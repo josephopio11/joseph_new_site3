@@ -3,6 +3,7 @@ import Contact from "@/components/contact";
 import Hero from "@/components/hero";
 import Projects from "@/components/projects";
 import Services from "@/components/services";
+import Skills2 from "@/components/skills2";
 import Testimonials from "@/components/testimonials";
 
 export default function PortfolioPage() {
@@ -13,6 +14,10 @@ export default function PortfolioPage() {
 
       {/* About Me Section */}
       <AboutMe />
+
+      {/* Services Section */}
+      {/* <Skills /> */}
+      <Skills2 />
 
       {/* Services Section */}
       <Services />

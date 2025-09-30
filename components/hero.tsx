@@ -19,29 +19,34 @@ const Hero = () => {
     >
       <div className="grid items-center gap-12 md:grid-cols-2">
         <div className="order-2 md:order-1">
-          <p className="text-muted-foreground mb-4 flex items-center gap-2 text-sm">
+          <p className="text-muted-foreground mb-4 flex items-center gap-2 text-xs lg:text-sm">
             WELCOME TO MY WORLD <Sparkles className="h-4 w-4" />
           </p>
-          <h1 className="mb-6 text-5xl font-bold text-balance md:text-6xl">
+          <h1 className="mb-6 text-4xl font-bold text-balance lg:text-6xl">
             Hi, I'm <span className="text-primary">Joseph Opio</span>
           </h1>
-          <p className="text-muted-foreground mb-8 text-lg text-pretty">
+          <p className="text-muted-foreground mb-2 text-sm text-pretty md:text-base lg:text-lg">
             I'm a seasoned Computer Science educator with over{" "}
             {new Date().getFullYear() - 2011}+ years of teaching experience.
             I've impacted countless students' lives through dynamic learning
             environments.
           </p>
-          <p className="text-muted-foreground mb-8 text-lg text-pretty">
+          <p className="text-muted-foreground mb-8 text-sm text-pretty md:text-base lg:text-lg">
             Beyond teaching, I excel in freelance web and app development,
             creating innovative solutions with cutting-edge tech. My expertise
             covers front-end, back-end, mobile apps, databases, and UX.
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              Contact Me
-              <ArrowRight className="mr-2 h-4 w-4" />
-            </Button>
+            <a href="#contact">
+              <Button
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                type="button"
+              >
+                Contact Me
+                <ArrowRight className="mr-2 h-4 w-4" />
+              </Button>
+            </a>
             <Button
               variant="outline"
               className="border-border hover:bg-card bg-transparent"
@@ -98,12 +103,12 @@ const Hero = () => {
         </div>
 
         <div className="relative order-1 overflow-hidden rounded-full md:order-2 md:overflow-auto md:rounded-none">
-          <div className="border-border/50 flex aspect-square items-center justify-center rounded-3xl border bg-gradient-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-sm dark:from-blue-200/40 dark:to-purple-200/20">
+          <div className="border-border/50 flex aspect-square items-center justify-center overflow-hidden rounded-3xl border bg-gradient-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-sm md:aspect-[11/16] lg:aspect-square dark:from-blue-200/40 dark:to-purple-200/20">
             <Image
               src="/me.png"
               fill
               alt="3D Design Element"
-              className="h-3/4 w-3/4 object-contain"
+              className="h-3/4 w-3/4 translate-y-4 object-contain"
             />
           </div>
         </div>

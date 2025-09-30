@@ -120,3 +120,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  /* Single marquee animation that can be reversed via animation-direction */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-33.333%);
+    }
+  }
+
+  /* Paused state with gradual stop */
+  .paused {
+    animation-play-state: paused !important;
+  }
+}
