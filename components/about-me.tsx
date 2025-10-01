@@ -3,7 +3,7 @@ import { Card, CardContent } from "./ui/card";
 
 const AboutMe = () => {
   return (
-    <section id="about" className="container mx-auto px-4 py-20">
+    <section id="about" className="container mx-auto scroll-mt-28 px-4 py-20">
       <h2 className="mb-12 text-4xl font-bold md:text-5xl">About me</h2>
 
       <div className="grid items-start gap-12 md:grid-cols-5">

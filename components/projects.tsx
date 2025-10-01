@@ -6,7 +6,10 @@ import { Card, CardContent } from "./ui/card";
 
 const Projects = () => {
   return (
-    <section id="projects" className="container mx-auto px-4 py-20">
+    <section
+      id="projects"
+      className="container mx-auto scroll-mt-28 px-4 py-20"
+    >
       <div className="mb-12 flex items-center justify-between">
         <div>
           <h2 className="mb-2 text-4xl font-bold md:text-5xl">My Projects</h2>

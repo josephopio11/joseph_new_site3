@@ -5,7 +5,7 @@ import { Textarea } from "./ui/textarea";
 
 const Contact = () => {
   return (
-    <section id="contact" className="container mx-auto px-4 py-20">
+    <section id="contact" className="container mx-auto scroll-mt-28 px-4 py-20">
       <h2 className="mb-12 text-4xl font-bold md:text-5xl">Contact</h2>
 
       <div className="grid gap-8 md:grid-cols-2">

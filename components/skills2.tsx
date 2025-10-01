@@ -19,8 +19,8 @@ const Skills2 = () => {
 
   return (
     <section
-      id="services"
-      className="relative container mx-auto overflow-hidden py-20"
+      id="skills"
+      className="relative container mx-auto scroll-mt-28 overflow-hidden py-20"
     >
       {/* Top blur */}
       <div className="from-background via-background/80 to-background/0 absolute -top-2 -left-1 -z-10 h-1/4 w-full bg-gradient-to-b dark:h-1/2" />

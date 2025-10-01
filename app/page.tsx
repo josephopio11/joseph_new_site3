@@ -1,10 +1,10 @@
 import AboutMe from "@/components/about-me";
+import Blog from "@/components/blog";
+import Contact from "@/components/contact";
 import Experience from "@/components/experience";
 import Hero from "@/components/hero";
 import Projects from "@/components/projects";
-import Services from "@/components/services";
 import Skills2 from "@/components/skills2";
-import Testimonials from "@/components/testimonials";
 
 export default function PortfolioPage() {
   return (
@@ -25,14 +25,17 @@ export default function PortfolioPage() {
       {/* My Experience Section */}
       <Experience />
 
+      {/* Blog Section */}
+      <Blog />
+
       {/* Services Section */}
-      <Services />
+      {/* <Services /> */}
 
       {/* Testimonials Section */}
-      <Testimonials />
+      {/* <Testimonials /> */}
 
       {/* Contact Section */}
-      {/* <Contact /> */}
+      <Contact />
     </>
   );
 }

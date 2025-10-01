@@ -229,3 +229,14 @@ export const experiencesData = [
     date: "from birth - 2011",
   },
 ] as const;
+
+export const navLinks = [
+  { name: "Home", href: "/#home" },
+  { name: "About", href: "/#about" },
+  { name: "My Works", href: "/#projects" },
+  { name: "Skills", href: "/#skills" },
+  { name: "Experience", href: "/#experience" },
+  { name: "Blog", href: "/#blog" },
+  // { name: "Reviews", href: "#testimonials" },
+  // { name: "Contact", href: "#contact" },
+] as const;
