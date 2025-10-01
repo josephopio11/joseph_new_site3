@@ -1,5 +1,5 @@
 import AboutMe from "@/components/about-me";
-import Contact from "@/components/contact";
+import Experience from "@/components/experience";
 import Hero from "@/components/hero";
 import Projects from "@/components/projects";
 import Services from "@/components/services";
@@ -15,21 +15,24 @@ export default function PortfolioPage() {
       {/* About Me Section */}
       <AboutMe />
 
+      {/* My Projects Section */}
+      <Projects />
+
       {/* Services Section */}
       {/* <Skills /> */}
       <Skills2 />
 
+      {/* My Experience Section */}
+      <Experience />
+
       {/* Services Section */}
       <Services />
-
-      {/* My Projects Section */}
-      <Projects />
 
       {/* Testimonials Section */}
       <Testimonials />
 
       {/* Contact Section */}
-      <Contact />
+      {/* <Contact /> */}
     </>
   );
 }

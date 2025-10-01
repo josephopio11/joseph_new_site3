@@ -111,21 +111,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="text-foreground mx-auto flex min-h-screen max-w-7xl flex-col">
+          <div className="text-foreground flex min-h-screen flex-col">
             {/* Header */}
             <Navigation />
-
-            {children}
+            <main>{children}</main>
 
             {/* Footer */}
-            <footer className="border-border/50 border-t py-8">
-              <div className="text-muted-foreground container mx-auto px-4 text-center text-sm">
-                <p>
-                  © {new Date().getFullYear()} Sara Howard. All rights
-                  reserved.
-                </p>
-              </div>
-            </footer>
+            {/* <Footer /> */}
           </div>
           <ThemeSwitcher />
         </ThemeProvider>

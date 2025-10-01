@@ -19,19 +19,19 @@ const Hero = () => {
     >
       <div className="grid items-center gap-12 md:grid-cols-2">
         <div className="order-2 md:order-1">
-          <p className="text-muted-foreground mb-4 flex items-center gap-2 text-xs lg:text-sm">
+          <p className="text-foreground mb-4 flex items-center gap-2 text-xs font-light lg:text-sm">
             WELCOME TO MY WORLD <Sparkles className="h-4 w-4" />
           </p>
-          <h1 className="mb-6 text-4xl font-bold text-balance lg:text-6xl">
+          <h1 className="text-muted-foreground dark:text-foreground mb-6 text-4xl font-bold text-balance lg:text-6xl">
             Hi, I'm <span className="text-primary">Joseph Opio</span>
           </h1>
-          <p className="text-muted-foreground mb-2 text-sm text-pretty md:text-base lg:text-lg">
+          <p className="text-muted-foreground dark:text-foreground mb-2 text-sm text-pretty md:text-base lg:text-lg">
             I'm a seasoned Computer Science educator with over{" "}
             {new Date().getFullYear() - 2011}+ years of teaching experience.
             I've impacted countless students' lives through dynamic learning
             environments.
           </p>
-          <p className="text-muted-foreground mb-8 text-sm text-pretty md:text-base lg:text-lg">
+          <p className="text-muted-foreground dark:text-foreground mb-8 text-sm text-pretty md:text-base lg:text-lg">
             Beyond teaching, I excel in freelance web and app development,
             creating innovative solutions with cutting-edge tech. My expertise
             covers front-end, back-end, mobile apps, databases, and UX.
@@ -102,8 +102,8 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="relative order-1 overflow-hidden rounded-full md:order-2 md:overflow-auto md:rounded-none">
-          <div className="border-border/50 flex aspect-square items-center justify-center overflow-hidden rounded-3xl border bg-gradient-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-sm md:aspect-[11/16] lg:aspect-square dark:from-blue-200/40 dark:to-purple-200/20">
+        <div className="relative order-1 overflow-hidden rounded-full shadow-xl shadow-purple-950/50 md:order-2 md:overflow-auto md:rounded-3xl">
+          <div className="border-border/50 flex aspect-square items-center justify-center overflow-hidden border bg-gradient-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-sm md:aspect-[11/16] lg:aspect-square dark:from-blue-200/40 dark:to-purple-200/20">
             <Image
               src="/me.png"
               fill

@@ -7,12 +7,24 @@ import {
   Pencil,
   Smartphone,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 
 const Services = () => {
   const services = [
+    {
+      icon: <Monitor className="h-6 w-6" />,
+      title: "UI/UX",
+      description:
+        "Creating intuitive and visually appealing user experiences.",
+    },
+    {
+      icon: <Monitor className="h-6 w-6" />,
+      title: "Web Design",
+      description:
+        "Designing responsive, engaging websites tailored to user needs.",
+    },
     {
       icon: <Monitor className="h-6 w-6" />,
       title: "UI/UX",
@@ -46,6 +58,15 @@ const Services = () => {
   const prevService = () => {
     setCurrentService((prev) => (prev - 1 + services.length) % services.length);
   };
+
+  // Auto scroll cards every 5 seconds when mouse if not hovering
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextService();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section id="services" className="container mx-auto px-4 py-20">
       <h2 className="mb-4 text-4xl font-bold md:text-5xl">Services</h2>
