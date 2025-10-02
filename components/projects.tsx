@@ -12,7 +12,9 @@ const Projects = () => {
     >
       <div className="mb-12 flex items-center justify-between">
         <div>
-          <h2 className="mb-2 text-4xl font-bold md:text-5xl">My Projects</h2>
+          <h2 className="mb-2 text-4xl font-bold text-gray-800 md:text-5xl dark:text-gray-200">
+            My Projects
+          </h2>
           <p className="text-muted-foreground">
             Discover projects that showcase my passion for design and
             innovation.

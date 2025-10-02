@@ -28,6 +28,7 @@ const Hero = () => {
   useEffect(() => {
     let ctx = gsap.context(() => {
       const tl = gsap.timeline();
+      const tl2 = gsap.timeline();
 
       tl.fromTo(
         ".name-animation",
@@ -70,12 +71,24 @@ const Hero = () => {
         { opacity: 0, y: 20 },
         {
           opacity: 1,
-          y: 0,
           duration: 1,
           stagger: 0.1,
           ease: "elastic.inOut(1, 0.3)",
         },
         "-=0.5",
+      );
+      tl2.fromTo(
+        ".profile-image",
+        { opacity: 0, x: 100 },
+        {
+          opacity: 1,
+          y: 0,
+          x: 0,
+          duration: 1,
+          stagger: 0.1,
+          ease: "elastic.inOut(1, 0.3)",
+          direction: "alternate",
+        },
       );
     }, component);
     return () => ctx.revert();
@@ -127,8 +140,8 @@ const Hero = () => {
             </div>
           </h1>
           <p className="text-muted-foreground dark:text-foreground my-experience mt-10 mb-8 text-sm text-pretty md:text-base lg:text-lg">
-            Computer Science educator with over{" "}
-            {new Date().getFullYear() - 2011}+ years experience
+            Computer Science educator with {new Date().getFullYear() - 2011 + 1}
+            + years experience
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
@@ -196,13 +209,13 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="relative order-1 overflow-hidden rounded-full shadow-xl shadow-purple-950/50 md:order-2 md:overflow-auto md:rounded-3xl">
+        <div className="profile-image relative order-1 overflow-hidden rounded-full opacity-0 shadow-xl shadow-purple-950/50 md:order-2 md:overflow-auto md:rounded-3xl">
           <div className="border-border/50 flex aspect-square items-center justify-center overflow-hidden border bg-gradient-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-sm md:aspect-[11/16] lg:aspect-square dark:from-blue-200/40 dark:to-purple-200/20">
             <Image
               src="/me.png"
               fill
               alt="3D Design Element"
-              className="h-3/4 w-3/4 translate-y-4 object-contain"
+              className="profile-image h-3/4 w-3/4 translate-y-4 object-contain opacity-0"
             />
           </div>
         </div>

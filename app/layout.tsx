@@ -2,6 +2,7 @@ import Footer from "@/components/footer";
 import Navigation from "@/components/navigation";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeSwitcher } from "@/components/theme-switcher";
+import ActiveSectionContextProvider from "@/context/activeSectionContext";
 import type { Metadata } from "next";
 import { Montserrat as Geist, Geist_Mono } from "next/font/google";
 import { WebSite, WithContext } from "schema-dts";
@@ -103,26 +104,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="!scroll-smooth">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-background dark:bg-background dark:text-foreground !scroll-smooth font-sans antialiased transition-colors duration-300 ease-in-out`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+      <ActiveSectionContextProvider>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} bg-background dark:bg-background dark:text-foreground !scroll-smooth font-sans antialiased transition-colors duration-300 ease-in-out`}
         >
-          <div className="text-foreground flex min-h-screen flex-col">
-            {/* Header */}
-            <Navigation />
-            <main>{children}</main>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="text-foreground flex min-h-screen flex-col">
+              {/* Header */}
+              <Navigation />
+              <main>{children}</main>
 
-            {/* Footer */}
-            <Footer />
-          </div>
-          <ThemeSwitcher />
-        </ThemeProvider>
-      </body>
+              {/* Footer */}
+              <Footer />
+            </div>
+            <ThemeSwitcher />
+          </ThemeProvider>
+        </body>
+      </ActiveSectionContextProvider>
     </html>
   );
 }

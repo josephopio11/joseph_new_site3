@@ -1,10 +1,26 @@
+"use client";
+
+import { useSectionInView } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
 
 const AboutMe = () => {
+  const { ref } = useSectionInView("About");
+
   return (
-    <section id="about" className="container mx-auto scroll-mt-28 px-4 py-20">
-      <h2 className="mb-12 text-4xl font-bold md:text-5xl">About me</h2>
+    <motion.section
+      id="about"
+      className="container mx-auto scroll-mt-28 px-4"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.3 }}
+      ref={ref}
+    >
+      <h2 className="mb-12 text-4xl font-bold text-gray-800 md:text-5xl dark:text-gray-200">
+        About me
+      </h2>
 
       <div className="grid items-start gap-12 md:grid-cols-5">
         <div className="relative md:col-span-2">
@@ -20,7 +36,7 @@ const AboutMe = () => {
           <div className="columns-1 sm:columns-2 md:columns-1 lg:columns-2 xl:columns-2">
             <p
               className={cn(
-                "text-muted-foreground dark:text-foreground mb-4 text-sm leading-relaxed lg:text-base",
+                "text-muted-foreground mb-4 text-sm leading-relaxed lg:text-base dark:text-gray-300",
                 "first-letter:float-left first-letter:pr-4 first-letter:text-7xl first-letter:font-bold",
               )}
             >
@@ -32,7 +48,7 @@ const AboutMe = () => {
               fostering a dynamic and engaging learning environment to nurture
               their potential.
             </p>
-            <p className="text-muted-foreground dark:text-foreground mb-4 text-sm leading-relaxed lg:text-base">
+            <p className="text-muted-foreground mb-4 text-sm leading-relaxed lg:text-base dark:text-gray-300">
               My passion for technology led me to delve into the world of
               freelance web and app development. With a strong command of
               programming languages and cutting-edge technologies, I take pride
@@ -42,7 +58,7 @@ const AboutMe = () => {
               committed to delivering high-quality work that aligns with the
               latest industry trends.
             </p>
-            <p className="text-muted-foreground dark:text-foreground mb-4 text-sm leading-relaxed lg:text-base">
+            <p className="text-muted-foreground mb-4 text-sm leading-relaxed lg:text-base dark:text-gray-300">
               My expertise spans various fields, including front-end and
               back-end web development, mobile app development, database design,
               and user experience (UX) optimization. To stay ahead in this
@@ -50,13 +66,13 @@ const AboutMe = () => {
               seeking out new opportunities for personal and professional
               growth.
             </p>
-            <p className="text-muted-foreground dark:text-foreground mb-4 text-sm leading-relaxed lg:text-base">
+            <p className="text-muted-foreground mb-4 text-sm leading-relaxed lg:text-base dark:text-gray-300">
               I thrive in collaborative environments, valuing teamwork and
               effective communication. Whether I am guiding students on their
               educational journey or collaborating with clients on their
               projects, I approach each endeavor with enthusiasm and dedication.
             </p>
-            <p className="text-muted-foreground dark:text-foreground mb-4 text-sm leading-relaxed lg:text-base">
+            <p className="text-muted-foreground mb-4 text-sm leading-relaxed lg:text-base dark:text-gray-300">
               Join me on this exciting journey as I continue to inspire and
               innovate in the realms of education and technology. If you are
               looking for a passionate and knowledgeable educator or a skilled
@@ -100,7 +116,7 @@ const AboutMe = () => {
           </div> */}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
