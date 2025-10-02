@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Navigation from "@/components/navigation";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeSwitcher } from "@/components/theme-switcher";
@@ -117,7 +118,7 @@ export default function RootLayout({
             <main>{children}</main>
 
             {/* Footer */}
-            {/* <Footer /> */}
+            <Footer />
           </div>
           <ThemeSwitcher />
         </ThemeProvider>

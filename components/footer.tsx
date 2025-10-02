@@ -13,27 +13,25 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="border-border/50 border-t">
-      {/* <div className="text-muted-foreground container mx-auto px-4 text-center text-sm">
-        <p>© {new Date().getFullYear()} Sara Howard. All rights reserved.</p>
-      </div> */}
-
       <nav className="sticky top-0 z-10 bg-cyan-950 p-4 drop-shadow-xl print:hidden">
         <div className="container mx-auto flex flex-col justify-between sm:flex-row">
-          <h3 className="text-small mb2 flex place-content-center justify-between text-center text-white sm:text-left md:mb-0">
+          <div className="text-small mb2 flex flex-col place-content-center justify-between text-center text-white sm:text-left md:mb-0">
             <Link
               href="/"
               className="text-white/80 no-underline hover:text-white"
             >
-              &copy; {new Date().getFullYear()} Joseph Opio. All rights
-              reserved. &nbsp;
+              &copy; {new Date().getFullYear()} Joseph Opio.
             </Link>
+            <span className="text-white/80 no-underline">
+              All rights reserved.
+            </span>
             <Link
               href="/privacy-policy"
               className="text-white/80 no-underline hover:text-white"
             >
               {"Privacy Policy"}
             </Link>
-          </h3>
+          </div>
           <hr className="my-2 border-slate-700" />
           <div className="flex flex-row justify-center gap-4 align-middle text-xl text-white sm:justify-evenly lg:text-2xl">
             <Link

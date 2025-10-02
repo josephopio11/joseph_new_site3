@@ -116,7 +116,7 @@ const PostPage = async (props: any) => {
           <Image
             src={`/images/posts/${wanted()}`}
             alt={`${post.data.title}`}
-            className="mt-0 aspect-video rounded-xl border border-white object-cover shadow-lg shadow-black/30 dark:border-white/50 dark:shadow-white/30"
+            className="mt-0 aspect-video rounded-xl border border-white object-cover shadow-lg shadow-black/30 lg:aspect-[5/2] dark:border-white/50 dark:shadow-white/30"
             width={1920}
             height={1080}
           />
@@ -133,7 +133,7 @@ const PostPage = async (props: any) => {
         </article>
         <div>
           <div className="mb-6 border-y-2 border-y-slate-500 py-2">
-            <h3 className="text-center text-sm">Tags:</h3>
+            <h3 className="text-center !text-sm">Tags:</h3>
             <div className="flex flex-row flex-wrap items-center justify-center gap-2 text-center align-middle">
               {tags.map((tag: string, i: number) => (
                 <span
@@ -148,9 +148,11 @@ const PostPage = async (props: any) => {
           <BackButton />
         </div>
       </div>
-      <div className="prose prose-xl !container mx-auto mt-8 mb-2 w-full px-4 print:hidden">
+      <div className="dark:prose-invert !container mx-auto mt-8 mb-2 w-full px-4 print:hidden">
         <div className="border-b-2 border-b-slate-500 py-2">
-          <h2>Related Posts</h2>
+          <h2 className="text-3xl font-bold dark:text-white/90">
+            Related Posts
+          </h2>
         </div>
         <div className="p-auto m-auto flex flex-col">
           <div className="hide-scroll-bar flex snap-x overflow-x-scroll pb-10">

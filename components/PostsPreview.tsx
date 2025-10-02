@@ -24,7 +24,6 @@ const PostsPreview = (props: PostMetadata) => {
               className="m-0 aspect-video object-cover"
               width={960}
               height={540}
-              quality={30}
             />
             <div className="p-2">
               <p className="m-0 text-xs font-light italic dark:text-slate-100">
