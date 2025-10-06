@@ -13,9 +13,9 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="border-border/50 border-t">
-      <nav className="sticky top-0 z-10 bg-cyan-950 p-4 drop-shadow-xl print:hidden">
-        <div className="container mx-auto flex flex-col justify-between sm:flex-row">
-          <div className="text-small mb2 flex flex-col place-content-center justify-between text-center text-white sm:text-left md:mb-0">
+      <nav className="sticky top-0 z-10 bg-purple-950 p-4 drop-shadow-xl dark:bg-purple-950/50 print:hidden">
+        <div className="container mx-auto flex flex-col items-center justify-between sm:flex-row">
+          <div className="text-small mb-6 flex flex-col place-content-center justify-between gap-2 text-center text-white sm:text-left md:mb-0 lg:flex-row">
             <Link
               href="/"
               className="text-white/80 no-underline hover:text-white"
@@ -32,7 +32,6 @@ const Footer = () => {
               {"Privacy Policy"}
             </Link>
           </div>
-          <hr className="my-2 border-slate-700" />
           <div className="flex flex-row justify-center gap-4 align-middle text-xl text-white sm:justify-evenly lg:text-2xl">
             <Link
               className="text-white/90 hover:text-white"

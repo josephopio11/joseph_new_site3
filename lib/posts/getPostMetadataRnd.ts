@@ -36,3 +36,11 @@ const getPostMetadataRnd = (): PostMetadata[] => {
 };
 
 export default getPostMetadataRnd;
+
+export function shufflePosts(posts: PostMetadata[]) {
+  for (let i = posts.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [posts[i], posts[j]] = [posts[j], posts[i]];
+  }
+  return posts;
+}

@@ -1,6 +1,6 @@
 import getPostMetadata from "@/lib/posts/getPostMetadata";
-import PostsPreview from "./PostsPreview";
-import { Button } from "./ui/button";
+import PostsPreview from "../PostsPreview";
+import { Button } from "../ui/button";
 
 export default function Blog() {
   const postMetadata = getPostMetadata();

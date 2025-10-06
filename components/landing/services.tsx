@@ -8,8 +8,8 @@ import {
   Smartphone,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Button } from "./ui/button";
-import { Card, CardContent } from "./ui/card";
+import { Button } from "../ui/button";
+import { Card, CardContent } from "../ui/card";
 
 const Services = () => {
   const services = [

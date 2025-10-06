@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 
 const Navigation = () => {
   return (
-    <header className="sticky top-0 z-50">
+    <header className="sticky top-0 z-50 print:hidden">
       <div className="container mx-auto">
         <div className="fixed top-5 left-1/2 container mx-auto w-full -translate-x-1/2 rounded-full border bg-white/50 px-4 py-4 shadow-lg backdrop-blur-sm dark:bg-black/70">
           <nav className="mx-2 flex items-center justify-between">

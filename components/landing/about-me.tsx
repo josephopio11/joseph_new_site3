@@ -3,7 +3,7 @@
 import { useSectionInView } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { Card, CardContent } from "./ui/card";
+import { Card, CardContent } from "../ui/card";
 
 const AboutMe = () => {
   const { ref } = useSectionInView("About");

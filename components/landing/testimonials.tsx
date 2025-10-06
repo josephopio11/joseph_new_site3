@@ -3,8 +3,8 @@
 import { testimonials } from "@/lib/data";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
-import { Button } from "./ui/button";
-import { Card, CardContent } from "./ui/card";
+import { Button } from "../ui/button";
+import { Card, CardContent } from "../ui/card";
 
 const Testimonials = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);

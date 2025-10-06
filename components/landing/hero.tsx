@@ -15,7 +15,7 @@ import {
 import { Urbanist } from "next/font/google";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 const urbanist = Urbanist({
   variable: "--font-geist-sans",
@@ -36,12 +36,14 @@ const Hero = () => {
           x: -100,
           opacity: 0,
           rotate: -10,
+          scale: 8,
         },
         {
           x: 0,
           opacity: 1,
           rotate: 0,
           duration: 1,
+          scale: 1,
           transformOrigin: "left top",
           ease: "elastic.inOut(1, 0.3)",
           stagger: { each: 0.1, from: "random" },
@@ -144,7 +146,7 @@ const Hero = () => {
             + years experience
           </p>
 
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center justify-start gap-4">
             <a href="#contact">
               <Button
                 className="bg-primary hover:bg-primary/90 text-primary-foreground cta-button"
@@ -161,10 +163,9 @@ const Hero = () => {
               Download CV
               <Download className="mr-2 h-4 w-4" />
             </Button>
+            <div className="flex flex-wrap items-center justify-center gap-4 py-3 text-lg font-medium sm:pb-3 print:hidden"></div>
 
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-4 py-3 text-lg font-medium sm:pb-3 print:hidden"></div>
-
-            <div className="ml-4 flex items-center gap-3">
+            <div className="flex items-center justify-start gap-3">
               <a
                 className="social-icon flex items-center gap-2 rounded-full bg-white p-4 text-gray-900 shadow-md shadow-gray-400 transition hover:scale-[1.02] hover:font-bold hover:shadow-lg hover:shadow-gray-900 focus:scale-[1.02] active:scale-[0.9] active:border-none active:bg-transparent active:shadow-none dark:border dark:border-slate-600 dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-600"
                 href="https://www.linkedin.com/in/josephopio/"

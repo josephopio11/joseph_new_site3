@@ -1,10 +1,10 @@
-import AboutMe from "@/components/about-me";
-import Blog from "@/components/blog";
-import Contact from "@/components/contact";
-import Experience from "@/components/experience";
-import Hero from "@/components/hero";
-import Projects from "@/components/projects";
-import Skills2 from "@/components/skills2";
+import AboutMe from "@/components/landing/about-me";
+import Blog from "@/components/landing/blog";
+import Contact from "@/components/landing/contact";
+import Experience from "@/components/landing/experience";
+import Hero from "@/components/landing/hero";
+import Projects from "@/components/landing/projects";
+import Skills2 from "@/components/landing/skills2";
 
 export default function PortfolioPage() {
   return (
