@@ -27,8 +27,6 @@ const Pagination = (props: PaginationProps) => {
         ? Number(page)
         : 1;
 
-  console.log("Top search page =>", currentPage);
-
   const getPagesToShow = () => {
     let startPage = currentPage - 2;
     let endPage = currentPage + 2;
@@ -47,8 +45,6 @@ const Pagination = (props: PaginationProps) => {
     );
   };
   const myPages = getPagesToShow();
-
-  console.log("Bottom search page =>", currentPage);
 
   return (
     <div className="flex w-full max-w-full flex-row items-center justify-center border-b-2 border-dotted border-gray-100 px-3 pt-3 pb-3 transition-all duration-300 sm:border-b-0 sm:pt-0">

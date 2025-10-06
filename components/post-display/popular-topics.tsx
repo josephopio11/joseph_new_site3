@@ -18,8 +18,6 @@ export function PopularTopics() {
   const posts = getPostMetadataRnd();
 
   const tagCounts = getSortedTagCounts(posts);
-  console.table(tagCounts.slice(0, 15));
-  console.log("=====================================================");
 
   return (
     <Card>

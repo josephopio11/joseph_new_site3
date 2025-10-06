@@ -1,9 +1,13 @@
+"use client";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { User } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function AuthorBio() {
+  const pathname = usePathname();
   return (
     <Card>
       <CardHeader>
@@ -17,11 +21,13 @@ export function AuthorBio() {
           <div className="flex items-center gap-3">
             <Avatar className="h-12 w-12">
               <AvatarImage src="/me2.png" alt="Joseph Opio" />
-              <AvatarFallback>SJ</AvatarFallback>
+              <AvatarFallback>JO</AvatarFallback>
             </Avatar>
             <div>
-              <h3 className="font-semibold">Joseph Opio</h3>
-              <p className="text-muted-foreground text-sm">The One and Only</p>
+              <h3 className="text-base font-semibold">Joseph Opio</h3>
+              <p className="text-muted-foreground text-xs">
+                The Computer Science Guy
+              </p>
             </div>
           </div>
           <p className="text-muted-foreground text-sm leading-relaxed">
@@ -32,12 +38,15 @@ export function AuthorBio() {
             cutting-edge tech. My expertise covers front-end, back-end, mobile
             apps, databases, and UX.
           </p>
-          <Link
-            href="/posts"
-            className="text-primary text-sm font-medium hover:underline"
-          >
-            View all articles →
-          </Link>
+
+          {pathname !== "/posts" && (
+            <Link
+              href="/posts"
+              className="text-primary text-sm font-medium hover:underline"
+            >
+              View all articles →
+            </Link>
+          )}
         </div>
       </CardContent>
     </Card>
