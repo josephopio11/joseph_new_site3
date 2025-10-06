@@ -43,8 +43,8 @@ export function ArticleHeader({
           src={`/images/posts/${imageSrc}`}
           alt={title}
           className="h-full w-full object-cover"
-          width={200}
-          height={200}
+          width={1920}
+          height={1080}
           priority
         />
       </div>

@@ -1,13 +1,14 @@
-import { User } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { User } from "lucide-react";
+import Link from "next/link";
 
 export function AuthorBio() {
   return (
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-lg">
-          <User className="h-5 w-5 text-accent" />
+          <User className="text-accent h-5 w-5" />
           About the Author
         </CardTitle>
       </CardHeader>
@@ -15,23 +16,30 @@ export function AuthorBio() {
         <div className="space-y-4">
           <div className="flex items-center gap-3">
             <Avatar className="h-12 w-12">
-              <AvatarImage src="/placeholder.svg?height=48&width=48" />
+              <AvatarImage src="/me2.png" alt="Joseph Opio" />
               <AvatarFallback>SJ</AvatarFallback>
             </Avatar>
             <div>
-              <h3 className="font-semibold">Sarah Johnson</h3>
-              <p className="text-sm text-muted-foreground">Senior Tech Reporter</p>
+              <h3 className="font-semibold">Joseph Opio</h3>
+              <p className="text-muted-foreground text-sm">The One and Only</p>
             </div>
           </div>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            Sarah has been covering technology and innovation for over a decade. She specializes in AI, machine
-            learning, and emerging technologies.
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            I'm a seasoned Computer Science educator with over 13 years of
+            teaching experience. I've impacted countless students' lives through
+            dynamic learning environments. Beyond teaching, I excel in freelance
+            web and app development, creating innovative solutions with
+            cutting-edge tech. My expertise covers front-end, back-end, mobile
+            apps, databases, and UX.
           </p>
-          <a href="#" className="text-sm text-primary hover:underline font-medium">
+          <Link
+            href="/posts"
+            className="text-primary text-sm font-medium hover:underline"
+          >
             View all articles →
-          </a>
+          </Link>
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

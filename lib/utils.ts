@@ -1,6 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { Post } from "./types";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -34,38 +33,4 @@ export function getRandomColour() {
   const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
   return randomColor;
-}
-
-export function getTagCounts(posts: Post[]): Record<string, number> {
-  return posts.reduce(
-    (acc, post) => {
-      post.tags.forEach((tag) => {
-        const cleanTag = tag.trim(); // strip extra spaces
-        acc[cleanTag] = (acc[cleanTag] || 0) + 1;
-      });
-      return acc;
-    },
-    {} as Record<string, number>,
-  );
-}
-
-export function getSortedTagCounts(
-  posts: Post[],
-): { tag: string; count: number }[] {
-  // build frequency map
-  const counts: Record<string, number> = posts.reduce(
-    (acc, post) => {
-      post.tags.forEach((tag) => {
-        const cleanTag = tag.trim();
-        acc[cleanTag] = (acc[cleanTag] || 0) + 1;
-      });
-      return acc;
-    },
-    {} as Record<string, number>,
-  );
-
-  // convert to array and sort ascending by count
-  return Object.entries(counts)
-    .map(([tag, count]) => ({ tag, count }))
-    .sort((a, b) => a.count - b.count);
 }

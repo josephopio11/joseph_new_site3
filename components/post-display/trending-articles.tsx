@@ -34,7 +34,7 @@ const trendingArticles = [
 ];
 
 export async function TrendingArticles() {
-  const posts = (await shufflePosts(getPostMetadataRnd())).slice(0, 4);
+  const posts = (await shufflePosts(getPostMetadataRnd())).slice(0, 6);
   return (
     <Card>
       <CardHeader>

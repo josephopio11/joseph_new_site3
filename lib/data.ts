@@ -6,7 +6,13 @@ import wordanalyticsImg from "@/public/wordanalytics.png";
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 
-import { FaReact } from "react-icons/fa";
+import {
+  FaArrowCircleUp,
+  FaChalkboardTeacher,
+  FaReact,
+  FaServer,
+} from "react-icons/fa";
+import { FaChargingStation } from "react-icons/fa6";
 
 import { LuGraduationCap } from "react-icons/lu";
 
@@ -175,6 +181,14 @@ export const projectsData = [
 
 export const experiencesData = [
   {
+    title: "Secondary Associate Leadership Team",
+    location: "XCL Education",
+    description:
+      "I am part of the Secondary Associate Leadership Team. Call me the ingredient in the school SALT",
+    icon: React.createElement(FaArrowCircleUp),
+    date: "2025 to date",
+  },
+  {
     title: "Computer Science Teacher",
     location: "XCL Education",
     description: "I am a teacher of Computer Science at XCL Education.",
@@ -201,7 +215,7 @@ export const experiencesData = [
     location: "Gitega International School",
     description:
       "I was in this school all the way from August 2017. It was a nice place to work in because the students were so disciplined.",
-    icon: React.createElement(CgWorkAlt),
+    icon: React.createElement(FaChalkboardTeacher),
     date: "2017 - 2019",
   },
   {
@@ -209,7 +223,7 @@ export const experiencesData = [
     location: "Horizon International School, Uganda",
     description:
       "This was the first international school I worked in. It was also my first experience managing enterprise servers for a school.",
-    icon: React.createElement(CgWorkAlt),
+    icon: React.createElement(FaServer),
     date: "2014 - 2017",
   },
   {
@@ -217,7 +231,7 @@ export const experiencesData = [
     location: "Ministry of Education and Sports, Uganda",
     description:
       "This was the first international school I worked in. It was also my first experience managing enterprise servers for a school.",
-    icon: React.createElement(CgWorkAlt),
+    icon: React.createElement(FaChargingStation),
     date: "2011 - 2014",
   },
   {

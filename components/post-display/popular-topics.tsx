@@ -1,7 +1,8 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import getPostMetadataRnd from "@/lib/posts/getPostMetadataRnd";
-import { getTagCounts } from "@/lib/utils";
+import { getSortedTagCounts } from "@/lib/posts/getTagCounts";
+import { cn, getRandomColour } from "@/lib/utils";
 import { Hash } from "lucide-react";
 
 const topics = [
@@ -16,8 +17,9 @@ const topics = [
 export function PopularTopics() {
   const posts = getPostMetadataRnd();
 
-  const sortedTags = getTagCounts(posts);
-  console.log(sortedTags);
+  const tagCounts = getSortedTagCounts(posts);
+  console.table(tagCounts.slice(0, 15));
+  console.log("=====================================================");
 
   return (
     <Card>
@@ -29,13 +31,19 @@ export function PopularTopics() {
       </CardHeader>
       <CardContent>
         <div className="flex flex-wrap gap-2">
-          {topics.map((topic) => (
+          {tagCounts.map((topic) => (
             <Badge
-              key={topic.name}
+              key={topic.tag}
               variant="secondary"
-              className="hover:bg-accent hover:text-accent-foreground cursor-pointer transition-colors"
+              className={cn(
+                "hover:bg-accent hover:text-accent-foreground h-7 cursor-pointer rounded-full text-white capitalize transition-colors",
+                getRandomColour(),
+              )}
             >
-              {topic.name}
+              {topic.tag}{" "}
+              <span className="bg-background text-foreground flex h-4 w-4 items-center justify-center rounded-full p-1 text-[10px] font-light">
+                {topic.count}
+              </span>
             </Badge>
           ))}
         </div>
