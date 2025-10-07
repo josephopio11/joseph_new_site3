@@ -34,6 +34,7 @@ export async function TrendingArticles() {
                       <div className="flex flex-wrap items-center gap-1">
                         {article.tags?.slice(0, 2).map((tag) => (
                           <Badge
+                            key={tag}
                             aria-label={tag}
                             className={`text-xs font-medium text-white ${getRandomColour()} print:text-black`}
                           >

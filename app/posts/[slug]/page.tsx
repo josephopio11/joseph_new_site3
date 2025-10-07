@@ -127,6 +127,7 @@ const BlogPage = async (props: any) => {
               {/* <pre>{JSON.stringify(post.data.tags, null, 2)}</pre> */}
               {post.data.tags.map((tag: string) => (
                 <Badge
+                  key={tag}
                   variant="secondary"
                   className={`text-xs font-medium text-white ${getRandomColour()} uppercase print:text-black`}
                 >

@@ -262,3 +262,5 @@ export const navLinks = [
   // { name: "Reviews", href: "#testimonials" },
   // { name: "Contact", href: "#contact" },
 ] as const;
+
+const josepn = {};
