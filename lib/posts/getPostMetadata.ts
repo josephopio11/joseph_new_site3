@@ -20,6 +20,7 @@ const getPostMetadata = (): PostMetadata[] => {
         slug: fileName.replace(".md", ""),
         image: matterResult.data.image as string,
         tags: matterResult.data.tags as string[],
+        badge: matterResult.data.badge as string,
       };
     });
 

@@ -5,7 +5,6 @@ import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-
 import {
   FaArrowCircleUp,
   FaChalkboardTeacher,
@@ -13,10 +12,19 @@ import {
   FaServer,
 } from "react-icons/fa";
 import { FaChargingStation } from "react-icons/fa6";
-
 import { LuGraduationCap } from "react-icons/lu";
-
 import { MdOutlineBabyChangingStation } from "react-icons/md";
+
+// Site configuration
+export const SITE_CONFIG = {
+  name: "Joseph Opio",
+  title: "Joseph Opio | Computer Science Teacher",
+  description:
+    "Computer Science Teacher at XCL Education, Malaysia. Teaching A Level, O Level, IGCSE, AP, IB, and GCSE Computer Science. Sharing insights about education and technology.",
+  url: "https://www.josephopio.com",
+  image: "/images/me.png",
+  twitter: "@josephopio", // Replace with actual Twitter handle
+} as const;
 
 export const projects = [
   {

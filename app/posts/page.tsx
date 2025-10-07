@@ -1,11 +1,13 @@
 import Pagination from "@/components/pagination";
-import { Sidebar } from "@/components/post-display/sidebar";
+import { BlogSidebar } from "@/components/post-display/blog-sidebar";
 import PostsPreview from "@/components/PostsPreview";
+import { SITE_CONFIG } from "@/lib/data";
 import getPostMetadata from "@/lib/posts/getPostMetadata";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.josephopio.com/posts"),
+  metadataBase: new URL(SITE_CONFIG.url),
   title: "My Blog and Posts",
   keywords: [
     "posts",
@@ -66,9 +68,9 @@ export default async function PostsPage(props: { searchParams: SearchParams }) {
   const postsSlice = postMetadata.slice(start, end);
 
   return (
-    <div className="pt-10">
-      <div className="my-16">{/* Just a spacer */}</div>
-      <div className="container mx-auto px-4 py-8">
+    <div className="pt-10 print:pt-0">
+      <div className="my-16 print:hidden">{/* Just a spacer */}</div>
+      <div className="container mx-auto px-4 py-8 print:p-0">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_380px] lg:gap-12">
           <article className="max-w-7xl">
             <div className="space-y-6">
@@ -79,35 +81,13 @@ export default async function PostsPage(props: { searchParams: SearchParams }) {
 
                 <p className="text-muted-foreground text-sm leading-relaxed text-pretty">
                   This is where I share all about me. If you need any
-                  information. Please look through my posts. Click here to
-                  contact me directly.
+                  information. Please look through my posts.{" "}
+                  <Link href="/#contact" className="underline">
+                    Click here
+                  </Link>{" "}
+                  to contact me directly.
                 </p>
               </div>
-
-              {/* <div className="text-muted-foreground flex flex-wrap items-center gap-4 text-sm">
-                <div className="flex items-center gap-2">
-                  <User className="h-4 w-4" />
-                  <span>Joseph Opio</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Calendar className="h-4 w-4" />
-                  <time dateTime="2025-03-10">
-                    {new Date(date).toDateString()}
-                  </time>
-                </div>
-                <span>8 min read</span>
-              </div> */}
-
-              {/* <div className="bg-muted aspect-video w-full overflow-hidden rounded-lg">
-                <Image
-                  src={`/images/posts/${imageSrc}`}
-                  alt={title}
-                  className="h-full w-full object-cover"
-                  width={1920}
-                  height={1080}
-                  priority
-                />
-              </div> */}
             </div>
             <div className="text-foreground my-8 grid !max-w-none grid-cols-1 space-y-6 sm:grid-cols-2 sm:gap-6 sm:space-y-0 md:grid-cols-3">
               {postsSlice.map((post) => (
@@ -119,25 +99,13 @@ export default async function PostsPage(props: { searchParams: SearchParams }) {
               hasPreviousPage={hasPreviousPage}
               totalPages={lastPage}
             />
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
-              {/* Tags: */}
-              {/* <pre>{JSON.stringify(post.data.tags, null, 2)}</pre> */}
-              {/* {post.data.tags.map((tag: string) => (
-                <Badge
-                  variant="secondary"
-                  className={`text-xs font-medium text-white ${getRandomColour()} print:text-black`}
-                >
-                  {tag}
-                </Badge>
-              ))} */}
-            </div>
             <p className="mt-12 hidden border-2 border-slate-500 pt-2 text-center text-sm text-slate-500 italic print:static print:mt-0 print:block print:border-0 print:pt-6 print:text-xs">
               This content was printed from Joseph Opio's site.
               (www.josephopio.com)
             </p>
           </article>
           <aside className="lg:sticky lg:top-8 lg:self-start">
-            <Sidebar />
+            <BlogSidebar />
           </aside>
         </div>
       </div>

@@ -16,7 +16,6 @@ const topics = [
 
 export function PopularTopics() {
   const posts = getPostMetadataRnd();
-
   const tagCounts = getSortedTagCounts(posts);
 
   return (

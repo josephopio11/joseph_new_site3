@@ -1,8 +1,8 @@
-import { projects, projectsData } from "@/lib/data";
-import { Link } from "lucide-react";
+import { projectsData } from "@/lib/data";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "../ui/button";
-import { Card, CardContent } from "../ui/card";
+import ProjectCard from "./project-card";
 
 const Projects = () => {
   return (
@@ -16,8 +16,7 @@ const Projects = () => {
             My Projects
           </h2>
           <p className="text-muted-foreground">
-            Discover projects that showcase my passion for design and
-            innovation.
+            Discover projects that showcase my passion for innovation.
           </p>
         </div>
         <Button
@@ -25,37 +24,13 @@ const Projects = () => {
           className="border-border hover:bg-card bg-transparent"
           asChild
         >
-          <a href="/projects">See All</a>
+          <Link href="/projects">See All</Link>
         </Button>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, index) => (
-          <Card
-            key={index}
-            className="bg-card/50 border-border hover:border-primary/50 group overflow-hidden transition-all"
-          >
-            <div className="aspect-video overflow-hidden">
-              <img
-                src={project.image || "/placeholder.svg"}
-                alt={project.title}
-                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-            <CardContent className="p-6">
-              <div className="mb-3 flex items-start justify-between">
-                <h3 className="text-lg font-semibold">{project.title}</h3>
-                <span
-                  className={`${project.tagColor} shrink-0 rounded-full px-3 py-1 text-xs text-white`}
-                >
-                  {project.tag}
-                </span>
-              </div>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {project.description}
-              </p>
-            </CardContent>
-          </Card>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {projectsData.slice(0, 4).map((project, index) => (
+          <ProjectCard key={index} project={project} />
         ))}
       </div>
     </section>

@@ -6,33 +6,6 @@ import { getRandomColour } from "@/lib/utils";
 import { TrendingUp } from "lucide-react";
 import { Badge } from "../ui/badge";
 
-const trendingArticles = [
-  {
-    id: 1,
-    title: "Breaking: Major Climate Agreement Reached at Global Summit",
-    category: "Environment",
-    readTime: "5 min read",
-  },
-  {
-    id: 2,
-    title: "Tech Giant Announces Revolutionary Quantum Computing Breakthrough",
-    category: "Technology",
-    readTime: "7 min read",
-  },
-  {
-    id: 3,
-    title: "Markets Rally as Economic Indicators Show Strong Growth",
-    category: "Business",
-    readTime: "4 min read",
-  },
-  {
-    id: 4,
-    title: "New Study Reveals Surprising Benefits of Mediterranean Diet",
-    category: "Health",
-    readTime: "6 min read",
-  },
-];
-
 export async function TrendingArticles() {
   const posts = (await shufflePosts(getPostMetadataRnd())).slice(0, 6);
   return (

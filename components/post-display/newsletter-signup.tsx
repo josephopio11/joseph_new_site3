@@ -11,7 +11,7 @@ import { Mail } from "lucide-react";
 
 export function NewsletterSignup() {
   return (
-    <Card className="bg-primary text-primary-foreground">
+    <Card className="bg-primary dark:bg-primary/50 text-primary-foreground">
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-lg">
           <Mail className="h-5 w-5" />

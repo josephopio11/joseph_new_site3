@@ -3,6 +3,7 @@ import Navigation from "@/components/navigation";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import ActiveSectionContextProvider from "@/context/activeSectionContext";
+import { SITE_CONFIG } from "@/lib/data";
 import type { Metadata } from "next";
 import { Montserrat as Geist, Geist_Mono } from "next/font/google";
 import { WebSite, WithContext } from "schema-dts";
@@ -17,17 +18,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-// Site configuration
-const SITE_CONFIG = {
-  name: "Joseph Opio",
-  title: "Joseph Opio | Computer Science Teacher",
-  description:
-    "Computer Science Teacher at XCL Education, Malaysia. Teaching A Level, O Level, IGCSE, AP, IB, and GCSE Computer Science. Sharing insights about education and technology.",
-  url: "https://www.josephopio.com",
-  image: "/images/me.png",
-  twitter: "@josephopio", // Replace with actual Twitter handle
-} as const;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
@@ -115,11 +105,8 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <div className="text-foreground flex min-h-screen flex-col">
-              {/* Header */}
               <Navigation />
               <main>{children}</main>
-
-              {/* Footer */}
               <Footer />
             </div>
             <ThemeSwitcher />

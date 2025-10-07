@@ -5,4 +5,5 @@ export interface PostMetadata {
   subtitle: string;
   image?: string;
   tags?: string[];
+  badge?: string;
 }

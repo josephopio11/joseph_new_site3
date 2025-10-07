@@ -19,7 +19,7 @@ const Navigation = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="hover:text-primary text-sm transition-colors"
+                  className="hover:text-primary text-sm font-bold transition-colors"
                 >
                   {link.name}
                 </a>
