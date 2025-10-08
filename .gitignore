@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# How to host the site
+# pm2 start npm --name "JosephSite" -- start

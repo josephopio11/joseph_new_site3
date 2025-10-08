@@ -255,12 +255,140 @@ export const experiencesData = [
 export const navLinks = [
   { name: "Home", href: "/#home" },
   { name: "About", href: "/#about" },
-  { name: "My Works", href: "/#projects" },
+  { name: "Projects", href: "/#projects" },
   { name: "Skills", href: "/#skills" },
   { name: "Experience", href: "/#experience" },
   { name: "Blog", href: "/#blog" },
-  // { name: "Reviews", href: "#testimonials" },
-  // { name: "Contact", href: "#contact" },
+  { name: "Services", href: "/#services" },
+  // { name: "Contact", href: "/#contact" },
 ] as const;
+
+export const myServices = [
+  {
+    category: "Education & Training",
+    items: [
+      {
+        item: "Private Tutoring",
+        description:
+          "Offer one-to-one or small group tutoring in Python, web development, or computer systems, supporting GCSE, IGCSE, and A-Level learners.",
+      },
+      {
+        item: "Online Courses & Workshops",
+        description:
+          "Create and sell online courses such as 'Python for Beginners', 'Intro to Game Design', or 'AI Made Simple'.",
+      },
+      {
+        item: "Coding Bootcamps for Teens",
+        description:
+          "Run weekend or holiday coding camps focused on game design, app creation, or AI projects using Teachable Machine.",
+      },
+      {
+        item: "Teacher Training",
+        description:
+          "Provide training sessions to help teachers integrate coding, computational thinking, or digital literacy into their lessons.",
+      },
+      {
+        item: "Curriculum Design",
+        description:
+          "Assist schools in developing or modernising their computer science curriculum to align with current standards and technologies.",
+      },
+    ],
+  },
+  {
+    category: "Web & Digital",
+    items: [
+      {
+        item: "Web Design & Development",
+        description:
+          "Build responsive websites for schools, charities, and small businesses with a focus on usability and educational value.",
+      },
+      {
+        item: "Educational Website Creation",
+        description:
+          "Design and develop interactive educational websites that include learning materials, quizzes, and tutorials.",
+      },
+      {
+        item: "Technical Support & Maintenance",
+        description:
+          "Provide technical support, manage hosting, update content, and maintain websites for educational organisations.",
+      },
+    ],
+  },
+  {
+    category: "Automation & Software",
+    items: [
+      {
+        item: "Custom Automation Scripts",
+        description:
+          "Develop Python scripts or small programs to automate tasks such as grading, data entry, or report generation.",
+      },
+      {
+        item: "Data Visualisation & Analysis",
+        description:
+          "Help schools or small organisations understand their data through clear analysis and visualisation tools.",
+      },
+      {
+        item: "Educational Software Development",
+        description:
+          "Create educational tools, simulations, or simple software to help students learn computer science concepts.",
+      },
+    ],
+  },
+  {
+    category: "Creative & Media",
+    items: [
+      {
+        item: "3D Animation Lessons or Freelance Work",
+        description:
+          "Teach 3D animation using Blender or offer freelance animation services for educational or promotional content.",
+      },
+      {
+        item: "Video Editing & Educational Content Creation",
+        description:
+          "Produce explainer videos, tutorials, or school promotional content with high-quality visuals and sound.",
+      },
+      {
+        item: "Digital Graphics & Vector Art",
+        description:
+          "Design educational illustrations and infographics using Inkscape or Adobe Illustrator.",
+      },
+    ],
+  },
+  {
+    category: "Social Impact & Environmental Tech",
+    items: [
+      {
+        item: "STEM Outreach & Environmental Education",
+        description:
+          "Lead workshops that show how technology and coding can be used to support environmental awareness and sustainability.",
+      },
+      {
+        item: "Tech-for-Good Consultancy",
+        description:
+          "Advise schools and NGOs on adopting cleaner, greener, and more efficient technologies.",
+      },
+    ],
+  },
+  {
+    category: "Consulting & Professional Services",
+    items: [
+      {
+        item: "Digital Transformation for Schools",
+        description:
+          "Consult with schools on implementing AI tools, digital literacy programmes, and efficient online collaboration systems.",
+      },
+      {
+        item: "Cybersecurity Awareness Training",
+        description:
+          "Deliver sessions on online safety, data privacy, and ethical computing practices.",
+      },
+      {
+        item: "Assessment Design",
+        description:
+          "Help schools create engaging, fair, and practical computer science assessments and projects.",
+      },
+    ],
+  },
+];
 
 const josepn = {};

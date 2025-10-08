@@ -2,14 +2,16 @@ import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import LinkTrigger from "./link-trigger";
 import ProjectCard from "./project-card";
 
 const Projects = () => {
   return (
     <section
       id="projects"
-      className="container mx-auto scroll-mt-28 px-4 py-20"
+      className="container mx-auto scroll-mt-28 px-4 sm:my-30"
     >
+      <LinkTrigger section="Projects" />
       <div className="mb-12 flex items-center justify-between">
         <div>
           <h2 className="mb-2 text-4xl font-bold text-gray-800 md:text-5xl dark:text-gray-200">

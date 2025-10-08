@@ -1,6 +1,5 @@
 "use client";
 
-import { useSectionInView } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
 import gsap from "gsap";
 import {
@@ -17,6 +16,7 @@ import { Urbanist } from "next/font/google";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { Button } from "../ui/button";
+import LinkTrigger from "./link-trigger";
 
 const urbanist = Urbanist({
   variable: "--font-geist-sans",
@@ -25,7 +25,6 @@ const urbanist = Urbanist({
 
 const Hero = () => {
   const component = useRef(null);
-  const { ref } = useSectionInView("Home");
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -122,7 +121,8 @@ const Hero = () => {
       id="home"
       className="container mx-auto mt-10 px-4 py-20 md:mt-0 md:py-32"
     >
-      <div className="grid items-center gap-12 md:grid-cols-2" ref={ref}>
+      <LinkTrigger section="Home" />
+      <div className="grid items-center gap-12 md:grid-cols-2">
         <div className="order-2 md:order-1">
           <p className="text-foreground mb-4 flex items-center gap-2 text-xs font-light lg:text-sm">
             WELCOME TO MY WORLD <Sparkles className="h-4 w-4" />

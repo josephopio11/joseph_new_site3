@@ -4,6 +4,7 @@ import { skillsRow1, skillsRow2, skillsRow3 } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useRef, useState } from "react";
+import LinkTrigger from "./link-trigger";
 
 interface MarqueeRowProps {
   skills: string[];
@@ -20,8 +21,9 @@ const Skills2 = () => {
   return (
     <section
       id="skills"
-      className="relative container mx-auto scroll-mt-28 overflow-hidden py-20"
+      className="relative container mx-auto scroll-mt-28 overflow-hidden sm:my-30"
     >
+      <LinkTrigger section="Skills" />
       {/* Top blur */}
       <div className="from-background via-background/80 to-background/0 absolute -top-2 -left-1 -z-10 h-1/4 w-full bg-gradient-to-b dark:h-1/2" />
 

@@ -8,6 +8,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import LinkTrigger from "./link-trigger";
 
 const Experience = () => {
   const { theme } = useTheme();
@@ -16,9 +17,10 @@ const Experience = () => {
     <section
       id="experience"
       // ref={ref}
-      className="container mx-auto scroll-mt-28 px-4 sm:mb-40"
+      className="container mx-auto scroll-mt-28 px-4 sm:my-30"
     >
       <h2 className="mb-12 text-4xl font-bold md:text-5xl">Experience</h2>
+      <LinkTrigger section="Experience" />
       <VerticalTimeline
         lineColor={
           theme === "light"

@@ -10,6 +10,8 @@ import {
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
+import LinkTrigger from "./link-trigger";
+import SectionTitle from "./section-title";
 
 const Services = () => {
   const services = [
@@ -68,11 +70,24 @@ const Services = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <section id="services" className="container mx-auto px-4 py-20">
-      <h2 className="mb-4 text-4xl font-bold md:text-5xl">Services</h2>
-      <p className="text-muted-foreground mb-12">
-        Transforming ideas into intuitive digital experiences
-      </p>
+    <section
+      id="services"
+      className="container mx-auto scroll-mt-28 px-4 py-20"
+    >
+      <LinkTrigger section="Services" />
+      <div className="mb-12 flex items-center justify-between">
+        <SectionTitle
+          title="Services"
+          sometext="Transforming ideas into intuitive digital experiences"
+        />
+        <Button
+          variant="outline"
+          className="border-border hover:bg-card bg-transparent"
+          asChild
+        >
+          <a href="/services">See All</a>
+        </Button>
+      </div>
 
       <div className="relative">
         <div className="flex items-center gap-4">

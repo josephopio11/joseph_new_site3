@@ -1,6 +1,8 @@
 import getPostMetadata from "@/lib/posts/getPostMetadata";
 import PostsPreview from "../PostsPreview";
 import { Button } from "../ui/button";
+import LinkTrigger from "./link-trigger";
+import SectionTitle from "./section-title";
 
 export default function Blog() {
   const postMetadata = getPostMetadata();
@@ -8,16 +10,13 @@ export default function Blog() {
     .slice(0, 4)
     .map((post) => <PostsPreview key={post.slug} {...post} />);
   return (
-    <section className="container mx-auto scroll-mt-28 px-4 sm:mb-30" id="blog">
+    <section className="container mx-auto scroll-mt-28 px-4 sm:my-30" id="blog">
+      <LinkTrigger section="Blog" />
       <div className="mb-12 flex items-center justify-between">
-        <div>
-          <h2 className="mb-2 text-4xl font-bold text-gray-800 md:text-5xl dark:text-gray-200">
-            Blog
-          </h2>
-          <p className="text-muted-foreground">
-            Wanna have some good read... here you go!
-          </p>
-        </div>
+        <SectionTitle
+          title="Blog"
+          sometext=" Wanna have some good read... here you go!"
+        />
         <Button
           variant="outline"
           className="border-border hover:bg-card bg-transparent"

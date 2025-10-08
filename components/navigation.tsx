@@ -25,7 +25,7 @@ const Navigation = () => {
               <span className="text-lg font-semibold">Joseph Opio</span>
             </Link>
 
-            <div className="hidden items-center gap-8 md:flex">
+            <div className="text-wrap-balance hidden items-center justify-center gap-8 md:flex md:flex-wrap">
               {navLinks.map((link) => (
                 <motion.div
                   className="relative flex h-3/4 items-center justify-center"

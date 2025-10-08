@@ -2,6 +2,7 @@ import Footer from "@/components/footer";
 import Navigation from "@/components/navigation";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeSwitcher } from "@/components/theme-switcher";
+import { Toaster } from "@/components/ui/sonner";
 import ActiveSectionContextProvider from "@/context/activeSectionContext";
 import { SITE_CONFIG } from "@/lib/data";
 import type { Metadata } from "next";
@@ -109,6 +110,7 @@ export default function RootLayout({
               <main>{children}</main>
               <Footer />
             </div>
+            <Toaster />
             <ThemeSwitcher />
           </ThemeProvider>
         </body>

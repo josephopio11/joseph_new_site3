@@ -4,6 +4,7 @@ import Contact from "@/components/landing/contact";
 import Experience from "@/components/landing/experience";
 import Hero from "@/components/landing/hero";
 import Projects from "@/components/landing/projects";
+import Services from "@/components/landing/services";
 import Skills2 from "@/components/landing/skills2";
 
 export default function PortfolioPage() {
@@ -16,7 +17,7 @@ export default function PortfolioPage() {
       <Skills2 />
       <Experience />
       <Blog />
-      {/* <Services /> */}
+      <Services />
       {/* <Testimonials /> */}
       <Contact />
     </>

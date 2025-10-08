@@ -2,17 +2,17 @@
 
 import { sendEmail } from "@/actions/sendEmail";
 import { verifyCaptcha } from "@/actions/serverActions";
-import { useSectionInView } from "@/lib/hooks";
 import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import { FaPaperPlane } from "react-icons/fa";
+import { toast } from "sonner";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import { Input } from "../ui/input";
+import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
 
 const ContactForm = () => {
-  const { ref } = useSectionInView("Blog");
-
   //Google Recaptcha
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [isVerified, setIsverified] = useState<boolean>(false);
@@ -24,39 +24,45 @@ const ContactForm = () => {
       .catch(() => setIsverified(false));
   }
   return (
-    <Card className="bg-card/50 border-border md:col-span-3" ref={ref}>
+    <Card className="bg-card/50 border-border col-span-1 md:col-span-1 lg:col-span-3">
       <CardContent className="p-8">
         <form
-          className="mt-10 flex flex-col dark:text-black"
+          className="space-y-6"
           action={async (formData) => {
             const { data, error } = await sendEmail(formData);
-            // if (!!error) {
-            //   toast.error(error!);
-            //   return;
-            // }
-            // if (!!data?.error) {
-            //   toast.error(data.error.message);
-            //   return;
-            // }
-            // toast.success("Email sent successfully!");
+            if (!!error) {
+              toast.error(error!);
+              return;
+            }
+            if (!!data?.error) {
+              toast.error(data.error.message);
+              return;
+            }
+            toast.success("Email sent successfully!");
           }}
         >
-          <Input
-            className="borderBlack dark:bg-opacity-80 dark:focus:bg-opacity-100 h-14 rounded-lg px-4 transition-all dark:bg-white dark:outline-none"
-            name="senderEmail"
-            type="email"
-            required
-            maxLength={500}
-            placeholder="Your email"
-          />
-          <Textarea
-            className="borderBlack dark:bg-opacity-80 dark:focus:bg-opacity-100 my-3 h-52 rounded-lg p-4 transition-all dark:bg-white dark:outline-none"
-            name="message"
-            placeholder="Your message"
-            required
-            maxLength={5000}
-          />
-          <div className="flex flex-col md:flex-row md:justify-between">
+          <>
+            <Label htmlFor="senderEmail">Your email</Label>
+            <Input
+              className="h-14 rounded-lg px-4 transition-all"
+              name="senderEmail"
+              type="email"
+              required
+              maxLength={500}
+              placeholder="Your email"
+            />
+          </>
+          <>
+            <Label htmlFor="message">Your message</Label>
+            <Textarea
+              className="my-3 h-52 rounded-lg p-4 transition-all"
+              name="message"
+              placeholder="Your message"
+              required
+              maxLength={5000}
+            />
+          </>
+          <div className="flex flex-wrap items-center gap-2 md:justify-between">
             {/* @ts-ignore */}
             <ReCAPTCHA
               sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
@@ -65,7 +71,11 @@ const ContactForm = () => {
               type="image"
             />
 
-            <Button type="submit" disabled={!isVerified} />
+            <Button type="submit" disabled={!isVerified}>
+              <FaPaperPlane className="mr-2" />
+              <span className="sr-only">Send message</span>
+              Submit
+            </Button>
           </div>
         </form>
         {/* <form className="space-y-6">
