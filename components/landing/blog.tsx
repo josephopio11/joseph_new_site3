@@ -8,7 +8,7 @@ export default function Blog() {
     .slice(0, 4)
     .map((post) => <PostsPreview key={post.slug} {...post} />);
   return (
-    <section className="container mx-auto scroll-mt-28 px-4 sm:mb-40" id="blog">
+    <section className="container mx-auto scroll-mt-28 px-4 sm:mb-30" id="blog">
       <div className="mb-12 flex items-center justify-between">
         <div>
           <h2 className="mb-2 text-4xl font-bold text-gray-800 md:text-5xl dark:text-gray-200">
