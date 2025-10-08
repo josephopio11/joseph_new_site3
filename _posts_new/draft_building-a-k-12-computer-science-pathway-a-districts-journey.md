@@ -105,7 +105,7 @@ Building a K-12 computer science pathway is a challenging but rewarding endeavor
 {
   "metadata": {
     "title": "Building a K-12 Computer Science Pathway: A District's Journey",
-    "excerpt": "Explore our district's journey in building a comprehensive K-12 computer science pathway, from initial assessment to implementation and sustainability. Learn about our challenges, triumphs, and lessons learned.",
+    "subtitle": "Explore our district's journey in building a comprehensive K-12 computer science pathway, from initial assessment to implementation and sustainability. Learn about our challenges, triumphs, and lessons learned.",
     "keywords": [
       "K-12 Computer Science",
       "Computer Science Education",

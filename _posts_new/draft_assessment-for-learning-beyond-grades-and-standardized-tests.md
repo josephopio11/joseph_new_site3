@@ -1,6 +1,6 @@
 ## Assessment for Learning: Beyond Grades and Standardized Tests
 
-````markdown
+`````markdown
 ````markdown
 ```markdown
 # Assessment for Learning: Beyond Grades and Standardized Tests
@@ -48,27 +48,21 @@ Assessment _for_ learning (AfL), also known as formative assessment, offers a po
 Here are some concrete examples of how to implement AfL strategies in a Computer Science classroom:
 
 1.  **Coding Challenges with Built-in Feedback:** Design coding challenges that provide immediate feedback on syntax errors, logic errors, and performance. Platforms like Codecademy, HackerRank, and LeetCode offer excellent resources for this. The focus here should not be on the points earned, but on understanding _why_ the code failed and how to fix it.
-
     - **Example:** Create a function that sorts an array of numbers. Provide feedback on whether the function produces the correct output for various test cases, including edge cases (e.g., empty array, array with duplicate values).
 
 2.  **Think-Pair-Share Activities:** Pose a challenging problem or question to the class. Have students think about it individually, then pair up to discuss their ideas. Finally, have each pair share their ideas with the whole class. This encourages active participation and allows students to learn from each other.
-
     - **Example:** "What are the advantages and disadvantages of using recursion versus iteration in this scenario?"
 
 3.  **Exit Tickets:** At the end of each class, ask students to answer a short question or solve a simple problem related to the day's lesson. This provides valuable feedback on what students understood and what needs further clarification.
-
     - **Example:** "What is the most important thing you learned today?" or "What is one question you still have about the topic?"
 
 4.  **Debugging Exercises:** Provide students with code that contains errors and ask them to identify and fix the errors. This helps them develop problem-solving skills and deepen their understanding of the underlying concepts.
-
     - **Example:** Provide a program that's supposed to calculate the factorial of a number but has a logical error causing incorrect results.
 
 5.  **Code Reviews:** Have students review each other's code, providing feedback on code quality, efficiency, and readability. This helps them develop critical thinking skills and learn about different coding styles. Use rubrics focused on style and clarity, not just functionality.
-
     - **Example:** Provide a checklist of code style guidelines (e.g., proper indentation, meaningful variable names, comments) and ask students to evaluate each other's code based on these guidelines.
 
 6.  **Project-Based Learning with Formative Checkpoints:** Break down large projects into smaller, manageable milestones. At each milestone, provide feedback on the student's progress and offer suggestions for improvement. This helps students stay on track and avoid getting overwhelmed.
-
     - **Example:** For a website development project, have checkpoints for:
       - Wireframe design
       - HTML structure
@@ -76,14 +70,12 @@ Here are some concrete examples of how to implement AfL strategies in a Computer
       - JavaScript functionality
 
 7.  **Self-Reflection Journals:** Encourage students to keep a journal where they reflect on their learning experiences, identify their strengths and weaknesses, and set goals for improvement.
-
     - **Example:** Prompts could include:
       - "What was the most challenging aspect of this project?"
       - "What did you learn from your mistakes?"
       - "What would you do differently next time?"
 
 8.  **Use of Rubrics (Focused on Learning, Not Just Grading):** Develop rubrics that clearly define the criteria for success. Share the rubrics with students at the beginning of the assignment so they know what is expected of them. Focus the rubric on the _process_ of learning, not just the final product.
-
     - **Example:** A rubric for a software design assignment could include criteria such as:
       - Problem definition
       - Solution design
@@ -131,12 +123,14 @@ By embracing Assessment for Learning, we can move beyond the grading glass ceili
 The transition to Assessment for Learning is a journey, not a destination. It requires ongoing reflection, experimentation, and collaboration. But the rewards are well worth the effort. By focusing on learning rather than grading, we can empower our students to become lifelong learners, critical thinkers, and creative problem-solvers – skills that are essential for success in the 21st century and beyond. Let us embrace this journey together and create a future where assessment truly serves the purpose of learning.
 ```
 ````
+`````
+
 ````
 
 ```json
 {
   "title": "Assessment for Learning: Beyond Grades and Standardized Tests",
-  "excerpt": "Explore how Assessment for Learning (AfL) can transform your Computer Science classroom, moving beyond traditional grades to foster deeper understanding and engagement.",
+  "subtitle": "Explore how Assessment for Learning (AfL) can transform your Computer Science classroom, moving beyond traditional grades to foster deeper understanding and engagement.",
   "keywords": [
     "Assessment for Learning",
     "Formative Assessment",
@@ -172,3 +166,4 @@ The transition to Assessment for Learning is a journey, not a destination. It re
 ---
 
 ```
+````

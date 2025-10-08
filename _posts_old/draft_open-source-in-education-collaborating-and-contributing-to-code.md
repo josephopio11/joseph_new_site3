@@ -1,12 +1,38 @@
 ---
-title: Open Source in Education: Collaborating and Contributing to Code
-excerpt: Explore the transformative power of open source in education. Learn how students and educators can collaborate, contribute, and innovate through open source projects, fostering invaluable skills and a passion for technology.
-keywords: [open source, education, programming, collaboration, contribution, coding, software, learning, technology, skills, innovation, projects, students, educators, curriculum]
-tags: [open source, education, programming, collaboration, coding, software, learning, technology, skills]
+title: "Open Source in Education: Collaborating and Contributing to Code"
+subtitle: "Explore the transformative power of open source in education. Learn how students and educators can collaborate, contribute, and innovate through open source projects, fostering invaluable skills and a passion for technology."
+keywords:
+  [
+    open source,
+    education,
+    programming,
+    collaboration,
+    contribution,
+    coding,
+    software,
+    learning,
+    technology,
+    skills,
+    innovation,
+    projects,
+    students,
+    educators,
+    curriculum,
+  ]
+tags:
+  [
+    open source,
+    education,
+    programming,
+    collaboration,
+    coding,
+    software,
+    learning,
+    technology,
+    skills,
+  ]
 date: 2022-05-15
 ---
-
-# Open Source in Education: Collaborating and Contributing to Code
 
 The digital landscape is constantly evolving, and with it, the need for a dynamic and adaptable education system. In the realm of Computer Science, one approach stands out for its potential to revolutionize learning and empower students: Open Source. This article delves into the transformative power of open source in education, exploring how it fosters collaboration, encourages contribution, and equips students with invaluable skills for the future.
 

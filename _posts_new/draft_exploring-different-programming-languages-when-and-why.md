@@ -1,6 +1,6 @@
 ---
 title: Exploring Different Programming Languages: When and Why?
-excerpt: A comprehensive guide to navigating the world of programming languages, exploring popular options and providing guidance on when and why to choose one over another.
+subtitle: A comprehensive guide to navigating the world of programming languages, exploring popular options and providing guidance on when and why to choose one over another.
 keywords: [programming languages, python, java, javascript, c++, c#, swift, go, kotlin, software development, computer science, coding, web development, mobile development, data science, machine learning]
 tags: [programming, languages, python, java, javascript, c++, c#, swift, go, kotlin, tutorial, guide, education]
 date: 2022-08-15
@@ -31,14 +31,12 @@ Let's explore some of the most popular and widely used programming languages, ex
 Python has become incredibly popular in recent years, and for good reason. Its clean syntax, extensive libraries, and large community make it an excellent choice for beginners and experienced programmers alike.
 
 - **Strengths:**
-
   - **Readability:** Python's syntax is designed to be easy to read and understand, making it a great language for learning programming fundamentals.
   - **Versatility:** Python is used in a wide range of applications, including web development (Django, Flask), data science (NumPy, Pandas, Scikit-learn), machine learning (TensorFlow, PyTorch), scripting, and automation.
   - **Large Community and Extensive Libraries:** Python has a vibrant community that contributes to a vast ecosystem of libraries and frameworks, making it easy to find solutions to common problems.
   - **Cross-Platform Compatibility:** Python code can run on various operating systems, including Windows, macOS, and Linux.
 
 - **Weaknesses:**
-
   - **Performance:** Python is generally slower than compiled languages like C++ or Java.
   - **Global Interpreter Lock (GIL):** The GIL can limit the performance of multi-threaded Python programs.
 
@@ -53,7 +51,6 @@ Python has become incredibly popular in recent years, and for good reason. Its c
 Java has been a mainstay in the enterprise world for decades, known for its robustness, scalability, and platform independence.
 
 - **Strengths:**
-
   - **Platform Independence (Write Once, Run Anywhere):** Java code is compiled into bytecode, which can be executed on any Java Virtual Machine (JVM), making it highly portable.
   - **Object-Oriented:** Java is a fully object-oriented language, promoting code reusability and maintainability.
   - **Strong Typing:** Java's strong typing helps catch errors early in the development process.
@@ -61,7 +58,6 @@ Java has been a mainstay in the enterprise world for decades, known for its robu
   - **Scalability and Performance:** Java is well-suited for building large-scale, high-performance applications.
 
 - **Weaknesses:**
-
   - **Verbosity:** Java code can be more verbose than code written in other languages like Python.
   - **Steep Learning Curve:** Java can be challenging for beginners due to its complexity and object-oriented nature.
 
@@ -76,14 +72,12 @@ Java has been a mainstay in the enterprise world for decades, known for its robu
 JavaScript is the language of the web, powering interactive elements and dynamic content on websites. It's essential for front-end development and increasingly important for back-end development as well.
 
 - **Strengths:**
-
   - **Ubiquity:** JavaScript runs in every web browser, making it the de facto language for front-end web development.
   - **Asynchronous Programming:** JavaScript's asynchronous nature allows for non-blocking operations, improving the responsiveness of web applications.
   - **Large Community and Extensive Frameworks:** JavaScript has a massive community and a wide range of frameworks, including React, Angular, and Vue.js.
   - **Node.js:** Node.js allows JavaScript to be used for back-end development, enabling full-stack JavaScript development.
 
 - **Weaknesses:**
-
   - **Browser Compatibility Issues:** Ensuring compatibility across different browsers can be challenging.
   - **Security Vulnerabilities:** JavaScript can be vulnerable to security exploits if not properly implemented.
   - **Dynamic Typing:** JavaScript's dynamic typing can lead to runtime errors.
@@ -98,14 +92,12 @@ JavaScript is the language of the web, powering interactive elements and dynamic
 C++ is a powerful, low-level language that provides fine-grained control over hardware resources. It's often used for performance-critical applications, such as game development, operating systems, and embedded systems.
 
 - **Strengths:**
-
   - **Performance:** C++ is known for its high performance and efficiency.
   - **Low-Level Control:** C++ provides direct access to hardware resources, allowing for fine-grained control.
   - **Object-Oriented:** C++ supports object-oriented programming, promoting code reusability and maintainability.
   - **Large Community and Extensive Libraries:** C++ has a large community and a wide range of libraries, including the Standard Template Library (STL).
 
 - **Weaknesses:**
-
   - **Complexity:** C++ is a complex language with a steep learning curve.
   - **Manual Memory Management:** C++ requires manual memory management, which can lead to memory leaks and other errors.
   - **Verbose Syntax:** C++ code can be more verbose than code written in other languages.
@@ -121,7 +113,6 @@ C++ is a powerful, low-level language that provides fine-grained control over ha
 C# (pronounced "C sharp") is a modern, object-oriented language developed by Microsoft. It's primarily used for developing applications on the .NET platform, including Windows desktop applications, web applications, and games.
 
 - **Strengths:**
-
   - **.NET Integration:** C# is tightly integrated with the .NET platform, providing access to a wide range of libraries and frameworks.
   - **Object-Oriented:** C# is a fully object-oriented language, promoting code reusability and maintainability.
   - **Strong Typing:** C#'s strong typing helps catch errors early in the development process.
@@ -129,7 +120,6 @@ C# (pronounced "C sharp") is a modern, object-oriented language developed by Mic
   - **Game Development (Unity):** C# is the primary language for developing games using the Unity game engine.
 
 - **Weaknesses:**
-
   - **Platform Dependence:** C# is primarily used for developing applications on the .NET platform, which is primarily Windows-based (although .NET Core and .NET 5+ are cross-platform).
   - **Vendor Lock-in:** Using C# can lead to vendor lock-in with Microsoft technologies.
 
@@ -144,14 +134,12 @@ C# (pronounced "C sharp") is a modern, object-oriented language developed by Mic
 Swift is a modern, powerful language developed by Apple for building applications on iOS, macOS, watchOS, and tvOS.
 
 - **Strengths:**
-
   - **Modern Syntax:** Swift has a clean and modern syntax that is easy to read and write.
   - **Performance:** Swift is designed for performance and is often faster than Objective-C.
   - **Safety:** Swift includes features that help prevent common programming errors, such as memory leaks and null pointer exceptions.
   - **Interoperability with Objective-C:** Swift can interoperate with existing Objective-C code, allowing developers to gradually migrate their codebases.
 
 - **Weaknesses:**
-
   - **Platform Dependence:** Swift is primarily used for developing applications on Apple platforms.
   - **Relatively New Language:** Swift is a relatively new language, so the ecosystem is still evolving.
 
@@ -166,14 +154,12 @@ Swift is a modern, powerful language developed by Apple for building application
 Go (also known as Golang) is a modern language developed by Google, designed for building scalable and concurrent applications.
 
 - **Strengths:**
-
   - **Concurrency:** Go has built-in support for concurrency, making it easy to write programs that can run multiple tasks simultaneously.
   - **Performance:** Go is a compiled language that is known for its high performance.
   - **Simplicity:** Go has a simple and easy-to-learn syntax.
   - **Garbage Collection:** Go has automatic garbage collection, which simplifies memory management.
 
 - **Weaknesses:**
-
   - **Error Handling:** Go's error handling can be verbose.
   - **Generics (Relatively New):** Generics were only recently added to Go, so the ecosystem is still developing.
 
@@ -187,14 +173,12 @@ Go (also known as Golang) is a modern language developed by Google, designed for
 Kotlin is a modern language that runs on the Java Virtual Machine (JVM) and is fully interoperable with Java. It's often used as a replacement for Java, offering a more concise and expressive syntax.
 
 - **Strengths:**
-
   - **Interoperability with Java:** Kotlin can seamlessly interoperate with existing Java code.
   - **Concise Syntax:** Kotlin has a more concise and expressive syntax than Java.
   - **Null Safety:** Kotlin has built-in null safety features that help prevent null pointer exceptions.
   - **Android Development:** Kotlin is officially supported by Google for Android development.
 
 - **Weaknesses:**
-
   - **Smaller Community:** Kotlin has a smaller community than Java.
   - **Learning Curve (for Java Developers):** While Kotlin is designed to be easy to learn for Java developers, there is still a learning curve.
 

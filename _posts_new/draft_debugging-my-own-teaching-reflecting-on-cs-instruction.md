@@ -1,6 +1,6 @@
 ## Debugging My Own Teaching: Reflecting on CS Instruction
 
-```markdown
+````markdown
 # Debugging My Own Teaching: Reflecting on CS Instruction
 
 **Metadata:**
@@ -8,12 +8,32 @@
 ```json
 {
   "title": "Debugging My Own Teaching: Reflecting on CS Instruction",
-  "excerpt": "A Computer Science teacher's journey of self-reflection and continuous improvement, exploring the challenges and triumphs of CS instruction in an international school setting.",
-  "keywords": ["Computer Science Education", "CS Instruction", "Teaching Reflection", "Debugging Teaching", "International School", "Pedagogy", "Coding Education", "Educational Technology", "Active Learning", "Assessment Strategies"],
-  "tags": ["CS Education", "Teaching", "Reflection", "Pedagogy", "Coding", "International School", "Technology"],
+  "subtitle": "A Computer Science teacher's journey of self-reflection and continuous improvement, exploring the challenges and triumphs of CS instruction in an international school setting.",
+  "keywords": [
+    "Computer Science Education",
+    "CS Instruction",
+    "Teaching Reflection",
+    "Debugging Teaching",
+    "International School",
+    "Pedagogy",
+    "Coding Education",
+    "Educational Technology",
+    "Active Learning",
+    "Assessment Strategies"
+  ],
+  "tags": [
+    "CS Education",
+    "Teaching",
+    "Reflection",
+    "Pedagogy",
+    "Coding",
+    "International School",
+    "Technology"
+  ],
   "datePublished": "2020-05-18"
 }
 ```
+````
 
 ## Debugging My Own Teaching: Reflecting on CS Instruction
 
@@ -61,10 +81,10 @@ In today's digital age, there is a wealth of technology and resources available 
 
 I have experimented with a variety of these tools in my classroom, including:
 
-*   **Online Coding Platforms:** Platforms like Codecademy, Khan Academy, and freeCodeCamp provide students with interactive coding exercises and tutorials.
-*   **Integrated Development Environments (IDEs):** IDEs like VS Code and Repl.it provide students with a powerful environment for writing, debugging, and running code.
-*   **Educational Robotics Kits:** Robotics kits like LEGO Mindstorms and VEX Robotics allow students to apply their coding skills to build and program robots.
-*   **Gamified Learning Platforms:** Platforms like CodeCombat and Scratch engage students in coding through games and interactive challenges.
+- **Online Coding Platforms:** Platforms like Codecademy, Khan Academy, and freeCodeCamp provide students with interactive coding exercises and tutorials.
+- **Integrated Development Environments (IDEs):** IDEs like VS Code and Repl.it provide students with a powerful environment for writing, debugging, and running code.
+- **Educational Robotics Kits:** Robotics kits like LEGO Mindstorms and VEX Robotics allow students to apply their coding skills to build and program robots.
+- **Gamified Learning Platforms:** Platforms like CodeCombat and Scratch engage students in coding through games and interactive challenges.
 
 While these tools can be incredibly valuable, it's important to use them strategically and purposefully. Simply introducing technology into the classroom is not enough. It's essential to carefully consider how these tools can be used to enhance the learning experience and achieve specific learning objectives.
 
@@ -81,12 +101,14 @@ Through this continuous process of feedback and reflection, I am able to identif
 ### The Final Compilation: A Teacher's Journey
 
 Debugging my own teaching is a challenging but ultimately rewarding endeavor. It requires a willingness to be vulnerable, to admit mistakes, and to continuously strive for improvement. As I continue on this journey, I am reminded of the words of the great computer scientist, Donald Knuth: "Programming is not about typing code, it's about thinking." Similarly, teaching is not just about delivering content, it's about fostering a love of learning and empowering students to become critical thinkers and problem solvers. And just like any complex program, the process of becoming an effective teacher is a journey of continuous debugging, refinement, and optimization. The "program" of my teaching is never truly finished, but that's what makes it so exciting.
+
 ```
 
- 
 
-> Temperature: 
+
+> Temperature:
 > 0.5
 >2025-10-07 at 19:03
 ---
 
+```

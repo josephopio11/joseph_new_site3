@@ -1,6 +1,6 @@
 ---
 title: 'The Moment a Student "Gets It": The Rewards of Teaching'
-excerpt: 'An in-depth look into the profound, transformative "Aha!" moment in the classroom, seen through the eyes of a Computer Science teacher. This article explores the struggle, the breakthrough, and the incredible ripple effect that makes teaching one of the most rewarding professions on earth.'
+subtitle: 'An in-depth look into the profound, transformative "Aha!" moment in the classroom, seen through the eyes of a Computer Science teacher. This article explores the struggle, the breakthrough, and the incredible ripple effect that makes teaching one of the most rewarding professions on earth.'
 keywords:
   [
     "teaching rewards",

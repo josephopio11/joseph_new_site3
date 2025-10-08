@@ -163,49 +163,73 @@ const Hero = () => {
               Download CV
               <Download className="mr-2 h-4 w-4" />
             </Button>
-            <div className="flex flex-wrap items-center justify-center gap-4 py-3 text-lg font-medium sm:pb-3 print:hidden"></div>
 
             <div className="flex items-center justify-start gap-3">
-              <a
-                className="social-icon flex items-center gap-2 rounded-full bg-white p-4 text-gray-900 shadow-md shadow-gray-400 transition hover:scale-[1.02] hover:font-bold hover:shadow-lg hover:shadow-gray-900 focus:scale-[1.02] active:scale-[0.9] active:border-none active:bg-transparent active:shadow-none dark:border dark:border-slate-600 dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-600"
-                href="https://www.linkedin.com/in/josephopio/"
-                target="_linkedin"
+              <Button
+                className="social-icon flex h-12 w-12 items-center gap-2 rounded-full bg-white p-4 text-gray-900 shadow-md shadow-gray-400 transition hover:scale-[1.02] hover:font-bold hover:shadow-lg hover:shadow-gray-900 focus:scale-[1.02] active:scale-[0.9] active:border-none active:bg-transparent active:shadow-none dark:border dark:border-slate-600 dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-600"
+                asChild
               >
-                <Linkedin className="h-4 w-4" />
-              </a>
+                <a
+                  href="https://www.linkedin.com/in/josephopio/"
+                  target="_linkedin"
+                >
+                  <Linkedin className="h-6 w-6" />
+                </a>
+              </Button>
 
-              <a
-                className="social-icon hover:bg-card flex items-center gap-2 rounded-full bg-white p-4 text-gray-900 shadow-md shadow-gray-400 transition hover:scale-[1.02] hover:font-bold hover:shadow-lg hover:shadow-gray-900 focus:scale-[1.02] active:scale-[0.9] active:border-none active:bg-transparent active:shadow-none dark:border dark:border-slate-600 dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-600"
-                href={"https://converter.josephopio.com"}
-                target="_converter"
+              <Button
+                className="social-icon flex h-12 w-12 items-center gap-2 rounded-full bg-white p-4 text-gray-900 shadow-md shadow-gray-400 transition hover:scale-[1.02] hover:font-bold hover:shadow-lg hover:shadow-gray-900 focus:scale-[1.02] active:scale-[0.9] active:border-none active:bg-transparent active:shadow-none dark:border dark:border-slate-600 dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-600"
+                asChild
               >
-                <CameraIcon className="h-4 w-4" />
-              </a>
-              <a
-                className="social-icon flex items-center gap-2 rounded-full bg-white p-4 text-gray-900 shadow-md shadow-gray-400 transition hover:scale-[1.02] hover:font-bold hover:shadow-lg hover:shadow-gray-900 focus:scale-[1.02] active:scale-[0.9] active:border-none active:bg-transparent active:shadow-none dark:border dark:border-slate-600 dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-600"
-                href={"https://www.youtube.com/@josephopio/?sub_confirmation=1"}
-                target="_youtube"
+                <a
+                  href={"https://converter.josephopio.com"}
+                  target="_converter"
+                >
+                  <CameraIcon className="h-6 w-6" />
+                </a>
+              </Button>
+              <Button
+                className="social-icon flex h-12 w-12 items-center gap-2 rounded-full bg-white p-4 text-gray-900 shadow-md shadow-gray-400 transition hover:scale-[1.02] hover:font-bold hover:shadow-lg hover:shadow-gray-900 focus:scale-[1.02] active:scale-[0.9] active:border-none active:bg-transparent active:shadow-none dark:border dark:border-slate-600 dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-600"
+                asChild
               >
-                <Youtube className="h-4 w-4" />
-              </a>
-
-              <a
-                className="social-icon flex items-center gap-2 rounded-full bg-white p-4 text-gray-900 shadow-md shadow-gray-400 transition hover:scale-[1.02] hover:font-bold hover:shadow-lg hover:shadow-gray-900 focus:scale-[1.02] active:scale-[0.9] active:border-none active:bg-transparent active:shadow-none dark:border dark:border-slate-600 dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-600"
-                href={"https://github.com/josephopio11"}
-                target="_github"
+                <a
+                  href={
+                    "https://www.youtube.com/@josephopio/?sub_confirmation=1"
+                  }
+                  target="_youtube"
+                >
+                  <Youtube className="h-6 w-6" />
+                </a>
+              </Button>
+              <Button
+                className="social-icon flex h-12 w-12 items-center gap-2 rounded-full bg-white p-4 text-gray-900 shadow-md shadow-gray-400 transition hover:scale-[1.02] hover:font-bold hover:shadow-lg hover:shadow-gray-900 focus:scale-[1.02] active:scale-[0.9] active:border-none active:bg-transparent active:shadow-none dark:border dark:border-slate-600 dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-600"
+                asChild
               >
-                <Github className="h-4 w-4" />
-              </a>
-              <a
-                className="social-icon flex items-center gap-2 rounded-full bg-white p-4 text-gray-900 shadow-md shadow-gray-400 transition hover:scale-[1.02] hover:font-bold hover:shadow-lg hover:shadow-gray-900 focus:scale-[1.02] active:scale-[0.9] active:border-none active:bg-transparent active:shadow-none dark:border dark:border-slate-600 dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-600"
-                // href={"https://www.redbubble.com/people/josephopio/shop?asc=u"}
-                href={"https://lms.josephopio.com"}
-                // target="_shop"
-                target="_school"
+                <a href={"https://github.com/josephopio11"} target="_github">
+                  <Github className="h-6 w-6" />
+                </a>
+              </Button>
+              <Button
+                className="social-icon flex h-12 w-12 items-center gap-2 rounded-full bg-white p-4 text-gray-900 shadow-md shadow-gray-400 transition hover:scale-[1.02] hover:font-bold hover:shadow-lg hover:shadow-gray-900 focus:scale-[1.02] active:scale-[0.9] active:border-none active:bg-transparent active:shadow-none dark:border dark:border-slate-600 dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-600"
+                asChild
               >
-                {/* <FaShoppingBag /> */}
-                <GraduationCap className="h-4 w-4" />
-              </a>
+                <a href={"https://lms.josephopio.com"} target="_school">
+                  <GraduationCap className="h-6 w-6" />
+                </a>
+              </Button>
+              {/* <Button
+                className="social-icon flex h-12 w-12 items-center gap-2 rounded-full bg-white p-4 text-gray-900 shadow-md shadow-gray-400 transition hover:scale-[1.02] hover:font-bold hover:shadow-lg hover:shadow-gray-900 focus:scale-[1.02] active:scale-[0.9] active:border-none active:bg-transparent active:shadow-none dark:border dark:border-slate-600 dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-600"
+                asChild
+              >
+                <a
+                  href={
+                    "https://www.redbubble.com/people/josephopio/shop?asc=u"
+                  }
+                  target="_shop"
+                >
+                  <FaShoppingBag />
+                </a>
+              </Button> */}
             </div>
           </div>
         </div>

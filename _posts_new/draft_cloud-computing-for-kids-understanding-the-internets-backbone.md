@@ -1,6 +1,6 @@
 ---
 title: Cloud Computing for Kids: Understanding the Internet's Backbone
-excerpt: Explore the magic of cloud computing! Learn how it powers your favorite apps, games, and websites in a fun and easy way. Discover the internet's backbone and how it works!
+subtitle: Explore the magic of cloud computing! Learn how it powers your favorite apps, games, and websites in a fun and easy way. Discover the internet's backbone and how it works!
 keywords: ["cloud computing", "kids", "internet", "servers", "data", "applications", "games", "websites", "storage", "software", "hardware", "data centers", "virtualization", "online safety", "digital literacy"]
 tags: ["cloud", "computing", "education", "technology", "internet safety", "kids tech"]
 date: 2023-08-15

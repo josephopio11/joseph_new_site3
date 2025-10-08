@@ -1,8 +1,8 @@
 ## From Programmer to Educator: A Career Transition Story
 
-```md
-```markdown
-```markdown
+````md
+````markdown
+````markdown
 ## From Programmer to Educator: A Career Transition Story
 
 The hum of the server room. The glow of the monitor illuminating my face in the dead of night. The satisfying click-clack of mechanical keys as I wrestled with complex algorithms. This was my life. I was a programmer, a coder, a digital architect, building virtual worlds with lines of code. And I loved it. Or, at least, I thought I did.
@@ -70,24 +70,30 @@ I am incredibly grateful for the opportunity to make a difference in the lives o
 The hum of the classroom has replaced the hum of the server room. The glow of the projector has replaced the glow of the monitor. The chatter of students has replaced the click-clack of mechanical keys. And I wouldn't have it any other way. The program I'm running now is one of change, growth, and empowerment, and it's the most rewarding one I've ever written.
 
 ```markdown
+
 ```
+````
+````
+````
 
 ```markdown
 ---
 title: From Programmer to Educator: A Career Transition Story
-excerpt: A personal account of a programmer's journey from the world of coding to the rewarding realm of computer science education in an international school.
+subtitle: A personal account of a programmer's journey from the world of coding to the rewarding realm of computer science education in an international school.
 keywords: [career change, computer science education, teaching, programming, international school, career transition, education, technology, coding, educator]
 tags: [career change, computer science, education, teaching, international school, programming, personal story]
 date: 2022-05-15
 ---
 ```
+
 ```
 
 
- 
 
-> Temperature: 
+
+> Temperature:
 > 0.6
 >2025-10-07 at 19:04
 ---
 
+```

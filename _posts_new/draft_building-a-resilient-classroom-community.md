@@ -1,6 +1,6 @@
 ---
 title: Building a Resilient Classroom Community: A Computer Science Teacher's Perspective
-excerpt: Discover practical strategies for fostering a resilient classroom community in computer science, where students feel safe to take risks, learn from mistakes, and support one another.
+subtitle: Discover practical strategies for fostering a resilient classroom community in computer science, where students feel safe to take risks, learn from mistakes, and support one another.
 keywords: [classroom community, computer science education, resilience, psychological safety, collaboration, teamwork, empathy, inclusivity, teacher-student relationships, conflict resolution, technology in education, growth mindset, pair programming, peer review, coding competitions]
 tags: [education, computer science, classroom management, community building, teaching strategies, resilience, international school]
 date: 2022-05-15

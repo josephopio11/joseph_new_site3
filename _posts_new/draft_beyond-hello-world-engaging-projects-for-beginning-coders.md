@@ -1,6 +1,6 @@
 ---
 title: Beyond "Hello World": Engaging Projects for Beginning Coders
-excerpt: Discover exciting and accessible project ideas to help beginning coders move beyond "Hello, World!" and embark on a rewarding journey of discovery.
+subtitle: Discover exciting and accessible project ideas to help beginning coders move beyond "Hello, World!" and embark on a rewarding journey of discovery.
 keywords: ["programming projects", "beginner coding", "computer science education", "coding for kids", "project-based learning", "coding tutorials", "learn to code", "coding challenges"]
 tags: ["programming", "education", "coding", "projects", "beginners", "computer science", "tutorial"]
 date: 2022-05-15
@@ -35,7 +35,6 @@ Now, let's explore a diverse range of project ideas, categorized by skill level 
 **Beginner Level (Suitable for students with basic programming knowledge):**
 
 - **Text-Based Adventure Game:**
-
   - **Concept:** Create a simple text-based adventure game where the user navigates through different scenarios by typing commands.
   - **Skills:** Input/Output, Conditional Statements (if/else), Loops, Variables, String Manipulation.
   - **Example:**
@@ -59,7 +58,6 @@ Now, let's explore a diverse range of project ideas, categorized by skill level 
   - **Enhancements:** Add more locations, items, puzzles, and characters to make the game more complex and engaging.
 
 - **Simple Calculator:**
-
   - **Concept:** Build a calculator that can perform basic arithmetic operations (addition, subtraction, multiplication, division).
   - **Skills:** Input/Output, Arithmetic Operators, Conditional Statements, Functions.
   - **Example:**
@@ -108,7 +106,6 @@ Now, let's explore a diverse range of project ideas, categorized by skill level 
   - **Enhancements:** Add more advanced functions (square root, exponentiation), error handling (division by zero), and a graphical user interface (GUI).
 
 - **Number Guessing Game:**
-
   - **Concept:** Create a game where the computer generates a random number, and the user has to guess it within a certain number of attempts.
   - **Skills:** Random Number Generation, Input/Output, Loops, Conditional Statements.
   - **Example:**
@@ -129,7 +126,7 @@ Now, let's explore a diverse range of project ideas, categorized by skill level 
           alert("Too high!");
         } else {
           alert(
-            `Congratulations! You guessed the number in ${attempts} attempts.`
+            `Congratulations! You guessed the number in ${attempts} attempts.`,
           );
         }
       }
@@ -141,7 +138,6 @@ Now, let's explore a diverse range of project ideas, categorized by skill level 
   - **Enhancements:** Add difficulty levels, a scorekeeping system, and a timer.
 
 - **Simple To-Do List:**
-
   - **Concept:** Build a program that allows the user to add, remove, and view items on a to-do list.
   - **Skills:** Arrays/Lists, Input/Output, Loops, Functions.
   - **Example (Python):**
@@ -196,27 +192,23 @@ Now, let's explore a diverse range of project ideas, categorized by skill level 
 **Intermediate Level (Suitable for students with a solid understanding of basic programming concepts):**
 
 - **Basic Web Scraper:**
-
   - **Concept:** Create a program that extracts data from a website, such as headlines, prices, or product descriptions.
   - **Skills:** Web Requests (HTTP), HTML Parsing, Regular Expressions (optional), Data Structures.
   - **Languages:** Python (using libraries like `requests` and `BeautifulSoup`), JavaScript (using `fetch` and DOM manipulation).
   - **Ethical Considerations:** Emphasize the importance of respecting website terms of service and avoiding excessive scraping that could overload the server.
 
 - **Simple Chatbot:**
-
   - **Concept:** Build a chatbot that can respond to user input based on predefined rules or a simple knowledge base.
   - **Skills:** Natural Language Processing (NLP) basics, String Manipulation, Conditional Statements, Data Structures.
   - **Languages:** Python (using libraries like `NLTK` or `spaCy`), JavaScript.
   - **Enhancements:** Integrate with a messaging platform (e.g., Telegram, Slack), use machine learning to improve the chatbot's responses.
 
 - **Graphical User Interface (GUI) Application:**
-
   - **Concept:** Create a desktop application with a graphical user interface, such as a simple image editor, a text editor, or a game.
   - **Skills:** GUI Frameworks (e.g., Tkinter for Python, JavaFX for Java, React for JavaScript), Event Handling, Object-Oriented Programming (OOP).
   - **Languages:** Python, Java, JavaScript.
 
 - **Data Visualization Project:**
-
   - **Concept:** Collect data from a source (e.g., a CSV file, an API) and create visualizations to represent the data, such as charts, graphs, or maps.
   - **Skills:** Data Analysis, Data Visualization Libraries (e.g., Matplotlib, Seaborn, Plotly for Python, D3.js for JavaScript).
   - **Languages:** Python, JavaScript.
@@ -224,25 +216,21 @@ Now, let's explore a diverse range of project ideas, categorized by skill level 
 **Advanced Level (Suitable for students with a strong understanding of programming concepts and data structures):**
 
 - **Machine Learning Project:**
-
   - **Concept:** Implement a machine learning algorithm to solve a specific problem, such as image classification, sentiment analysis, or spam detection.
   - **Skills:** Machine Learning Libraries (e.g., scikit-learn, TensorFlow, PyTorch), Data Preprocessing, Model Training, Evaluation.
   - **Languages:** Python.
 
 - **Game Development Project:**
-
   - **Concept:** Create a more complex game with advanced features, such as AI, physics, and multiplayer support.
   - **Skills:** Game Engines (e.g., Unity, Unreal Engine), Object-Oriented Programming (OOP), Data Structures, Algorithms.
   - **Languages:** C#, C++.
 
 - **Mobile App Development Project:**
-
   - **Concept:** Develop a mobile app for iOS or Android using a mobile app development framework.
   - **Skills:** Mobile App Development Frameworks (e.g., React Native, Flutter, Swift, Kotlin), UI/UX Design, API Integration.
   - **Languages:** JavaScript, Swift, Kotlin.
 
 - **Blockchain Project:**
-
   - **Concept:** Implement a simple blockchain or decentralized application (DApp).
   - **Skills:** Cryptography, Distributed Systems, Smart Contracts (e.g., Solidity for Ethereum).
   - **Languages:** Python, JavaScript, Solidity.

@@ -1,6 +1,6 @@
 ---
 title: "The Role of Failure in the Learning Process (General & CS)"
-excerpt: "As a Computer Science teacher, I've learned that our greatest fear in education—failure—is actually our most powerful tool for learning. This article explores why we must embrace mistakes, celebrate the 'bug,' and cultivate a fail-forward mindset in our classrooms and beyond."
+subtitle: "As a Computer Science teacher, I've learned that our greatest fear in education—failure—is actually our most powerful tool for learning. This article explores why we must embrace mistakes, celebrate the 'bug,' and cultivate a fail-forward mindset in our classrooms and beyond."
 keywords:
   [
     "role of failure in learning",

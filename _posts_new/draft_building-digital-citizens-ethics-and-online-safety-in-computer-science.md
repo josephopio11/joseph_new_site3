@@ -1,6 +1,6 @@
 ---
 title: Building Digital Citizens: Ethics and Online Safety in Computer Science
-excerpt: Explore the crucial aspects of ethics and online safety in computer science education. Equip students with the skills to navigate the digital world responsibly and ethically.
+subtitle: Explore the crucial aspects of ethics and online safety in computer science education. Equip students with the skills to navigate the digital world responsibly and ethically.
 keywords: [digital citizenship, ethics, online safety, computer science education, cyberbullying, privacy, data security, algorithms, digital literacy, digital etiquette]
 tags: [education, computer science, ethics, online safety, digital citizenship, technology, curriculum, teaching]
 date: 2022-05-15

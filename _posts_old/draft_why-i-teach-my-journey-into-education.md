@@ -1,6 +1,6 @@
 ---
 title: "Why I Teach: My Journey into Education"
-excerpt: "From the fast-paced world of software engineering to the dynamic environment of an international classroom, this is the story of my unexpected journey into teaching Computer Science and the profound 'why' that keeps me here."
+subtitle: "From the fast-paced world of software engineering to the dynamic environment of an international classroom, this is the story of my unexpected journey into teaching Computer Science and the profound 'why' that keeps me here."
 keywords:
   [
     "why become a teacher",

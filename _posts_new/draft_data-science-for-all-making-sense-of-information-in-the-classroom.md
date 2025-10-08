@@ -71,7 +71,7 @@ Data science is no longer a niche field; it's a fundamental literacy for the 21s
 {
   "metadata": {
     "title": "Data Science for All: Making Sense of Information in the Classroom",
-    "excerpt": "Explore how to bring the power of data science into the classroom, making it accessible and engaging for all students, regardless of their background or perceived aptitude for STEM subjects.",
+    "subtitle": "Explore how to bring the power of data science into the classroom, making it accessible and engaging for all students, regardless of their background or perceived aptitude for STEM subjects.",
     "keywords": [
       "data science",
       "education",

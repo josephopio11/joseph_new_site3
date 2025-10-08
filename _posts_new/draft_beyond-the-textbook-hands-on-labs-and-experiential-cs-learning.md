@@ -106,7 +106,7 @@ By embracing hands-on labs and experiential learning, we can transform computer 
 {
   "metadata": {
     "title": "Beyond the Textbook: Hands-On Labs and Experiential CS Learning",
-    "excerpt": "Explore the power of hands-on labs and experiential learning in computer science education. Discover practical strategies and inspiring examples to create a more engaging and effective learning environment.",
+    "subtitle": "Explore the power of hands-on labs and experiential learning in computer science education. Discover practical strategies and inspiring examples to create a more engaging and effective learning environment.",
     "keywords": [
       "computer science education",
       "hands-on learning",

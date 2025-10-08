@@ -3,9 +3,33 @@
 ```markdown
 ---
 title: "Building Resilience in Students Through Challenging Projects"
-excerpt: "As a Computer Science teacher, I've discovered that the most valuable lessons aren't about syntax, but about strength. This article explores how carefully designed, challenging projects can transform students from passive learners into resilient, confident problem-solvers ready for any obstacle."
-keywords: ["student resilience", "computer science education", "project-based learning", "teaching coding", "growth mindset in students", "educational technology", "21st-century skills", "pedagogy", "STEM education", "student engagement"]
-tags: ["Resilience", "PBL", "Computer Science", "Education", "Teaching Strategies", "Growth Mindset", "EdTech", "Student Projects", "Debugging", "Problem-Solving"]
+subtitle: "As a Computer Science teacher, I've discovered that the most valuable lessons aren't about syntax, but about strength. This article explores how carefully designed, challenging projects can transform students from passive learners into resilient, confident problem-solvers ready for any obstacle."
+keywords:
+  [
+    "student resilience",
+    "computer science education",
+    "project-based learning",
+    "teaching coding",
+    "growth mindset in students",
+    "educational technology",
+    "21st-century skills",
+    "pedagogy",
+    "STEM education",
+    "student engagement",
+  ]
+tags:
+  [
+    "Resilience",
+    "PBL",
+    "Computer Science",
+    "Education",
+    "Teaching Strategies",
+    "Growth Mindset",
+    "EdTech",
+    "Student Projects",
+    "Debugging",
+    "Problem-Solving",
+  ]
 date: "2024-03-15"
 ---
 
@@ -15,7 +39,7 @@ I still remember the silence. It was the kind of heavy, anxious quiet that fills
 
 “It’s impossible,” she whispered, not looking up. “I’ve tried everything. I’m just not good enough at this.”
 
-That phrase—*“I’m not good enough”*—is the enemy of learning. It’s the wall that’s far more impenetrable than any bug in a piece of code. As a Computer Science teacher in an international school, I’ve come to believe that my primary job isn’t just to teach Python or Java. It’s to teach resilience. It’s to help students like Maya see a bug-riddled screen not as a verdict on their abilities, but as a puzzle waiting to be solved.
+That phrase—_“I’m not good enough”_—is the enemy of learning. It’s the wall that’s far more impenetrable than any bug in a piece of code. As a Computer Science teacher in an international school, I’ve come to believe that my primary job isn’t just to teach Python or Java. It’s to teach resilience. It’s to help students like Maya see a bug-riddled screen not as a verdict on their abilities, but as a puzzle waiting to be solved.
 
 And the most powerful tool I’ve found for this is the well-designed, intentionally challenging project.
 
@@ -35,15 +59,15 @@ Not all difficult projects are created equal. A poorly designed challenge can cr
 
 ### 1. It Lives in the "Zone of Productive Struggle"
 
-The project needs to be a genuine challenge, pushing students just beyond their current comfort zone. It can't be a simple rehash of concepts they've already mastered. However, it also can't be so far beyond their reach that they have no entry point. This is Vygotsky's "Zone of Proximal Development" in action. The goal is to create a task that is achievable *with effort and support*. It requires careful scaffolding—breaking the project into manageable milestones, providing key resources, and being available for guidance (but not answers).
+The project needs to be a genuine challenge, pushing students just beyond their current comfort zone. It can't be a simple rehash of concepts they've already mastered. However, it also can't be so far beyond their reach that they have no entry point. This is Vygotsky's "Zone of Proximal Development" in action. The goal is to create a task that is achievable _with effort and support_. It requires careful scaffolding—breaking the project into manageable milestones, providing key resources, and being available for guidance (but not answers).
 
 ### 2. It is Authentic and Meaningful
 
 Students will push through walls for something they care about. Abstract exercises about calculating factorials have their place, but resilience is forged in the fires of passion. The best projects are tied to something real.
 
-*   **Solve a real problem:** "Our school library's checkout system is inefficient. Can we design a better one?"
-*   **Connect to their interests:** "You love that video game? Let's build a simplified version of its core mechanic."
-*   **Give them a voice:** "Create a data visualization that tells a story about an issue you care about, like climate change or local pollution."
+- **Solve a real problem:** "Our school library's checkout system is inefficient. Can we design a better one?"
+- **Connect to their interests:** "You love that video game? Let's build a simplified version of its core mechanic."
+- **Give them a voice:** "Create a data visualization that tells a story about an issue you care about, like climate change or local pollution."
 
 When the project has a purpose beyond a grade, the motivation to overcome obstacles becomes intrinsic.
 
@@ -75,10 +99,10 @@ This framework prevents me from becoming a walking answer key and encourages stu
 
 My grading rubrics for major projects reflect what I value most: the process. The final, working product might only be worth 40% of the grade. The rest is allocated to things like:
 
-*   **Project Planning & Design:** Did they map out their approach before they started coding?
-*   **Version Control History:** Can I see a clear history of their work, with meaningful commit messages showing their thought process?
-*   **Code Comments & Readability:** Did they write code that others (and their future selves) can understand?
-*   **A "Process Journal" or "Bug Log":** A short, written reflection where they document the biggest challenges they faced and how they overcame them.
+- **Project Planning & Design:** Did they map out their approach before they started coding?
+- **Version Control History:** Can I see a clear history of their work, with meaningful commit messages showing their thought process?
+- **Code Comments & Readability:** Did they write code that others (and their future selves) can understand?
+- **A "Process Journal" or "Bug Log":** A short, written reflection where they document the biggest challenges they faced and how they overcame them.
 
 This reassures students that their effort, their problem-solving, and their learning are what truly matter. A project that is ambitious but slightly flawed is often more valuable than a simple project that is "perfect."
 
@@ -107,10 +131,8 @@ As educators, we are architects of learning environments. We can build classroom
 These gyms might be messy. They will certainly be noisy with the sounds of frustration, debate, and eventual triumph. But they are the places where real strength is built. By embracing challenging projects, we are giving our students more than just technical skills. We are giving them the confidence to face any complex problem—in code, and in life—and say, "Okay. I don't know the answer yet. But I know I can figure it out."
 ```
 
- 
-
-> Temperature: 
+> Temperature:
 > 0.1
->2025-10-07 at 22:34
----
+> 2025-10-07 at 22:34
 
+---

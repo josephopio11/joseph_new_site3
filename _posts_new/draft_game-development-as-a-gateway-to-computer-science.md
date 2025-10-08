@@ -5,7 +5,7 @@
 ```json
 {
   "title": "Game Development as a Gateway to Computer Science",
-  "excerpt": "Explore how game development can spark a passion for computer science, offering a fun and engaging way to learn programming, problem-solving, and creative thinking.",
+  "subtitle": "Explore how game development can spark a passion for computer science, offering a fun and engaging way to learn programming, problem-solving, and creative thinking.",
   "keywords": [
     "game development",
     "computer science",

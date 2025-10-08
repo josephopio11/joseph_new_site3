@@ -1,6 +1,6 @@
 ---
 title: "The Imposter Syndrome in Tech Education: Overcoming Self-Doubt"
-excerpt: "A deep dive into imposter syndrome in tech education, exploring its causes, impact, and practical strategies for overcoming self-doubt in students and teachers."
+subtitle: "A deep dive into imposter syndrome in tech education, exploring its causes, impact, and practical strategies for overcoming self-doubt in students and teachers."
 keywords:
   [
     "imposter syndrome",

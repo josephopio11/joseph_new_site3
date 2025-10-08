@@ -102,7 +102,7 @@ Teaching computer science to students with special educational needs requires a 
 {
   "metadata": {
     "title": "Computer Science for Special Education Students: Adaptive Strategies",
-    "excerpt": "Explore adaptive strategies and practical approaches for teaching computer science to students with special educational needs (SEN). Learn how to create inclusive learning environments and empower all students to thrive.",
+    "subtitle": "Explore adaptive strategies and practical approaches for teaching computer science to students with special educational needs (SEN). Learn how to create inclusive learning environments and empower all students to thrive.",
     "keywords": [
       "computer science",
       "special education",

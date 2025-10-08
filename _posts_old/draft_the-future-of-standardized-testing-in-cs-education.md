@@ -1,6 +1,6 @@
 ---
 title: "The Future of Standardized Testing in CS Education"
-excerpt: "Explore the limitations of current standardized tests in computer science education and discover innovative approaches to assessment that better reflect the skills and knowledge needed for success in the 21st century."
+subtitle: "Explore the limitations of current standardized tests in computer science education and discover innovative approaches to assessment that better reflect the skills and knowledge needed for success in the 21st century."
 keywords:
   [
     "computer science education",

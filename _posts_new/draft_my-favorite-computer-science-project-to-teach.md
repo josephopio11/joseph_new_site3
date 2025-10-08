@@ -3,15 +3,38 @@
 ```markdown
 ---
 title: "My Favorite Computer Science Project to Teach"
-excerpt: "A long-form reflection by an international school CS teacher on why the text-based adventure game is the perfect project for teaching programming fundamentals, creativity, and computational thinking. Discover the 'aha' moments, scaling challenges, and practical tips for your own classroom."
-keywords: ["computer science education", "teaching programming", "coding projects for students", "high school computer science", "text-based adventure game", "python projects", "CS education", "engaging coding projects", "computational thinking", "project-based learning"]
-tags: ["Teaching", "Computer Science", "EdTech", "Programming", "Project-Based Learning", "Python", "Game Development", "Education", "Coding"]
+subtitle: "A long-form reflection by an international school CS teacher on why the text-based adventure game is the perfect project for teaching programming fundamentals, creativity, and computational thinking. Discover the 'aha' moments, scaling challenges, and practical tips for your own classroom."
+keywords:
+  [
+    "computer science education",
+    "teaching programming",
+    "coding projects for students",
+    "high school computer science",
+    "text-based adventure game",
+    "python projects",
+    "CS education",
+    "engaging coding projects",
+    "computational thinking",
+    "project-based learning",
+  ]
+tags:
+  [
+    "Teaching",
+    "Computer Science",
+    "EdTech",
+    "Programming",
+    "Project-Based Learning",
+    "Python",
+    "Game Development",
+    "Education",
+    "Coding",
+  ]
 date_of_publishing: "2024-08-16"
 ---
 
 # My Favorite Computer Science Project to Teach
 
-There’s a question that echoes in the faculty lounge of every school with a Computer Science department: “What’s the *perfect* project?” We’ve all been there. We spend hours searching for that elusive, magical assignment that will simultaneously ignite a passion for coding, cement fundamental concepts, and be accessible to every student in the room, from the ones who have been coding since they were ten to the ones who still think Python is just a snake.
+There’s a question that echoes in the faculty lounge of every school with a Computer Science department: “What’s the _perfect_ project?” We’ve all been there. We spend hours searching for that elusive, magical assignment that will simultaneously ignite a passion for coding, cement fundamental concepts, and be accessible to every student in the room, from the ones who have been coding since they were ten to the ones who still think Python is just a snake.
 
 I’ve tried them all. The data visualizer, the personal website, the simple mobile app, the chatbot. They’re all valuable, and they all have their place. But after years of teaching bright, curious, and wonderfully diverse minds at an international school, I always come back to one. It’s old-school, it lacks flashy graphics, and it requires a little bit of imagination.
 
@@ -25,7 +48,7 @@ Why this project? In a world of stunning 3D graphics and virtual reality, why go
 
 The answer lies in its simplicity. When you strip away the complexities of graphics libraries, physics engines, and asset management, you are left with the purest form of programming logic. The entire world of the game is built with words, variables, and conditional statements. The barrier to entry is beautifully, refreshingly low. All a student needs is a basic understanding of `print()` statements, variables, and `if-elif-else` blocks to create their first interactive room.
 
-This is critical in an international school classroom. I have students from a dozen different countries, with wildly different educational backgrounds. Some have been through rigorous, logic-focused math programs, while others come from arts-heavy curricula. The text-based game meets them all where they are. It’s a blank canvas. The artistically inclined student can focus on crafting a beautiful narrative, while the logically-minded student can design intricate puzzles and state-management systems. There is no "right" way to succeed, only *their* way.
+This is critical in an international school classroom. I have students from a dozen different countries, with wildly different educational backgrounds. Some have been through rigorous, logic-focused math programs, while others come from arts-heavy curricula. The text-based game meets them all where they are. It’s a blank canvas. The artistically inclined student can focus on crafting a beautiful narrative, while the logically-minded student can design intricate puzzles and state-management systems. There is no "right" way to succeed, only _their_ way.
 
 The project begins with a single line of code:
 
@@ -51,7 +74,7 @@ I remember one student, let's call her Priya, who was struggling to grasp the di
 
 “How does the computer know which lever I pulled?” she asked, frustrated.
 
-We sat down and mapped it out on a whiteboard. “*If* the player pulls the brass lever first, then we check for the silver one. *Else if* they pull the silver one, it’s a trap. *Else*, for any other choice, it’s also a trap.” Suddenly, the syntax wasn't just abstract rules; it was the blueprint for her puzzle. The `if/elif/else` structure clicked into place not as a concept, but as a tool. The look of triumph on her face when she finally got the logic right was worth more than any graded test.
+We sat down and mapped it out on a whiteboard. “_If_ the player pulls the brass lever first, then we check for the silver one. _Else if_ they pull the silver one, it’s a trap. _Else_, for any other choice, it’s also a trap.” Suddenly, the syntax wasn't just abstract rules; it was the blueprint for her puzzle. The `if/elif/else` structure clicked into place not as a concept, but as a tool. The look of triumph on her face when she finally got the logic right was worth more than any graded test.
 
 Another student, a quiet boy named Kenji, wasn't a particularly strong coder, but he was a brilliant writer. His game world was a surreal, cyberpunk city where street signs changed based on the player’s inventory and NPCs spoke in riddles. His code was messy at first, a tangled web of nested `if` statements. This became his motivation to learn about functions. He didn't want to learn functions because I told him to; he wanted to learn them because he needed a better way to manage his complex, beautiful narrative. He refactored his "spaghetti code" into clean, reusable functions, not for a better grade, but for the sake of his art.
 
@@ -59,15 +82,15 @@ Another student, a quiet boy named Kenji, wasn't a particularly strong coder, bu
 
 The beauty of this project is its scalability. It grows with the student.
 
-*   **The Beginner’s Quest (Weeks 1-2):** We focus on the fundamentals. Students create a few interconnected rooms using `if/elif/else` chains. They learn to manage a player's inventory with a simple list. They might use a `while` loop to keep the game running. The goal is a short, playable story with a clear beginning and end.
+- **The Beginner’s Quest (Weeks 1-2):** We focus on the fundamentals. Students create a few interconnected rooms using `if/elif/else` chains. They learn to manage a player's inventory with a simple list. They might use a `while` loop to keep the game running. The goal is a short, playable story with a clear beginning and end.
 
-*   **The Intermediate Journey (Weeks 3-4):** We introduce more robust structures. Instead of massive `if` statements, students learn to use dictionaries to represent rooms, where keys are directions (`'north'`, `'south'`) and values are the names of other rooms. This is a huge leap. It separates the game's data from its logic, a cornerstone concept in software engineering. We introduce functions like `show_room()` or `handle_input()` to organize their code.
+- **The Intermediate Journey (Weeks 3-4):** We introduce more robust structures. Instead of massive `if` statements, students learn to use dictionaries to represent rooms, where keys are directions (`'north'`, `'south'`) and values are the names of other rooms. This is a huge leap. It separates the game's data from its logic, a cornerstone concept in software engineering. We introduce functions like `show_room()` or `handle_input()` to organize their code.
 
-*   **The Advanced Expedition (Weeks 5-6):** For students who are ready, we push into the world of Object-Oriented Programming (OOP). Suddenly, a room isn’t just a dictionary; it’s an instance of a `Room` class with properties like `.description` and `.exits`. The player has an `Inventory` class. Items can have their own methods. This is where the project truly shines, acting as a perfect, tangible sandbox for understanding the abstract concepts of classes, objects, and encapsulation. Some students even go further, learning to load their entire game world from a JSON file, completely separating the story from the engine.
+- **The Advanced Expedition (Weeks 5-6):** For students who are ready, we push into the world of Object-Oriented Programming (OOP). Suddenly, a room isn’t just a dictionary; it’s an instance of a `Room` class with properties like `.description` and `.exits`. The player has an `Inventory` class. Items can have their own methods. This is where the project truly shines, acting as a perfect, tangible sandbox for understanding the abstract concepts of classes, objects, and encapsulation. Some students even go further, learning to load their entire game world from a JSON file, completely separating the story from the engine.
 
 This tiered approach ensures that every student can succeed at their own level while the most ambitious are never bored. The project has a low floor and a very high ceiling.
 
-### The Skills They *Really* Learn
+### The Skills They _Really_ Learn
 
 Yes, they learn about variables, loops, and data structures. But that’s just the surface. The skills they absorb are far more profound.
 
@@ -77,7 +100,7 @@ Yes, they learn about variables, loops, and data structures. But that’s just t
 
 3.  **User-Centric Design:** Midway through the project, I hold a “playtesting” session where students play each other's games. This is often a humbling and incredibly valuable experience. They quickly learn that a puzzle that makes perfect sense to them might be completely incomprehensible to someone else. They learn to write clear descriptions, give subtle hints, and think about the experience from the player’s point of view.
 
-4.  **Creative Confidence:** The most important outcome, for me, is the shift in identity. They stop seeing themselves as just *consumers* of technology and start seeing themselves as *creators*. They built a world. They wrote a story. They designed a challenge. And they did it all with code. The pride they feel when they watch a friend laugh or struggle through a puzzle they designed is immense and empowering.
+4.  **Creative Confidence:** The most important outcome, for me, is the shift in identity. They stop seeing themselves as just _consumers_ of technology and start seeing themselves as _creators_. They built a world. They wrote a story. They designed a challenge. And they did it all with code. The pride they feel when they watch a friend laugh or struggle through a puzzle they designed is immense and empowering.
 
 ### A Final Thought for Fellow Educators
 
@@ -88,10 +111,8 @@ Start small. Celebrate the creative and quirky ideas. Encourage them to write ab
 In the end, this project isn't just about teaching them to code. It's about teaching them that with a few lines of logic and a lot of imagination, they have the power to create a world from a blank screen. And that’s a lesson far more valuable than any single programming language.
 ```
 
- 
-
-> Temperature: 
+> Temperature:
 > 0.9
->2025-10-07 at 22:36
----
+> 2025-10-07 at 22:36
 
+---
