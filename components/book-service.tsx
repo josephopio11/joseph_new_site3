@@ -34,14 +34,6 @@ const BookService = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentStep, setCurrentStep] = useState<BookingStep>("service");
 
-  //   const bookableServices =  myServices
-  //       .map((category) => ({
-  //         ...category,
-  //         items: category.items.filter((item) => item.bookable === true),
-  //       }))
-  //       .filter((category) => category.items.length > 0);
-  //   };
-
   const [formData, setFormData] = useState({
     category: "",
     service: "",
@@ -84,6 +76,13 @@ const BookService = () => {
       });
     }, 300);
   };
+
+  const bookableServices = myServices
+    .map((category) => ({
+      ...category,
+      items: category.items.filter((item) => item.bookable === true),
+    }))
+    .filter((category) => category.items.length > 0);
 
   const selectedCategory = myServices.find(
     (cat) => cat.category === formData.category,
@@ -172,7 +171,7 @@ const BookService = () => {
                       <SelectValue placeholder="Select a category" />
                     </SelectTrigger>
                     <SelectContent>
-                      {myServices.map((cat) => (
+                      {bookableServices.map((cat) => (
                         <SelectItem key={cat.category} value={cat.category}>
                           {cat.category}
                         </SelectItem>

@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { myServices, SITE_CONFIG } from "@/lib/data";
-import { cn, getRandomColour } from "@/lib/utils";
+import { cn, getRandomBackgroundColour } from "@/lib/utils";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -103,22 +103,23 @@ export default async function PostsPage() {
                     </div>
 
                     {/* Services Grid */}
-                    <div className="grid gap-6 md:grid-cols-2">
+                    <div className="grid gap-4 md:grid-cols-3">
                       {category.items.map((service, serviceIndex) => (
                         <Card
                           key={serviceIndex}
                           className={cn(
-                            "group hover:border-accent/50 transition-colors duration-300",
-                            getRandomColour("90"),
+                            "group hover:border-primary/50 transition-colors duration-300",
+                            getRandomBackgroundColour(),
+                            "text-black",
                           )}
                         >
                           <CardHeader>
-                            <CardTitle className="group-hover:text-accent text-xl transition-colors duration-300">
+                            <CardTitle className="text-xl text-gray-900 transition-colors duration-300 group-hover:text-black dark:text-gray-200">
                               {service.item}
                             </CardTitle>
                           </CardHeader>
                           <CardContent>
-                            <CardDescription className="text-base leading-relaxed">
+                            <CardDescription className="text-sm leading-relaxed transition-colors duration-300 hover:text-black dark:hover:text-gray-200">
                               {service.description}
                             </CardDescription>
                           </CardContent>
