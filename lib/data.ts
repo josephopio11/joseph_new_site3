@@ -3,6 +3,14 @@ import fileconvImg from "@/public/fileconv.png";
 import giaImg from "@/public/gia.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
+import {
+  Briefcase,
+  Cpu,
+  Globe,
+  GraduationCap,
+  Leaf,
+  Palette,
+} from "lucide-react";
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import {
@@ -266,9 +274,11 @@ export const navLinks = [
 export const myServices = [
   {
     category: "Education & Training",
+    icon: GraduationCap,
     items: [
       {
         item: "Private Tutoring",
+        bookable: true,
         description:
           "Offer one-to-one or small group tutoring in Python, web development, or computer systems, supporting GCSE, IGCSE, and A-Level learners.",
       },
@@ -279,6 +289,7 @@ export const myServices = [
       },
       {
         item: "Coding Bootcamps for Teens",
+        bookable: true,
         description:
           "Run weekend or holiday coding camps focused on game design, app creation, or AI projects using Teachable Machine.",
       },
@@ -296,6 +307,7 @@ export const myServices = [
   },
   {
     category: "Web & Digital",
+    icon: Globe,
     items: [
       {
         item: "Web Design & Development",
@@ -309,6 +321,7 @@ export const myServices = [
       },
       {
         item: "Technical Support & Maintenance",
+        bookable: true,
         description:
           "Provide technical support, manage hosting, update content, and maintain websites for educational organisations.",
       },
@@ -316,6 +329,7 @@ export const myServices = [
   },
   {
     category: "Automation & Software",
+    icon: Cpu,
     items: [
       {
         item: "Custom Automation Scripts",
@@ -336,6 +350,7 @@ export const myServices = [
   },
   {
     category: "Creative & Media",
+    icon: Palette,
     items: [
       {
         item: "3D Animation Lessons or Freelance Work",
@@ -356,6 +371,7 @@ export const myServices = [
   },
   {
     category: "Social Impact & Environmental Tech",
+    icon: Leaf,
     items: [
       {
         item: "STEM Outreach & Environmental Education",
@@ -364,6 +380,7 @@ export const myServices = [
       },
       {
         item: "Tech-for-Good Consultancy",
+        bookable: true,
         description:
           "Advise schools and NGOs on adopting cleaner, greener, and more efficient technologies.",
       },
@@ -371,6 +388,7 @@ export const myServices = [
   },
   {
     category: "Consulting & Professional Services",
+    icon: Briefcase,
     items: [
       {
         item: "Digital Transformation for Schools",
@@ -379,6 +397,7 @@ export const myServices = [
       },
       {
         item: "Cybersecurity Awareness Training",
+        bookable: true,
         description:
           "Deliver sessions on online safety, data privacy, and ethical computing practices.",
       },

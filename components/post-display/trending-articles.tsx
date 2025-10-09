@@ -6,14 +6,18 @@ import { getRandomColour } from "@/lib/utils";
 import { TrendingUp } from "lucide-react";
 import { Badge } from "../ui/badge";
 
-export async function TrendingArticles() {
+type Props = {
+  title?: string;
+};
+
+export async function TrendingArticles({ title }: Props) {
   const posts = (await shufflePosts(getPostMetadataRnd())).slice(0, 6);
   return (
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-lg">
           <TrendingUp className="text-primary h-5 w-5" />
-          Related Articles
+          {title || "Related Articles"}
         </CardTitle>
       </CardHeader>
       <CardContent>

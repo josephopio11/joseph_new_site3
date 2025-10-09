@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function getRandomColour() {
+export function getRandomColour(opacity?: string): string {
   const colors = [
     "bg-red-700",
     "bg-blue-700",
@@ -32,6 +32,13 @@ export function getRandomColour() {
   ] as const;
   const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
+  if (!!opacity) {
+    opacity = "90";
+    console.log(randomColor + `/${opacity}`);
+    return randomColor + `/${opacity}`;
+  }
+
+  console.log(randomColor);
   return randomColor;
 }
 
