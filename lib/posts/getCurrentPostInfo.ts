@@ -1,6 +1,6 @@
 import getPostContent from "./getPostContent";
 
-export const getCurrentPostInfo = async (slug: any) => {
+export const getCurrentPostInfo = async (slug: string) => {
   const post = getPostContent(slug);
   return {
     title: post.data.title,

@@ -27,7 +27,7 @@ const Hero = () => {
   const component = useRef(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       const tl = gsap.timeline();
       const tl2 = gsap.timeline();
 
@@ -133,7 +133,7 @@ const Hero = () => {
               urbanist.className,
             )}
           >
-            Hi, I'm
+            Hi, I&apos;m
             <div className="block text-[clamp(1.5rem,16vmin,5rem)] leading-none font-extrabold tracking-tighter sm:text-[clamp(2rem,12vmin,8rem)] md:text-[clamp(2rem,12vmin,12rem)] lg:text-[clamp(2rem,16vmin,16rem)]">
               <span className="dark:text-primary-foreground text-gray-600 md:block">
                 {renderLetters("Joseph", "first")}

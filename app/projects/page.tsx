@@ -80,7 +80,7 @@ export default async function ProjectsPage(props: {
                 </h1>
 
                 <p className="text-muted-foreground text-sm leading-relaxed text-pretty">
-                  This is where ideas come to life. Here you'll find a
+                  This is where ideas come to life. Here you&apos;ll find a
                   collection of work that represents my journey as a teacher and
                   computer science lover from experimental concepts to polished
                   solutions. Each project tells a story of problem-solving,
@@ -99,7 +99,7 @@ export default async function ProjectsPage(props: {
               totalPages={lastPage}
             />
             <p className="mt-12 hidden border-2 border-slate-500 pt-2 text-center text-sm text-slate-500 italic print:static print:mt-0 print:block print:border-0 print:pt-6 print:text-xs">
-              This content was printed from Joseph Opio's site.
+              This content was printed from Joseph Opio&apos;s site.
               (www.josephopio.com)
             </p>
           </article>

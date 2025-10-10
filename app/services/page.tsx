@@ -140,8 +140,8 @@ export default async function PostsPage() {
                   </h2>
                   <p className="text-muted-foreground mx-auto max-w-2xl text-lg text-pretty">
                     Whether you need tutoring, web development, or consultancy
-                    services, I'm here to help bring your educational technology
-                    vision to life.
+                    services, I&apos;m here to help bring your educational
+                    technology vision to life.
                   </p>
                   <div className="pt-4">
                     <a
@@ -156,7 +156,7 @@ export default async function PostsPage() {
             </section>
 
             <p className="mt-12 hidden border-2 border-slate-500 pt-2 text-center text-sm text-slate-500 italic print:static print:mt-0 print:block print:border-0 print:pt-6 print:text-xs">
-              This content was printed from Joseph Opio's site.
+              This content was printed from Joseph Opio&apos;s site.
               (www.josephopio.com)
             </p>
           </article>

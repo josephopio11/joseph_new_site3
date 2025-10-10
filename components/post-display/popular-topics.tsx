@@ -5,14 +5,14 @@ import { getSortedTagCounts } from "@/lib/posts/getTagCounts";
 import { cn, getRandomColour } from "@/lib/utils";
 import { Hash } from "lucide-react";
 
-const topics = [
-  { name: "Artificial Intelligence", count: 234 },
-  { name: "Climate Change", count: 189 },
-  { name: "Cryptocurrency", count: 156 },
-  { name: "Space Exploration", count: 142 },
-  { name: "Renewable Energy", count: 128 },
-  { name: "Cybersecurity", count: 115 },
-];
+// const topics = [
+//   { name: "Artificial Intelligence", count: 234 },
+//   { name: "Climate Change", count: 189 },
+//   { name: "Cryptocurrency", count: 156 },
+//   { name: "Space Exploration", count: 142 },
+//   { name: "Renewable Energy", count: 128 },
+//   { name: "Cybersecurity", count: 115 },
+// ];
 
 export function PopularTopics() {
   const posts = getPostMetadataRnd();

@@ -3,7 +3,7 @@ import matter from "gray-matter";
 import { redirect } from "next/navigation";
 import { PostMetadata } from "./PostMetadata";
 
-function getRandomItem({ length }: any) {
+function getRandomItem({ length }: { length: number }): number {
   return Math.floor(Math.random() * length);
 }
 
@@ -17,7 +17,7 @@ const getPostMetadataRnd = (): PostMetadata[] => {
     const posts = markdownPosts.map((fileName) => {
       const fileContents = fs.readFileSync(`posts/${fileName}`, "utf8");
       const matterResult = matter(fileContents);
-      const randomNumber = getRandomItem(files.length);
+      const randomNumber = getRandomItem(files);
       return {
         title: matterResult.data.title,
         date: matterResult.data.date,
@@ -30,7 +30,7 @@ const getPostMetadataRnd = (): PostMetadata[] => {
     });
 
     return posts.sort((a, b) => (a.randomNumber > b.randomNumber ? 1 : -1));
-  } catch (error) {
+  } catch {
     redirect("/");
   }
 };

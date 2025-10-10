@@ -420,7 +420,7 @@ const BookService = () => {
                 </div>
 
                 <p className="text-muted-foreground text-sm">
-                  We've sent a confirmation email to{" "}
+                  We&apos;ve sent a confirmation email to{" "}
                   <span className="text-foreground font-medium">
                     {formData.email}
                   </span>

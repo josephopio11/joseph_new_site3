@@ -1,74 +1,51 @@
 "use client";
 
-import {
-  ChevronLeft,
-  ChevronRight,
-  Monitor,
-  Pencil,
-  Smartphone,
-} from "lucide-react";
-import { useEffect, useState } from "react";
+import { fadedColours, myServices } from "@/lib/data";
+import { cn } from "@/lib/utils";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useCallback, useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import LinkTrigger from "./link-trigger";
 import SectionTitle from "./section-title";
 
 const Services = () => {
-  const services = [
-    {
-      icon: <Monitor className="h-6 w-6" />,
-      title: "UI/UX",
-      description:
-        "Creating intuitive and visually appealing user experiences.",
-    },
-    {
-      icon: <Monitor className="h-6 w-6" />,
-      title: "Web Design",
-      description:
-        "Designing responsive, engaging websites tailored to user needs.",
-    },
-    {
-      icon: <Monitor className="h-6 w-6" />,
-      title: "UI/UX",
-      description:
-        "Creating intuitive and visually appealing user experiences.",
-    },
-    {
-      icon: <Monitor className="h-6 w-6" />,
-      title: "Web Design",
-      description:
-        "Designing responsive, engaging websites tailored to user needs.",
-    },
-    {
-      icon: <Smartphone className="h-6 w-6" />,
-      title: "App Design",
-      description: "Crafting seamless and user-friendly mobile app interfaces.",
-    },
-    {
-      icon: <Pencil className="h-6 w-6" />,
-      title: "Prototyping & Wireframing",
-      description: "Interactive prototypes and wireframes for better flow.",
-    },
-  ];
-
   const [currentService, setCurrentService] = useState(0);
 
-  const nextService = () => {
-    setCurrentService((prev) => (prev + 1) % services.length);
-  };
+  // Auto scroll cards every 5 seconds when mouse if not hovering
+
+  const services = myServices.flatMap((category) =>
+    category.items
+      .filter((item) => item.bookable === true)
+      .map((item) => ({
+        item: item.item,
+        description: item.description,
+        category: myServices.find((c) => c.category === category.category)
+          ?.category,
+        icon: category.icon,
+      })),
+  );
 
   const prevService = () => {
     setCurrentService((prev) => (prev - 1 + services.length) % services.length);
   };
 
-  // Auto scroll cards every 5 seconds when mouse if not hovering
+  const nextService = useCallback(() => {
+    setCurrentService((prev) => (prev + 1) % services.length);
+  }, [services.length]);
+
+  // const nextService = () => {
+  //   setCurrentService((prev) => (prev + 1) % services.length);
+  // };
+
   useEffect(() => {
     const interval = setInterval(() => {
       nextService();
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [nextService]);
+
   return (
     <section
       id="services"
@@ -100,27 +77,31 @@ const Services = () => {
             <ChevronLeft className="h-5 w-5" />
           </Button>
 
-          <div className="grid flex-1 grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="grid flex-1 grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
             {[0, 1, 2].map((offset) => {
               const index = (currentService + offset) % services.length;
               const service = services[index];
               return (
                 <Card
                   key={index}
-                  className={`bg-card/50 border-border hover:border-primary/50 transition-all ${
-                    offset === 1 ? "border-primary/50 md:scale-105" : ""
-                  }`}
+                  className={cn(
+                    `bg-card/50 border-border hover:border-primary/50 transition-all ${
+                      offset === 1 ? "border-primary/50 md:scale-105" : ""
+                    }`,
+                    fadedColours[index % fadedColours.length],
+                  )}
                 >
-                  <CardContent className="p-6">
-                    <div className="bg-background/50 mb-4 flex h-12 w-12 items-center justify-center rounded-lg">
-                      {service.icon}
+                  <CardContent className="">
+                    <div className="bg-background/50 mb-4 flex items-center justify-center gap-2 rounded-lg p-2">
+                      <service.icon className="h-12 w-12" />
+                      <h3 className="mb-2 font-semibold lg:text-lg">
+                        {service.item}
+                      </h3>
                     </div>
-                    <h3 className="mb-2 text-lg font-semibold">
-                      {service.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
                       {service.description}
                     </p>
+                    <Button>Learn More...</Button>
                   </CardContent>
                 </Card>
               );

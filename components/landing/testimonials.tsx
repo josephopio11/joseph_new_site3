@@ -2,6 +2,7 @@
 
 import { testimonials } from "@/lib/data";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
@@ -27,10 +28,10 @@ const Testimonials = () => {
         <Card className="bg-card/50 border-border">
           <CardContent className="p-8">
             <p className="mb-6 text-lg leading-relaxed italic">
-              "{testimonials[currentTestimonial].quote}"
+              &ldquo;{testimonials[currentTestimonial].quote}&rdquo;
             </p>
             <div className="flex items-center gap-3">
-              <img
+              <Image
                 src={
                   testimonials[currentTestimonial].avatar || "/placeholder.svg"
                 }

@@ -31,12 +31,12 @@ export function AuthorBio() {
             </div>
           </div>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            I'm a seasoned Computer Science educator with over 13 years of
-            teaching experience. I've impacted countless students' lives through
-            dynamic learning environments. Beyond teaching, I excel in freelance
-            web and app development, creating innovative solutions with
-            cutting-edge tech. My expertise covers front-end, back-end, mobile
-            apps, databases, and UX.
+            I&apos;m a seasoned Computer Science educator with over 13 years of
+            teaching experience. I&apos;ve impacted countless students&apos;
+            lives through dynamic learning environments. Beyond teaching, I
+            excel in freelance web and app development, creating innovative
+            solutions with cutting-edge tech. My expertise covers front-end,
+            back-end, mobile apps, databases, and UX.
           </p>
 
           {pathname !== "/posts" && (

@@ -33,8 +33,7 @@ export async function TrendingArticles({ title }: Props) {
                     {article.title}
                   </h3>
                   <div className="text-muted-foreground flex items-center gap-2 text-xs">
-                    {/* @ts-ignore */}
-                    {article?.tags?.length > 0 && (
+                    {article?.tags && article?.tags?.length > 0 && (
                       <div className="flex flex-wrap items-center gap-1">
                         {article.tags?.slice(0, 2).map((tag) => (
                           <Badge

@@ -25,7 +25,7 @@ const getPostMetadata = (): PostMetadata[] => {
     });
 
     return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
-  } catch (error) {
+  } catch {
     redirect("/");
   }
 };

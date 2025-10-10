@@ -6,14 +6,6 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 
-type Project = {
-  title: string;
-  description: string;
-  siteUrl: string;
-  tags: string[];
-  imageUrl?: string;
-};
-
 type ProjectCardProps = {
   project: (typeof projectsData)[number];
 };

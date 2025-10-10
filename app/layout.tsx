@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd: WithContext<WebSite> = {
+export const jsonLd: WithContext<WebSite> = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": `${SITE_CONFIG.url}/#website`,

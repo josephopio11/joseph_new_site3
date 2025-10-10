@@ -1,11 +1,9 @@
 import { ArticleContent } from "@/components/post-display/article-content";
 import { ArticleHeader } from "@/components/post-display/article-header";
 import { Sidebar } from "@/components/post-display/sidebar";
-import PostsPreview from "@/components/PostsPreview";
 import { Badge } from "@/components/ui/badge";
 import getPostContent from "@/lib/posts/getPostContent";
 import getPostMetadata from "@/lib/posts/getPostMetadata";
-import getPostMetadataRnd from "@/lib/posts/getPostMetadataRnd";
 import { getRandomColour } from "@/lib/utils";
 import { Metadata } from "next";
 
@@ -16,10 +14,17 @@ export const generateStaticParams = async () => {
   }));
 };
 
-export async function generateMetadata(props: any): Promise<Metadata> {
+type Props = {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export async function generateMetadata(props: Props): Promise<Metadata> {
   const slug = (await props.params).slug;
   const post = getPostContent(slug);
   const tags = post.data.tags;
+
+  console.log(await props);
 
   const postImage = () => {
     if (post.data.image === undefined) {
@@ -77,10 +82,9 @@ export async function generateMetadata(props: any): Promise<Metadata> {
   };
 }
 
-const BlogPage = async (props: any) => {
+const BlogPage = async (props: Props) => {
   const slug = (await props.params).slug;
   const post = getPostContent(slug);
-  const tags = post.data.tags;
 
   const wanted = () => {
     if (post.data.image === undefined) {
@@ -88,25 +92,6 @@ const BlogPage = async (props: any) => {
     } else {
       return post.data.image;
     }
-  };
-
-  const postMetadata = getPostMetadataRnd();
-  const postPreviews = postMetadata.map((post) => (
-    <PostsPreview key={post.slug} {...post} />
-  ));
-
-  const postTags = () => {
-    if (tags === undefined) {
-      return (
-        "joseph, opio, teacher, igcse, a level, cambridge, computer, science, " +
-        post.data.title.split(" ").join(", ").toLowerCase()
-      );
-    }
-    return (
-      post.data.title.split(" ").join(", ").toLowerCase() +
-      ", " +
-      tags.join(", ")
-    );
   };
 
   return (
@@ -136,7 +121,7 @@ const BlogPage = async (props: any) => {
               ))}
             </div>
             <p className="mt-12 hidden border-2 border-slate-500 pt-2 text-center text-sm text-slate-500 italic print:static print:mt-0 print:block print:border-0 print:pt-6 print:text-xs">
-              This content was printed from Joseph Opio's site.
+              This content was printed from Joseph Opio&apos;s site.
               (www.josephopio.com)
             </p>
           </article>

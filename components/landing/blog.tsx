@@ -1,4 +1,5 @@
 import getPostMetadata from "@/lib/posts/getPostMetadata";
+import Link from "next/link";
 import PostsPreview from "../PostsPreview";
 import { Button } from "../ui/button";
 import LinkTrigger from "./link-trigger";
@@ -22,7 +23,7 @@ export default function Blog() {
           className="border-border hover:bg-card bg-transparent"
           asChild
         >
-          <a href="/posts">See All</a>
+          <Link href="/posts">See All</Link>
         </Button>
       </div>
       <div className="flex flex-col items-center justify-center">

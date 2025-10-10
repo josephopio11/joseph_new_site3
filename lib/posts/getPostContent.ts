@@ -9,7 +9,7 @@ const getPostContent = (slug: string) => {
     const content = fs.readFileSync(file, "utf8");
     const matterResult = matter(content);
     return matterResult;
-  } catch (error) {
+  } catch {
     redirect("/posts");
   }
 };

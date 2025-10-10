@@ -3,6 +3,7 @@
 import { useSectionInView } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Card, CardContent } from "../ui/card";
 
 const AboutMe = () => {
@@ -25,7 +26,9 @@ const AboutMe = () => {
       <div className="grid items-start gap-12 md:grid-cols-5">
         <div className="relative md:col-span-2">
           <div className="aspect-video overflow-hidden rounded-3xl border-2 border-white bg-gradient-to-br from-purple-300 to-pink-300 shadow-xl shadow-purple-950/50 md:aspect-[3/7] lg:aspect-[3/5] xl:aspect-[7/12] 2xl:aspect-[4/5]">
-            <img
+            <Image
+              width={500}
+              height={500}
               src="/3d-illustration-person-working-at-desk-with-laptop.jpg"
               alt="Designer at work"
               className="h-full w-full object-cover"

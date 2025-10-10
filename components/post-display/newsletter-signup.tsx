@@ -18,8 +18,8 @@ export function NewsletterSignup() {
           Newsletter
         </CardTitle>
         <CardDescription className="text-primary-foreground/80">
-          I don't really do this kind of thing... but in case I need help can I
-          trust you to be among the first people I can email?
+          I don&apos;t really do this kind of thing... but in case I need help
+          can I trust you to be among the first people I can email?
         </CardDescription>
       </CardHeader>
       <CardContent>

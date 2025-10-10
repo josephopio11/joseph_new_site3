@@ -5,7 +5,7 @@ import Experience from "@/components/landing/experience";
 import Hero from "@/components/landing/hero";
 import Projects from "@/components/landing/projects";
 import Services from "@/components/landing/services";
-import Skills2 from "@/components/landing/skills2";
+import Skills from "@/components/landing/skills";
 
 export default function PortfolioPage() {
   return (
@@ -14,7 +14,7 @@ export default function PortfolioPage() {
       <AboutMe />
       <Projects />
       {/* <Skills /> */}
-      <Skills2 />
+      <Skills />
       <Experience />
       <Blog />
       <Services />

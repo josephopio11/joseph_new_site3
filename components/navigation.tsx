@@ -63,7 +63,7 @@ const Navigation = () => {
               ))}
             </div>
 
-            <a href="/#contact">
+            <Link href="/#contact">
               <Button
                 className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full"
                 type="button"
@@ -71,7 +71,7 @@ const Navigation = () => {
                 <Mail className="mr-1 h-4 w-4" />
                 Contact
               </Button>
-            </a>
+            </Link>
           </nav>
         </div>
       </div>
