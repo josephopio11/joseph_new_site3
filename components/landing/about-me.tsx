@@ -29,9 +29,9 @@ const AboutMe = () => {
             <Image
               width={500}
               height={500}
-              src="/3d-illustration-person-working-at-desk-with-laptop.jpg"
+              src="/images/me/escape.jpg"
               alt="Designer at work"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-top"
             />
           </div>
         </div>
