@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import LinkTrigger from "./link-trigger";
 import ProjectCard from "./project-card";
+import SectionTitle from "./section-title";
 
 const Projects = () => {
   return (
@@ -13,14 +14,11 @@ const Projects = () => {
     >
       <LinkTrigger section="Projects" />
       <div className="mb-12 flex items-center justify-between">
-        <div>
-          <h2 className="mb-2 text-4xl font-bold text-gray-800 md:text-5xl dark:text-gray-200">
-            My Projects
-          </h2>
-          <p className="text-muted-foreground">
-            Discover projects that showcase my passion for innovation.
-          </p>
-        </div>
+        <SectionTitle
+          title="My Projects"
+          sometext="Discover projects that showcase my passion for innovation."
+        />
+
         <Button
           variant="outline"
           className="border-border hover:bg-card bg-transparent"

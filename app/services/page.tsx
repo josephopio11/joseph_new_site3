@@ -145,7 +145,7 @@ export default async function PostsPage() {
                   </p>
                   <div className="pt-4">
                     <a
-                      href="mailto:contact@example.com"
+                      href="mailto:blessme@josephopio.com"
                       className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center rounded-lg px-8 py-3 text-base font-medium transition-colors duration-200"
                     >
                       Get in touch

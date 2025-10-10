@@ -1,23 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
 import { myServices } from "@/lib/data";
 import {
   ArrowLeft,
@@ -26,14 +9,31 @@ import {
   CheckCircle2,
   CreditCard,
 } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "./ui/dialog";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
+import { Textarea } from "./ui/textarea";
 
 type BookingStep = "service" | "details" | "payment" | "confirmation";
 
 const BookService = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentStep, setCurrentStep] = useState<BookingStep>("service");
-
   const [formData, setFormData] = useState({
     category: "",
     service: "",
@@ -77,16 +77,11 @@ const BookService = () => {
     }, 300);
   };
 
-  const bookableServices = myServices
-    .map((category) => ({
-      ...category,
-      items: category.items.filter((item) => item.bookable === true),
-    }))
-    .filter((category) => category.items.length > 0);
-
   const selectedCategory = myServices.find(
     (cat) => cat.category === formData.category,
   );
+  const bookableServices =
+    selectedCategory?.items.filter((item) => item.bookable) || [];
 
   return (
     <div className="lg:sticky lg:top-30 lg:self-start">
@@ -171,11 +166,15 @@ const BookService = () => {
                       <SelectValue placeholder="Select a category" />
                     </SelectTrigger>
                     <SelectContent>
-                      {bookableServices.map((cat) => (
-                        <SelectItem key={cat.category} value={cat.category}>
-                          {cat.category}
-                        </SelectItem>
-                      ))}
+                      {myServices
+                        .filter((cat) =>
+                          cat.items.some((item) => item.bookable),
+                        )
+                        .map((cat) => (
+                          <SelectItem key={cat.category} value={cat.category}>
+                            {cat.category}
+                          </SelectItem>
+                        ))}
                     </SelectContent>
                   </Select>
                 </div>
@@ -193,7 +192,7 @@ const BookService = () => {
                         <SelectValue placeholder="Select a service" />
                       </SelectTrigger>
                       <SelectContent>
-                        {selectedCategory?.items.map((item) => (
+                        {bookableServices.map((item) => (
                           <SelectItem key={item.item} value={item.item}>
                             {item.item}
                           </SelectItem>
@@ -202,6 +201,14 @@ const BookService = () => {
                     </Select>
                   </div>
                 )}
+
+                <p>
+                  If what you need is not in this list, please{" "}
+                  <Link href="/#contact" className="underline">
+                    {" "}
+                    contact me.{" "}
+                  </Link>
+                </p>
 
                 <Button
                   onClick={handleNext}
@@ -382,8 +389,8 @@ const BookService = () => {
             {currentStep === "confirmation" && (
               <div className="space-y-6 py-8 text-center">
                 <div className="flex justify-center">
-                  <div className="bg-accent/20 flex h-16 w-16 items-center justify-center rounded-full">
-                    <CheckCircle2 className="text-accent h-10 w-10" />
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/20">
+                    <CheckCircle2 className="h-10 w-10 text-emerald-500" />
                   </div>
                 </div>
 

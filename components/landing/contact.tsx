@@ -25,7 +25,7 @@ const Contact = () => {
               you as soon as I can — usually within 24 hours.
             </p>
             <div>
-              <div className="grid-md-1 grid gap-4 lg:grid-cols-2">
+              <div className="grid gap-4">
                 <div className="rounded-lg border border-gray-200 bg-white p-6 shadow dark:border-gray-700 dark:bg-gray-800">
                   <div className="flex flex-row gap-2">
                     <p className="m-0 justify-center p-0 align-middle text-2xl dark:text-slate-200">
@@ -37,9 +37,9 @@ const Contact = () => {
                   </div>
                   <Link
                     className="mb-3 font-normal text-gray-500 dark:text-gray-400"
-                    href="mailto:hi@josephopio.com"
+                    href="mailto:blessme@josephopio.com"
                   >
-                    hi@josephopio .com
+                    blessme@josephopio.com
                   </Link>
                 </div>
                 <div className="rounded-lg border border-gray-200 bg-white p-6 shadow dark:border-gray-700 dark:bg-gray-800">
