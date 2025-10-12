@@ -12,7 +12,7 @@ const AboutMe = () => {
   return (
     <motion.section
       id="about"
-      className="container mx-auto scroll-mt-28 px-4 sm:my-30"
+      className="container mx-auto scroll-mt-28 px-4 sm:mb-30"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}

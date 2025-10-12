@@ -24,8 +24,6 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const post = getPostContent(slug);
   const tags = post.data.tags;
 
-  console.log(await props);
-
   const postImage = () => {
     if (post.data.image === undefined) {
       return "bg.jpg";

@@ -77,8 +77,8 @@ const Services = () => {
             <ChevronLeft className="h-5 w-5" />
           </Button>
 
-          <div className="grid flex-1 grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-            {[0, 1, 2].map((offset) => {
+          <div className="grid flex-1 grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
+            {[0, 1, 2, 4].map((offset) => {
               const index = (currentService + offset) % services.length;
               const service = services[index];
               return (
