@@ -36,7 +36,7 @@ const Skills = () => {
       <div className="from-background to-background/0 absolute -top-2 -right-1 -z-10 h-[130%] w-1/6 bg-gradient-to-l" />
 
       <Image
-        src="/bg.jpg"
+        src="/images/landing/cloud_bg.jpg"
         alt="wave"
         fill
         className="absolute inset-0 -z-30 h-56 object-cover opacity-20"

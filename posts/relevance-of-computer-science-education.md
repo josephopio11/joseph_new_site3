@@ -3,26 +3,31 @@ title: "Navigating the Digital Age: The Relevance of Computer Science Education 
 subtitle: "In a world where technology continues to reshape the way we live and work, the importance of a digitally literate and adaptable populace cannot be overstated."
 date: "2024-01-14"
 image: "computer_science.jpg"
-tags: [Computer science, education relevance,
-Importance of coding skills for everyone,
-Digital literacy in the 21st century,
-Benefits of learning computer science basics,
-Role of technology in daily life,
-Problem-solving skills in the digital age,
-Adaptability and technology evolution,
-Interdisciplinary applications of computer science,
-Coding as a language for communication,
-Technology and creativity integration,
-Specialization and computer science for non-tech fields,
-Diverse skill sets in a technologically advancing world,
-Balancing technology and humanities,
-Necessity of digital literacy in various professions,
-Creativity without coding, alternative technological expressions,
-Harnessing technology for personal and professional growth,
-The evolving role of technology in different sectors,
-Data analysis and research tools for non-tech professionals,
-Fusion of technology and the arts,
-Adapting to the complexities of the digital age,]
+tags:
+  [
+    Computer science,
+    education relevance,
+    Importance of coding skills for everyone,
+    Digital literacy in the 21st century,
+    Benefits of learning computer science basics,
+    Role of technology in daily life,
+    Problem-solving skills in the digital age,
+    Adaptability and technology evolution,
+    Interdisciplinary applications of computer science,
+    Coding as a language for communication,
+    Technology and creativity integration,
+    Specialization and computer science for non-tech fields,
+    Diverse skill sets in a technologically advancing world,
+    Balancing technology and humanities,
+    Necessity of digital literacy in various professions,
+    Creativity without coding,
+    alternative technological expressions,
+    Harnessing technology for personal and professional growth,
+    The evolving role of technology in different sectors,
+    Data analysis and research tools for non-tech professionals,
+    Fusion of technology and the arts,
+    Adapting to the complexities of the digital age,
+  ]
 ---
 
 In our increasingly digitalized world, the role of technology is more pervasive than ever before. From smartphones and social media to artificial intelligence and automation, technology has become an integral part of our daily lives. With this technological revolution, a common question arises: Does everyone have to study computer science to be relevant in today's society?

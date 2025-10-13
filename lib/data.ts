@@ -1,8 +1,8 @@
-import corpcommentImg from "@/public/corpcomment.png";
-import fileconvImg from "@/public/fileconv.png";
-import giaImg from "@/public/gia.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
+import corpcommentImg from "@/public/images/projects/corpcomment.png";
+import fileconvImg from "@/public/images/projects/fileconv.png";
+import giaImg from "@/public/images/projects/gia.png";
+import rmtdevImg from "@/public/images/projects/rmtdev.png";
+import wordanalyticsImg from "@/public/images/projects/wordanalytics.png";
 import {
   Briefcase,
   Cpu,

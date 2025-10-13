@@ -29,7 +29,7 @@ const AboutMe = () => {
             <Image
               width={500}
               height={500}
-              src="/images/me/escape.jpg"
+              src="/images/landing/escape.jpg"
               alt="Designer at work"
               className="h-full w-full object-cover object-top"
             />
