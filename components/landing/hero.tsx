@@ -80,7 +80,7 @@ const Hero = () => {
         },
         "-=0.5",
       );
-      tl2.fromTo(
+      tl.fromTo(
         ".profile-image",
         { opacity: 0, x: 100 },
         {
