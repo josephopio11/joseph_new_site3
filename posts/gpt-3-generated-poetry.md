@@ -87,8 +87,8 @@ And it will understand that we're writing a work-out routine, and continue in th
 It can also do some pretty zany stuff, like translating from English to emoji.
 
 ```
-I love pizza and beer.
-😀❤️🍕🍺
+I love pizza.
+😀❤️🍕
 
 I flew to Japan and ate some Sushi.
 ✈️🇯🇵😋 🍣

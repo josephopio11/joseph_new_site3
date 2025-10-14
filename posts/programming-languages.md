@@ -8,7 +8,7 @@ tags: []
 
 Programming languages form the backbone of modern technology, powering everything from websites and mobile apps to complex software systems. Each language has its own unique features, strengths, and drawbacks. In this article, we'll delve into some of the most common programming languages, shedding light on their key attributes, advantages, and disadvantages.
 
-![](images/571f3d38d7213f0654e3b3a5a8aeb4b0.png)
+![Python Logo](/images/posts/python_logo.png)
 
 ## 1. Python
 
@@ -29,7 +29,7 @@ Programming languages form the backbone of modern technology, powering everythin
 - Slower execution speed compared to compiled languages like C++ or Rust.
 - Global Interpreter Lock (GIL) can limit multi-threading performance.
 
-![](images/ae613b7ee0d55ac27c08d3ee1c8249be.png)
+![Java Logo](/images/posts/java_logo.png)
 
 ## 2. Java
 
@@ -49,7 +49,7 @@ Programming languages form the backbone of modern technology, powering everythin
 - Slower execution speed compared to compiled languages like C++.
 - Verbose syntax compared to languages like Python.
 
-![](images/afa95b1c5e5bf752fc38a7faacd0f92a.png)
+![](/images/posts/javascript_logo.png)
 
 ## 3. JavaScript
 
@@ -69,7 +69,7 @@ Programming languages form the backbone of modern technology, powering everythin
 - Can be prone to compatibility issues across different browsers.
 - Less secure due to client-side execution, which can lead to vulnerabilities.
 
-![](images/b8e8c06e0fbd44bbbdf2fb52a100bb29.png)
+![](/images/posts/c++.png)
 
 ## 4. C++
 
@@ -105,7 +105,7 @@ Programming languages form the backbone of modern technology, powering everythin
 - Primarily targeted at the Windows ecosystem, which can limit cross-platform capabilities.
 - Limited support for low-level system programming.
 
-![](images/c7cbee65409752d0865ee532cd6f1795.png)
+![Ruby Logo](/images/posts/ruby.png)
 
 ## 6. Ruby
 
@@ -124,7 +124,7 @@ Programming languages form the backbone of modern technology, powering everythin
 - Slower execution speed compared to compiled languages like C++.
 - Memory-intensive, which can be a drawback for certain applications.
 
-![](images/973624422cab15a0afa66e7494c820bf.png)
+![Go logo](/images/posts/go.png)
 
 ## 7. Go (Golang)
 
@@ -160,7 +160,7 @@ Programming languages form the backbone of modern technology, powering everythin
 - Can be challenging for beginners due to its specialized focus on statistics.
 - Slower execution speed for certain tasks compared to compiled languages.
 
-![](images/2845fc11bbd28331cb5efc82e7232445.png)
+![Swift Logo](/images/posts/swift.png)
 
 ## 9. Swift
 
@@ -179,7 +179,7 @@ Programming languages form the backbone of modern technology, powering everythin
 - Limited to the Apple ecosystem, which can restrict the reach of applications.
 - Younger language compared to others, which means a smaller community and fewer resources.
 
-![](images/2e4966f436563e2377e365661ad72c87.png)
+![](/images/posts/php.png)
 
 ## 10. PHP
 
@@ -198,7 +198,7 @@ Programming languages form the backbone of modern technology, powering everythin
 - Historically criticized for security vulnerabilities, though improvements have been made.
 - Inconsistent standard library compared to some other languages.
 
-![](images/d4971043e6020784784bb6b79ddf758f.png)
+![Scala](/images/posts/scala.png)
 
 ## 11. Scala
 
@@ -217,7 +217,7 @@ Programming languages form the backbone of modern technology, powering everythin
 - Steeper learning curve, especially for those new to functional programming concepts.
 - Smaller community compared to more mainstream languages.
 
-![](images/3be1b53c11811138ac8c8ccd79d18c59.png)
+![Kotlin](/images/posts/kotlin.png)
 
 ## 12. Kotlin
 
@@ -236,7 +236,7 @@ Programming languages form the backbone of modern technology, powering everythin
 - Slower compilation times compared to Java, especially for larger projects.
 - Less mature ecosystem compared to Java, although it's rapidly growing.
 
-![](images/1ad57e90cb26d13d6da8000a1407c7c2.png)
+![Haskell](/images/posts/haskell.png)
 
 ## 13. Haskell
 
@@ -255,7 +255,7 @@ Programming languages form the backbone of modern technology, powering everythin
 - Steep learning curve, especially for those unfamiliar with functional programming paradigms.
 - Less mainstream and may not be as applicable to all domains.
 
-![](images/89df69acbc849856184fab729f7c705d.png)
+![Typescript](/images/posts/typescript.png)
 
 ## 14. TypeScript
 
@@ -274,7 +274,7 @@ Programming languages form the backbone of modern technology, powering everythin
 - Additional compilation step required, which can add complexity to the development process.
 - Requires a learning curve for developers accustomed to dynamic typing in JavaScript.
 
-![](images/f3e6f1458ee613c2f7a9fd6627f99548.png)
+![](/images/posts/Perl.png)
 
 ## 15. Perl
 
@@ -667,7 +667,7 @@ Programming languages form the backbone of modern technology, powering everythin
 - Limited adoption compared to more widely used languages.
 - May not have as extensive a library ecosystem as more modern languages.
 
-![](images/3be1b53c11811138ac8c8ccd79d18c59.png)
+![](/images/posts/kotlin.png)
 
 ## 38. Kotlin/Native
 
