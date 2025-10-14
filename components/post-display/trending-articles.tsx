@@ -23,7 +23,11 @@ export async function TrendingArticles({ title }: Props) {
       <CardContent>
         <div className="space-y-4">
           {posts.map((article, index) => (
-            <a key={article.slug} href={article.slug} className="group block">
+            <a
+              key={article.slug}
+              href={`/posts/${article.slug}`}
+              className="group block"
+            >
               <div className="flex gap-3">
                 <span className="text-muted-foreground/40 group-hover:text-accent text-2xl font-bold transition-colors">
                   {String(index + 1).padStart(2, "0")}
