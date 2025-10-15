@@ -21,7 +21,7 @@ export function ArticleHeader({
           {title}
         </h1>
 
-        <p className="text-muted-foreground text-xl leading-relaxed text-pretty">
+        <p className="text-muted-foreground text-sm leading-relaxed text-pretty">
           {subtitle}
         </p>
       </div>
