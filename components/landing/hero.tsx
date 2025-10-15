@@ -57,7 +57,7 @@ const Hero = () => {
         { opacity: 1, y: 0, duration: 1, ease: "elastic.inOut(1, 0.3)" },
         "-=0.5",
       );
-      tl.fromTo(
+      tl2.fromTo(
         ".cta-button",
         { opacity: 0, y: 20 },
         {
@@ -69,18 +69,7 @@ const Hero = () => {
         },
         "-=0.5",
       );
-      tl.fromTo(
-        ".social-icon",
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          duration: 1,
-          stagger: 0.1,
-          ease: "elastic.inOut(1, 0.3)",
-        },
-        "-=0.5",
-      );
-      tl.fromTo(
+      tl2.fromTo(
         ".profile-image",
         { opacity: 0, x: 100 },
         {
@@ -92,6 +81,17 @@ const Hero = () => {
           ease: "elastic.inOut(1, 0.3)",
           direction: "alternate",
         },
+      );
+      tl2.fromTo(
+        ".social-icon",
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          duration: 1,
+          stagger: 0.1,
+          ease: "elastic.inOut(1, 0.3)",
+        },
+        "-=0.5",
       );
     }, component);
     return () => ctx.revert();
