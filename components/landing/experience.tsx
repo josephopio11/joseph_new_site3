@@ -60,6 +60,7 @@ const Experience = () => {
             </VerticalTimelineElement>
           </React.Fragment>
         ))}
+        <LinkTrigger section="Experience" />
       </VerticalTimeline>
     </section>
   );

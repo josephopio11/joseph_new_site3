@@ -4,6 +4,8 @@ import { skillsRow1, skillsRow2, skillsRow3 } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useRef, useState } from "react";
+import LinkTrigger from "./link-trigger";
+import SectionTitle from "./section-title";
 
 interface MarqueeRowProps {
   skills: string[];
@@ -22,7 +24,7 @@ const Skills = () => {
       id="skills"
       className="relative container mx-auto scroll-mt-28 overflow-hidden pb-12 sm:my-30"
     >
-      {/* <LinkTrigger section="Skills" /> */}
+      <LinkTrigger section="Skills" />
       {/* Top blur */}
       <div className="from-background via-background/80 to-background/0 absolute -top-2 -left-1 -z-10 h-1/4 w-full bg-gradient-to-b dark:h-1/2" />
 
@@ -43,16 +45,16 @@ const Skills = () => {
         priority
       />
       <div className="px-4">
-        <h2 className="z-20 mb-4 text-4xl font-bold md:text-5xl">Skills</h2>
-        <p className="text-muted-foreground mb-12">
-          Transforming ideas into intuitive digital experiences
-        </p>
+        <SectionTitle
+          title="Skills"
+          sometext="Transforming ideas into intuitive digital experiences."
+        />
       </div>
       <div className="relative -z-20 my-10 md:my-0">
         <div className="gradient-edge" />
         <div className="gradient-edge" />
 
-        <div className="h-52">
+        <div className="min-h-60">
           <div className="w-full space-y-6 overflow-hidden py-8">
             {/* Row 1 - Fast */}
             <MarqueeRow
@@ -84,6 +86,7 @@ const Skills = () => {
           </div>
         </div>
       </div>
+      <LinkTrigger section="Skills" />
     </section>
   );
 };
@@ -120,9 +123,9 @@ function MarqueeRow({
     <div
       className={cn(
         "relative overflow-visible",
-        place === "back" && "z-0 -mb-4 scale-70",
-        place === "middle" && "z-10 my-0 scale-100",
-        place === "front" && "z-20 -mt-1 scale-130",
+        place === "back" && "z-0 scale-70",
+        place === "middle" && "z-10 mb-12 scale-100",
+        place === "front" && "z-20 scale-130",
       )}
       onMouseEnter={() => onHoverChange(true)}
       onMouseLeave={handleMouseLeave}

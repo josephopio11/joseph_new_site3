@@ -248,6 +248,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      <LinkTrigger section="Home" />
     </section>
   );
 };

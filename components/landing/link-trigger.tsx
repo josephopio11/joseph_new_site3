@@ -10,7 +10,7 @@ interface LinkTriggerProps {
 const LinkTrigger = ({ section }: LinkTriggerProps) => {
   const { ref } = useSectionInView(section);
 
-  return <div ref={ref} className="hidden" />;
+  return <div ref={ref} className="h-0 w-0" />;
 };
 
 export default LinkTrigger;
