@@ -6,11 +6,11 @@ import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { FaPaperPlane } from "react-icons/fa";
 import { toast } from "sonner";
-import { RichTextEditor } from "../text-editor";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
+import { Textarea } from "../ui/textarea";
 
 const ContactForm = () => {
   //Google Recaptcha
@@ -32,6 +32,7 @@ const ContactForm = () => {
           action={async (formData) => {
             setIsLoading(true);
             const { data, error } = await sendEmail(formData);
+            setIsLoading(false);
             if (error) {
               toast.error(error || "");
               return;
@@ -41,14 +42,13 @@ const ContactForm = () => {
               return;
             }
             toast.success("Email sent successfully!");
-            setIsLoading(false);
           }}
         >
           <div className="space-y-2">
-            <Label htmlFor="senderName">Your name</Label>
+            <Label htmlFor="name">Your name</Label>
             <Input
               className="h-14 rounded-lg px-4 transition-all"
-              name="senderName"
+              name="name"
               type="text"
               required
               maxLength={500}
@@ -68,21 +68,21 @@ const ContactForm = () => {
           </div>
           <div className="space-y-2">
             <Label htmlFor="message">Your message</Label>
-            <RichTextEditor
+            {/* <RichTextEditor
               id="message"
               className="my-3 h-52 rounded-lg p-0 transition-all"
               name="message"
               placeholder="Your message"
               required
               maxLength={5000}
-            />
-            {/* <Textarea
+            /> */}
+            <Textarea
               className="my-3 h-52 rounded-lg p-4 transition-all"
               name="message"
               placeholder="Your message"
               required
               maxLength={5000}
-            /> */}
+            />
           </div>
           <div className="flex flex-wrap items-center gap-2 md:justify-between">
             <ReCAPTCHA
@@ -92,7 +92,7 @@ const ContactForm = () => {
               type="image"
             />
 
-            <Button type="submit" disabled={!isVerified || isLoading}>
+            <Button type="submit" disabled={isLoading}>
               <FaPaperPlane className="mr-2" />
               <span className="sr-only">Send message</span>
               Submit
