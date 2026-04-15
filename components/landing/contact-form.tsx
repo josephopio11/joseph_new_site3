@@ -45,6 +45,17 @@ const ContactForm = () => {
           }}
         >
           <div className="space-y-2">
+            <Label htmlFor="senderName">Your name</Label>
+            <Input
+              className="h-14 rounded-lg px-4 transition-all"
+              name="senderName"
+              type="text"
+              required
+              maxLength={500}
+              placeholder="Your Name"
+            />
+          </div>
+          <div className="space-y-2">
             <Label htmlFor="senderEmail">Your email</Label>
             <Input
               className="h-14 rounded-lg px-4 transition-all"
