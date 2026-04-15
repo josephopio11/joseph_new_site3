@@ -136,6 +136,7 @@ const RichTextEditor = forwardRef<HTMLDivElement, RichTextEditorProps>(
       onBlur() {
         onBlur?.();
       },
+      immediatelyRender: false,
     });
 
     // Sync external value changes
@@ -273,7 +274,7 @@ const RichTextEditor = forwardRef<HTMLDivElement, RichTextEditorProps>(
                 characterCount >= maxLength && "text-destructive font-medium",
               )}
               aria-live="polite"
-              aria-label={`${characterCount} of ${maxLength} characters used`}
+              // aria-label={`${characterCount} of ${maxLength} characters used`}
             >
               {characterCount}/{maxLength}
             </span>

@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { FaPaperPlane } from "react-icons/fa";
 import { toast } from "sonner";
-import RichTextEditor from "../text-editor";
+import { RichTextEditor } from "../text-editor";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import { Input } from "../ui/input";
