@@ -6,11 +6,11 @@ import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { FaPaperPlane } from "react-icons/fa";
 import { toast } from "sonner";
+import RichTextEditor from "../text-editor";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
-import { Textarea } from "../ui/textarea";
 
 const ContactForm = () => {
   //Google Recaptcha
@@ -68,13 +68,21 @@ const ContactForm = () => {
           </div>
           <div className="space-y-2">
             <Label htmlFor="message">Your message</Label>
-            <Textarea
-              className="my-3 h-52 rounded-lg p-4 transition-all"
+            <RichTextEditor
+              id="message"
+              className="my-3 h-52 rounded-lg p-0 transition-all"
               name="message"
               placeholder="Your message"
               required
               maxLength={5000}
             />
+            {/* <Textarea
+              className="my-3 h-52 rounded-lg p-4 transition-all"
+              name="message"
+              placeholder="Your message"
+              required
+              maxLength={5000}
+            /> */}
           </div>
           <div className="flex flex-wrap items-center gap-2 md:justify-between">
             <ReCAPTCHA
