@@ -25,10 +25,10 @@ const AboutMe = () => {
 
       <div className="grid items-start gap-12 md:grid-cols-5">
         <div className="relative md:col-span-2">
-          <div className="aspect-video overflow-hidden rounded-3xl border-2 border-white bg-gradient-to-br from-purple-300 to-pink-300 shadow-xl shadow-purple-950/50 md:aspect-[3/7] lg:aspect-[3/5] xl:aspect-[7/12] 2xl:aspect-[4/5]">
+          <div className="aspect-video overflow-hidden rounded-3xl border-2 border-white bg-linear-to-br from-purple-300 to-pink-300 shadow-xl shadow-purple-950/50 md:aspect-3/7 lg:aspect-3/5 xl:aspect-7/12 2xl:aspect-4/5">
             <Image
-              width={500}
-              height={500}
+              width={1000}
+              height={1000}
               src="/images/landing/escape.jpg"
               alt="Designer at work"
               className="h-full w-full object-cover object-top"
@@ -73,7 +73,8 @@ const AboutMe = () => {
               I thrive in collaborative environments, valuing teamwork and
               effective communication. Whether I am guiding students on their
               educational journey or collaborating with clients on their
-              projects, I approach each endeavor with enthusiasm and dedication.
+              projects, I approach each endeavour with enthusiasm and
+              dedication.
             </p>
             <p className="text-muted-foreground mb-4 text-sm leading-relaxed lg:text-base dark:text-gray-300">
               Join me on this exciting journey as I continue to inspire and
@@ -83,7 +84,7 @@ const AboutMe = () => {
             </p>
           </div>
 
-          <Card className="from-primary/70 my-8 border-0 bg-gradient-to-r to-purple-600/80 dark:from-black dark:shadow-lg dark:shadow-white/20">
+          <Card className="from-primary/70 my-8 border-0 bg-linear-to-r to-purple-600/80 dark:from-black dark:shadow-lg dark:shadow-white/20">
             <CardContent className="p-6">
               <p className="leading-relaxed text-white italic">
                 Feel free to{" "}

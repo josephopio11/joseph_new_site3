@@ -121,9 +121,10 @@ const Services = () => {
         <div className="mt-8 flex justify-center gap-2">
           {services.map((_, index) => (
             <button
-              key={index}
+              key={index.toString()}
+              type="button"
               onClick={() => setCurrentService(index)}
-              className={`h-2 w-2 rounded-full transition-all ${
+              className={`h-2 w-2 rounded-full transition-all duration-300 ${
                 index === currentService ? "bg-primary w-8" : "bg-muted"
               }`}
             />

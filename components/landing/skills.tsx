@@ -4,6 +4,7 @@ import { skillsRow1, skillsRow2, skillsRow3 } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useRef, useState } from "react";
+import { Button } from "../ui/button";
 import LinkTrigger from "./link-trigger";
 import SectionTitle from "./section-title";
 
@@ -26,16 +27,16 @@ const Skills = () => {
     >
       <LinkTrigger section="Skills" />
       {/* Top blur */}
-      <div className="from-background via-background/80 to-background/0 absolute -top-2 -left-1 -z-10 h-1/4 w-full bg-gradient-to-b dark:h-1/2" />
+      <div className="from-background via-background/80 to-background/0 absolute -top-2 -left-1 -z-10 h-1/4 w-full bg-linear-to-b dark:h-1/2" />
 
       {/* bottom blur */}
-      <div className="from-background via-background/80 to-background/0 absolute -bottom-2 -left-1 -z-10 h-1/4 w-full bg-gradient-to-t" />
+      <div className="from-background via-background/80 to-background/0 absolute -bottom-2 -left-1 -z-10 h-1/4 w-full bg-linear-to-t" />
 
       {/* left blur */}
-      <div className="from-background to-background/0 absolute -top-2 -left-1 -z-10 h-[130%] w-1/6 bg-gradient-to-r" />
+      <div className="from-background to-background/0 absolute -top-2 -left-1 -z-10 h-[130%] w-1/6 bg-linear-to-r" />
 
       {/* right blur */}
-      <div className="from-background to-background/0 absolute -top-2 -right-1 -z-10 h-[130%] w-1/6 bg-gradient-to-l" />
+      <div className="from-background to-background/0 absolute -top-2 -right-1 -z-10 h-[130%] w-1/6 bg-linear-to-l" />
 
       <Image
         src="/images/landing/cloud_bg.jpg"
@@ -120,7 +121,8 @@ function MarqueeRow({
   };
 
   return (
-    <div
+    <Button
+      variant={"ghost"}
       className={cn(
         "relative overflow-visible",
         place === "back" && "z-0 scale-70",
@@ -144,7 +146,7 @@ function MarqueeRow({
         {duplicatedSkills.map((skill, index) => (
           <div
             key={`${skill}-${index}`}
-            className="relative flex-shrink-0 overflow-visible rounded-full border border-purple-100 bg-white/90 px-8 py-4 shadow-lg shadow-blue-950/50 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 hover:shadow-xl dark:border-purple-200/20 dark:bg-black dark:from-blue-950/50 dark:to-purple-950/50"
+            className="relative shrink-0 overflow-visible rounded-full border border-purple-100 bg-white/90 px-8 py-4 shadow-lg shadow-blue-950/50 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 hover:shadow-xl dark:border-purple-200/20 dark:bg-black dark:from-blue-950/50 dark:to-purple-950/50"
           >
             {/* Cloud shape decorations */}
             <div className="absolute -top-2 -left-2 h-6 w-6 rounded-full bg-white/80 blur-sm dark:bg-purple-200/10" />
@@ -156,6 +158,6 @@ function MarqueeRow({
           </div>
         ))}
       </div>
-    </div>
+    </Button>
   );
 }

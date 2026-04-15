@@ -15,13 +15,14 @@ import { Textarea } from "../ui/textarea";
 const ContactForm = () => {
   //Google Recaptcha
   const recaptchaRef = useRef<ReCAPTCHA>(null);
-  const [isVerified, setIsverified] = useState<boolean>(false);
+  const [isVerified, setIsVerified] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   async function handleCaptchaSubmission(token: string | null) {
     // Server function to verify captcha
     await verifyCaptcha(token)
-      .then(() => setIsverified(true))
-      .catch(() => setIsverified(false));
+      .then(() => setIsVerified(true))
+      .catch(() => setIsVerified(false));
   }
   return (
     <Card className="bg-card/50 border-border col-span-1 md:col-span-1 lg:col-span-3">
@@ -29,19 +30,21 @@ const ContactForm = () => {
         <form
           className="space-y-6"
           action={async (formData) => {
+            setIsLoading(true);
             const { data, error } = await sendEmail(formData);
-            if (!!error) {
-              toast.error(error!);
+            if (error) {
+              toast.error(error || "");
               return;
             }
-            if (!!data?.error) {
+            if (data?.error) {
               toast.error(data.error.message);
               return;
             }
             toast.success("Email sent successfully!");
+            setIsLoading(false);
           }}
         >
-          <>
+          <div className="space-y-2">
             <Label htmlFor="senderEmail">Your email</Label>
             <Input
               className="h-14 rounded-lg px-4 transition-all"
@@ -51,8 +54,8 @@ const ContactForm = () => {
               maxLength={500}
               placeholder="Your email"
             />
-          </>
-          <>
+          </div>
+          <div className="space-y-2">
             <Label htmlFor="message">Your message</Label>
             <Textarea
               className="my-3 h-52 rounded-lg p-4 transition-all"
@@ -61,16 +64,16 @@ const ContactForm = () => {
               required
               maxLength={5000}
             />
-          </>
+          </div>
           <div className="flex flex-wrap items-center gap-2 md:justify-between">
             <ReCAPTCHA
-              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
               ref={recaptchaRef}
               onChange={handleCaptchaSubmission}
               type="image"
             />
 
-            <Button type="submit" disabled={!isVerified}>
+            <Button type="submit" disabled={!isVerified || isLoading}>
               <FaPaperPlane className="mr-2" />
               <span className="sr-only">Send message</span>
               Submit

@@ -238,10 +238,11 @@ const Hero = () => {
         </div>
 
         <div className="profile-image relative order-1 overflow-hidden rounded-full opacity-0 shadow-xl shadow-purple-950/50 md:order-2 md:overflow-auto md:rounded-3xl">
-          <div className="border-border/50 flex aspect-square items-center justify-center overflow-hidden border bg-gradient-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-sm md:aspect-[11/16] lg:aspect-square dark:from-blue-200/40 dark:to-purple-200/20">
+          <div className="border-border/50 flex aspect-square items-center justify-center overflow-hidden border bg-linear-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-sm md:aspect-11/16 lg:aspect-square dark:from-blue-200/40 dark:to-purple-200/20">
             <Image
               src="/images/landing/me.png"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               alt="3D Design Element"
               className="profile-image h-3/4 w-3/4 translate-y-4 object-contain opacity-0"
             />

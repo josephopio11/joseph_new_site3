@@ -1,5 +1,4 @@
-onlyBuiltDependencies:
-  - '@tailwindcss/oxide'
-  - react-vertical-timeline-component
-  - sharp
-  - unrs-resolver
+allowBuilds:
+  react-vertical-timeline-component: true
+  sharp: true
+  unrs-resolver: true

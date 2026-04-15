@@ -29,7 +29,7 @@ const Experience = () => {
         }
       >
         {experiencesData.map((item, index) => (
-          <React.Fragment key={index}>
+          <React.Fragment key={index.toString()}>
             <VerticalTimelineElement
               contentStyle={{
                 background:
@@ -48,13 +48,15 @@ const Experience = () => {
               date={item.date}
               icon={item.icon}
               iconStyle={{
-                background: "rgba(255, 255, 255, 0.25)",
+                background: "rgba(255, 255, 255, 0.0)",
                 fontSize: "1.5rem",
+                backdropFilter: "blur(2px)",
+                // boxShadow: "1px 1px 2px #888888",
               }}
             >
               <h3 className="text-lg font-semibold uppercase">{item.title}</h3>
-              <p className="!mt-0 font-normal">{item.location}</p>
-              <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
+              <p className="mt-0! font-normal">{item.location}</p>
+              <p className="mt-1! font-normal! text-gray-700 dark:text-white/75">
                 {item.description}
               </p>
             </VerticalTimelineElement>

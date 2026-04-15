@@ -11,7 +11,7 @@ const Contact = () => {
     >
       <h2 className="mb-12 text-4xl font-bold md:text-5xl">Contact</h2>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
-        <Card className="from-primary/80 col-span-1 border-0 bg-gradient-to-br to-purple-600/80 md:col-span-1 lg:col-span-2 dark:border dark:border-white/30 dark:from-black dark:shadow-lg dark:shadow-white/20">
+        <Card className="from-primary/80 col-span-1 border-0 bg-linear-to-br to-purple-600/80 md:col-span-1 lg:col-span-2 dark:border dark:border-white/30 dark:from-black dark:shadow-lg dark:shadow-white/20">
           <CardContent className="space-y-6 p-8">
             <h3 className="mb-4 text-3xl font-bold text-balance text-white">
               Wanna have a chat?

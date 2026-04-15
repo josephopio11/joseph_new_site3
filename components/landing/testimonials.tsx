@@ -32,6 +32,7 @@ const Testimonials = () => {
             </p>
             <div className="flex items-center gap-3">
               <Image
+                fill
                 src={
                   testimonials[currentTestimonial].avatar || "/placeholder.svg"
                 }
@@ -63,7 +64,8 @@ const Testimonials = () => {
           <div className="flex items-center gap-2">
             {testimonials.map((_, index) => (
               <button
-                key={index}
+                key={index.toString()}
+                type="button"
                 onClick={() => setCurrentTestimonial(index)}
                 className={`h-2 w-2 rounded-full transition-all ${
                   index === currentTestimonial ? "bg-primary w-8" : "bg-muted"
