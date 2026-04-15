@@ -144,7 +144,7 @@ const RichTextEditor = forwardRef<HTMLDivElement, RichTextEditorProps>(
       if (!editor || value === undefined) return;
       const current = editor.getHTML();
       if (current !== value) {
-        editor.commands.setContent(value, false);
+        editor.commands.setContent(value);
       }
     }, [editor, value]);
 
