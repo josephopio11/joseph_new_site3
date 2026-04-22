@@ -1,6 +1,8 @@
 import corpcommentImg from "@/public/images/projects/corpcomment.png";
+import devMgmtImg from "@/public/images/projects/devmgmt.png";
 import fileconvImg from "@/public/images/projects/fileconv.png";
 import giaImg from "@/public/images/projects/gia.png";
+import makanImg from "@/public/images/projects/makan.png";
 import rmtdevImg from "@/public/images/projects/rmtdev.png";
 import wordanalyticsImg from "@/public/images/projects/wordanalytics.png";
 import {
@@ -154,6 +156,29 @@ export const skillsRow3 = [
 
 export const projectsData = [
   {
+    title: "DevMgmt.msc",
+    description:
+      "A straightforward way to track devices, equipment, and who has them. No complicated features. Just the essentials.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Tailwind",
+      "Prisma",
+      "PostgreSQL",
+    ],
+    siteUrl: "https://items.josephopio.com/",
+    imageUrl: devMgmtImg,
+  },
+  {
+    title: "Malaysia Eatery Finder",
+    description:
+      "Are you anywhere in Malaysia and want to find where to have some makan? This is the app for you.",
+    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Gemini"],
+    siteUrl: "https://makan.josephopio.com/",
+    imageUrl: makanImg,
+  },
+  {
     title: "Free Media File Converter",
     description:
       "This web app will help you convert between various media file types free. Just access and use free of charge.",
@@ -161,6 +186,7 @@ export const projectsData = [
     siteUrl: "https://converter.josephopio.com/",
     imageUrl: fileconvImg,
   },
+
   {
     title: "GIA Website",
     description:

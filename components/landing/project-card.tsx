@@ -34,14 +34,14 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             </Button>
           )}
         </div>
-        <p className="text-muted-foreground border-primary mb-3 line-clamp-2 text-sm">
+        <p className="text-muted-foreground border-primary mb-3 line-clamp-2 text-xs">
           {project.description}
         </p>
         <div className="flex flex-row flex-wrap gap-1">
-          {project.tags.map((tag, index) => (
+          {project.tags.map((tag) => (
             <span
               className={`${getRandomColour()} shrink-0 rounded-full px-3 py-1 text-xs text-white`}
-              key={index}
+              key={tag}
             >
               {tag}
             </span>
