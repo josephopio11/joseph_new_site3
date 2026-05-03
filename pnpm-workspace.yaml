@@ -1,4 +1,7 @@
 allowBuilds:
+  '@prisma/engines': true
+  esbuild: true
+  prisma: true
   react-vertical-timeline-component: true
   sharp: true
   unrs-resolver: true
