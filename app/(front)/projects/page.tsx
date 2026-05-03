@@ -88,9 +88,9 @@ export default async function ProjectsPage(props: {
                 </p>
               </div>
             </div>
-            <div className="text-foreground my-8 grid !max-w-none grid-cols-1 space-y-6 sm:grid-cols-2 sm:gap-6 sm:space-y-0 md:grid-cols-3 print:gap-2">
+            <div className="text-foreground my-8 grid max-w-none! grid-cols-1 space-y-6 sm:grid-cols-2 sm:gap-6 sm:space-y-0 md:grid-cols-3 print:gap-2">
               {projectsSlice.map((project, index) => (
-                <ProjectCard key={index} project={project} />
+                <ProjectCard key={String(index)} project={project} />
               ))}
             </div>
             <Pagination

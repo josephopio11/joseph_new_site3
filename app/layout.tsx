@@ -1,5 +1,3 @@
-import Footer from "@/components/footer";
-import Navigation from "@/components/navigation";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { Toaster } from "@/components/ui/sonner";
@@ -94,10 +92,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="!scroll-smooth">
+    <html lang="en" suppressHydrationWarning className="scroll-smooth!">
       <ActiveSectionContextProvider>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} bg-background dark:bg-background dark:text-foreground !scroll-smooth font-sans antialiased transition-colors duration-300 ease-in-out`}
+          className={`${geistSans.variable} ${geistMono.variable} bg-background dark:bg-background dark:text-foreground scroll-smooth! font-sans antialiased transition-colors duration-300 ease-in-out`}
         >
           <ThemeProvider
             attribute="class"
@@ -105,11 +103,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <div className="text-foreground flex min-h-screen flex-col">
-              <Navigation />
-              <main>{children}</main>
-              <Footer />
-            </div>
+            {children}
             <Toaster />
             <ThemeSwitcher />
           </ThemeProvider>

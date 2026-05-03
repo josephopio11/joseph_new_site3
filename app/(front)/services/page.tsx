@@ -88,7 +88,7 @@ export default async function PostsPage() {
               {myServices.map((category, categoryIndex) => {
                 const Icon = category.icon;
                 return (
-                  <div key={categoryIndex} className="space-y-8">
+                  <div key={String(categoryIndex)} className="space-y-8">
                     {/* Category Header */}
                     <div className="space-y-2">
                       <div className="flex items-center gap-3">
@@ -106,7 +106,7 @@ export default async function PostsPage() {
                     <div className="grid gap-4 md:grid-cols-3">
                       {category.items.map((service, serviceIndex) => (
                         <Card
-                          key={serviceIndex}
+                          key={String(serviceIndex)}
                           className={cn(
                             "group hover:border-primary/50 transition-colors duration-300",
                             getRandomBackgroundColour(),
