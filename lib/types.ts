@@ -1,6 +1,6 @@
-import { navLinks } from "./data";
+import { NavLink } from "./generated/prisma/browser";
 
-export type SectionName = (typeof navLinks)[number]["name"];
+export type SectionName = NavLink[][number]["name"];
 
 export type Post = {
   title: string;

@@ -1,4 +1,4 @@
-import { projectsData } from "@/lib/data";
+import { FrontProject } from "@/lib/actions/project";
 import { getRandomColour } from "@/lib/utils";
 import { Link as LinkIcon } from "lucide-react";
 import Image from "next/image";
@@ -7,7 +7,7 @@ import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 
 type ProjectCardProps = {
-  project: (typeof projectsData)[number];
+  project: FrontProject;
 };
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
@@ -17,7 +17,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         <Image
           width={1000}
           height={1000}
-          src={project.imageUrl || "/placeholder.svg"}
+          src={project.imageUrl || "/placeholder.png"}
           alt={project.title}
           className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
           style={{ objectPosition: "center top" }}
@@ -41,9 +41,9 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           {project.tags.map((tag) => (
             <span
               className={`${getRandomColour()} shrink-0 rounded-full px-3 py-1 text-xs text-white`}
-              key={tag}
+              key={tag.id}
             >
-              {tag}
+              {tag.name}
             </span>
           ))}
         </div>

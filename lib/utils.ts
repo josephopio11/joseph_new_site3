@@ -1,4 +1,4 @@
-import { clsx, type ClassValue } from "clsx";
+import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { fadedColours, solidColours } from "./data";
 
@@ -51,3 +51,12 @@ export const getErrorMessage = (error: unknown): string => {
 
   return message;
 };
+
+export const sluggify = (str: string) =>
+  str
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, "")
+    .replace(/[\s_-]+/g, "-")
+    .replace(/^-+/, "")
+    .replace(/-+$/, "");

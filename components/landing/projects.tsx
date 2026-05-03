@@ -1,11 +1,13 @@
-import { projectsData } from "@/lib/data";
+import { getFrontProjects } from "@/lib/actions/project";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import LinkTrigger from "./link-trigger";
 import ProjectCard from "./project-card";
 import SectionTitle from "./section-title";
 
-const Projects = () => {
+export default async function Projects() {
+  const projectsData = await getFrontProjects();
+
   return (
     <section
       id="projects"
@@ -34,6 +36,4 @@ const Projects = () => {
       </div>
     </section>
   );
-};
-
-export default Projects;
+}

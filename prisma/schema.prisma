@@ -74,3 +74,113 @@ model Verification {
   @@index([identifier])
   @@map("verification")
 }
+
+model Post {
+  id       String   @id @default(uuid())
+  title    String
+  slug     String
+  subtitle String?
+  date     DateTime
+  image    String?
+  tags     Tags[]
+
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  category   Category? @relation(fields: [categoryId], references: [id])
+  categoryId Int?
+
+  @@index([slug])
+  @@map("post")
+}
+
+model Tags {
+  id          Int       @id @default(autoincrement())
+  name        String
+  slug        String
+  description String?
+  posts       Post[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  projects    Project[]
+
+  @@map("tags")
+}
+
+model Category {
+  id          Int      @id @default(autoincrement())
+  name        String
+  slug        String
+  description String?
+  post        Post[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("category")
+}
+
+model Project {
+  id          String  @id @default(uuid())
+  title       String
+  slug        String
+  description String
+  tags        Tags[]
+  siteUrl     String?
+  githubUrl   String?
+  imageUrl    String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([slug])
+  @@map("project")
+}
+
+model Experience {
+  id          String    @id @default(uuid())
+  title       String
+  company     String?
+  location    String?
+  startDate   DateTime?
+  endDate     DateTime?
+  description String?
+  icon        String?
+  isCurrent   Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("experience")
+}
+
+model NavLink {
+  id        Int      @id @default(autoincrement())
+  name      String
+  href      String
+  createdAt DateTime @default(now())
+
+  @@map("nav_link")
+}
+
+model ServiceCategory {
+  id       String    @id @default(uuid())
+  name     String
+  slug     String
+  icon     String?
+  services Service[]
+
+  @@map("service_category")
+}
+
+model Service {
+  id                String          @id @default(uuid())
+  title             String
+  bookable          Boolean
+  icon              String?
+  description       String
+  slug              String
+  serviceCategoryId String
+  category          ServiceCategory @relation(fields: [serviceCategoryId], references: [id])
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+
+  @@map("service")
+}

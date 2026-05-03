@@ -106,6 +106,9 @@ export default function RootLayout({
             {children}
             <Toaster />
             <ThemeSwitcher />
+            <div className="text-muted-foreground fixed right-1 bottom-1 font-mono text-xs">
+              (Press <kbd>d</kbd> to toggle dark mode)
+            </div>
           </ThemeProvider>
         </body>
       </ActiveSectionContextProvider>

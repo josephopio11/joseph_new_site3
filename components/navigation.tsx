@@ -1,14 +1,19 @@
 "use client";
 
 import { useActiveSectionContext } from "@/context/activeSectionContext";
-import { navLinks } from "@/lib/data";
-import { cn } from "@/lib/utils";
+import { NavLink } from "@/lib/generated/prisma/browser";
 import { motion } from "framer-motion";
 import { Mail, Sparkles } from "lucide-react";
 import Link from "next/link";
+// import { navLinks } from "@/lib/data";
+import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 
-const Navigation = () => {
+type Props = {
+  navLinks: NavLink[];
+};
+
+const Navigation = ({ navLinks }: Props) => {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
   return (
