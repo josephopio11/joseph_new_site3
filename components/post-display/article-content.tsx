@@ -6,7 +6,7 @@ interface ArticleContentProps {
 
 export function ArticleContent({ content }: ArticleContentProps) {
   return (
-    <div className="prose prose-lg text-foreground mt-8 !max-w-none space-y-6">
+    <div className="prose prose-lg text-foreground mt-8 max-w-none! space-y-6">
       {/* prose-pre:w-fit 
       prose-pre:max-w-none 
       prose-pre:overflow-x-scroll  */}

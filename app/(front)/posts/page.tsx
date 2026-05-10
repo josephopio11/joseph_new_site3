@@ -1,9 +1,10 @@
+import { getAllPosts } from "@/actions/post";
+import PostsPreview from "@/components/PostsPreview";
 import Pagination from "@/components/pagination";
 import { BlogSidebar } from "@/components/post-display/blog-sidebar";
-import PostsPreview from "@/components/PostsPreview";
 import { SITE_CONFIG } from "@/lib/data";
 import getPostMetadata from "@/lib/posts/getPostMetadata";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -67,6 +68,10 @@ export default async function PostsPage(props: { searchParams: SearchParams }) {
   const hasPreviousPage = page > 1;
   const postsSlice = postMetadata.slice(start, end);
 
+  const myPosts = await getAllPosts(start, end);
+
+  console.log(myPosts);
+
   return (
     <div className="pt-10 print:pt-0">
       <div className="my-16 print:hidden">{/* Just a spacer */}</div>
@@ -89,8 +94,8 @@ export default async function PostsPage(props: { searchParams: SearchParams }) {
                 </p>
               </div>
             </div>
-            <div className="text-foreground my-8 grid !max-w-none grid-cols-1 space-y-6 sm:grid-cols-2 sm:gap-6 sm:space-y-0 md:grid-cols-3">
-              {postsSlice.map((post) => (
+            <div className="text-foreground my-8 grid max-w-none! grid-cols-1 space-y-6 sm:grid-cols-2 sm:gap-6 sm:space-y-0 md:grid-cols-3">
+              {myPosts.map((post) => (
                 <PostsPreview key={post.slug} {...post} />
               ))}
             </div>

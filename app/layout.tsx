@@ -5,7 +5,7 @@ import ActiveSectionContextProvider from "@/context/activeSectionContext";
 import { SITE_CONFIG } from "@/lib/data";
 import type { Metadata } from "next";
 import { Montserrat as Geist, Geist_Mono } from "next/font/google";
-import { WebSite, WithContext } from "schema-dts";
+import type { WebSite, WithContext } from "schema-dts";
 import "./globals.css";
 
 const geistSans = Geist({

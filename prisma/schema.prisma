@@ -76,18 +76,23 @@ model Verification {
 }
 
 model Post {
-  id       String   @id @default(uuid())
-  title    String
-  slug     String
-  subtitle String?
-  date     DateTime
-  image    String?
-  tags     Tags[]
+  id          String    @id @default(uuid())
+  title       String
+  slug        String    @unique
+  subtitle    String?
+  date        DateTime
+  image       String?
+  tags        Tags[]
+  categoryId  Int?
+  category    Category? @relation(fields: [categoryId], references: [id])
+  content     String?
+  isPublished Boolean   @default(false)
+  isFeatured  Boolean   @default(false)
+  badge       String?
 
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
-  category   Category? @relation(fields: [categoryId], references: [id])
-  categoryId Int?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  visits    Visits[]
 
   @@index([slug])
   @@map("post")
@@ -96,32 +101,34 @@ model Post {
 model Tags {
   id          Int       @id @default(autoincrement())
   name        String
-  slug        String
+  slug        String    @unique
   description String?
   posts       Post[]
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   projects    Project[]
 
+  @@index([slug])
   @@map("tags")
 }
 
 model Category {
   id          Int      @id @default(autoincrement())
   name        String
-  slug        String
+  slug        String   @unique
   description String?
   post        Post[]
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
+  @@index([slug])
   @@map("category")
 }
 
 model Project {
   id          String  @id @default(uuid())
   title       String
-  slug        String
+  slug        String  @unique
   description String
   tags        Tags[]
   siteUrl     String?
@@ -163,10 +170,11 @@ model NavLink {
 model ServiceCategory {
   id       String    @id @default(uuid())
   name     String
-  slug     String
+  slug     String    @unique
   icon     String?
   services Service[]
 
+  @@index([slug])
   @@map("service_category")
 }
 
@@ -176,11 +184,21 @@ model Service {
   bookable          Boolean
   icon              String?
   description       String
-  slug              String
+  slug              String          @unique
   serviceCategoryId String
   category          ServiceCategory @relation(fields: [serviceCategoryId], references: [id])
   createdAt         DateTime        @default(now())
   updatedAt         DateTime        @updatedAt
 
+  @@index([slug])
   @@map("service")
+}
+
+model Visits {
+  id        String   @id @default(uuid())
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id])
+  ipAddress String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
