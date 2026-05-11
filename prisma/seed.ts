@@ -1,5 +1,6 @@
 import { PrismaClient } from "@/lib/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { subHours } from "date-fns";
 import "dotenv/config";
 import { Pool } from "pg";
 
@@ -17,7 +18,7 @@ async function main() {
   await prisma.navLink.deleteMany();
   await prisma.experience.deleteMany();
   await prisma.project.deleteMany();
-  await prisma.post.deleteMany();
+  // await prisma.post.deleteMany();
   await prisma.tags.deleteMany();
   await prisma.category.deleteMany();
 
@@ -87,37 +88,37 @@ async function main() {
     },
   });
 
-  // ─── Posts ────────────────────────────────────────────────────────────────
-  console.log("📝 Seeding posts...");
-  await prisma.post.create({
-    data: {
-      title: "Getting Started with Next.js 14",
-      slug: "getting-started-with-nextjs-14",
-      subtitle: "A practical guide for educators and developers",
-      date: new Date("2024-03-15"),
-      categoryId: categoryWebDev.id,
-      tags: {
-        connect: [
-          { id: tagByName["Next.js"].id },
-          { id: tagByName["React"].id },
-          { id: tagByName["TypeScript"].id },
-        ],
-      },
-    },
-  });
+  // // ─── Posts ────────────────────────────────────────────────────────────────
+  // console.log("📝 Seeding posts...");
+  // await prisma.post.create({
+  //   data: {
+  //     title: "Getting Started with Next.js 14",
+  //     slug: "getting-started-with-nextjs-14",
+  //     subtitle: "A practical guide for educators and developers",
+  //     date: new Date("2024-03-15"),
+  //     categoryId: categoryWebDev.id,
+  //     tags: {
+  //       connect: [
+  //         { id: tagByName["Next.js"].id },
+  //         { id: tagByName["React"].id },
+  //         { id: tagByName["TypeScript"].id },
+  //       ],
+  //     },
+  //   },
+  // });
 
-  await prisma.post.create({
-    data: {
-      title: "Teaching Python to Teenagers",
-      slug: "teaching-python-to-teenagers",
-      subtitle: "Tips and strategies that actually work in the classroom",
-      date: new Date("2024-05-01"),
-      categoryId: categoryEdTech.id,
-      tags: {
-        connect: [{ id: tagByName["React"].id }],
-      },
-    },
-  });
+  // await prisma.post.create({
+  //   data: {
+  //     title: "Teaching Python to Teenagers",
+  //     slug: "teaching-python-to-teenagers",
+  //     subtitle: "Tips and strategies that actually work in the classroom",
+  //     date: new Date("2024-05-01"),
+  //     categoryId: categoryEdTech.id,
+  //     tags: {
+  //       connect: [{ id: tagByName["React"].id }],
+  //     },
+  //   },
+  // });
 
   // ─── Projects ─────────────────────────────────────────────────────────────
   console.log("🚀 Seeding projects...");
@@ -136,6 +137,9 @@ async function main() {
         "Prisma",
         "PostgreSQL",
       ],
+      githubUrl: null,
+      imageUrl: "/images/projects/devmgmt.png",
+      createdAt: new Date(),
     },
     {
       title: "Malaysia Eatery Finder",
@@ -144,6 +148,9 @@ async function main() {
         "Are you anywhere in Malaysia and want to find where to have some makan? This is the app for you.",
       siteUrl: "https://makan.josephopio.com/",
       tags: ["React", "TypeScript", "Next.js", "Tailwind", "Gemini"],
+      githubUrl: null,
+      imageUrl: "/images/projects/makan.png",
+      createdAt: subHours(new Date(), 1),
     },
     {
       title: "Free Media File Converter",
@@ -152,6 +159,9 @@ async function main() {
         "This web app will help you convert between various media file types free. Just access and use free of charge.",
       siteUrl: "https://converter.josephopio.com/",
       tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+      githubUrl: null,
+      imageUrl: "/images/projects/fileconv.png",
+      createdAt: subHours(new Date(), 2),
     },
     {
       title: "GIA Website",
@@ -160,6 +170,9 @@ async function main() {
         "Did this website for this school when I was employed with them. Still rocking on.",
       siteUrl: "https://www.gitegainternationalacademy.org/",
       tags: ["Wordpress", "MySQL", "CSS", "BeaverBuilder"],
+      githubUrl: null,
+      imageUrl: "/images/projects/gia.png",
+      createdAt: subHours(new Date(), 3),
     },
     {
       title: "CorpComment",
@@ -168,6 +181,9 @@ async function main() {
         "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
       siteUrl: null,
       tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+      githubUrl: null,
+      imageUrl: "/images/projects/corpcomment.png",
+      createdAt: subHours(new Date(), 4),
     },
     {
       title: "rmtDev",
@@ -176,6 +192,9 @@ async function main() {
         "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
       siteUrl: null,
       tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+      githubUrl: null,
+      imageUrl: "/images/projects/rmtdev.png",
+      createdAt: subHours(new Date(), 5),
     },
     {
       title: "Word Analytics",
@@ -184,6 +203,9 @@ async function main() {
         "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
       siteUrl: null,
       tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+      githubUrl: null,
+      imageUrl: "/images/projects/wordanalytics.png",
+      createdAt: subHours(new Date(), 6),
     },
   ];
 
@@ -195,10 +217,13 @@ async function main() {
     await prisma.project.create({
       data: {
         title: project.title,
-        slug: project.slug,
+        slug: `${project.slug}-${Math.random().toString(36).substring(2, 8)}`,
         description: project.description,
         siteUrl: project.siteUrl,
         tags: { connect: connectTags },
+        imageUrl: project.imageUrl,
+        githubUrl: project.githubUrl,
+        createdAt: project.createdAt,
       },
     });
   }

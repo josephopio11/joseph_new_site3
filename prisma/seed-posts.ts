@@ -1,10 +1,10 @@
 import { PrismaClient } from "@/lib/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import "dotenv/config";
+import { marked } from "marked";
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { Pool } from "pg";
-import { marked } from "marked";
 
 const connectionString = `${process.env.DATABASE_URL}`;
 const pool = new Pool({ connectionString });
@@ -96,6 +96,11 @@ function slugify(text: string): string {
 async function main() {
   console.log("🌱 Starting posts seed...");
 
+  // ─── Clean up existing data ───────────────────────────────────────────────
+  await prisma.post.deleteMany();
+
+  // ─── Process markdown files ───────────────────────────────────────────────
+
   const postsDir = join(process.cwd(), "posts");
   const files = readdirSync(postsDir).filter((f) => f.endsWith(".md"));
 
@@ -111,7 +116,8 @@ async function main() {
       continue;
     }
 
-    const slug = slugify(frontmatter.title);
+    // const slug = slugify(frontmatter.title);
+    const slug = file.replace(".md", "");
 
     console.log(`📝 Processing: ${frontmatter.title}`);
 

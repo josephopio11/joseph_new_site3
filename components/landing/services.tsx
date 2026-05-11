@@ -1,5 +1,6 @@
 "use client";
 
+import { ServiceDisplayType } from "@/actions/service";
 import { fadedColours, myServices } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -8,6 +9,10 @@ import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import LinkTrigger from "./link-trigger";
 import SectionTitle from "./section-title";
+
+type DisplayServiceProps = {
+  services: ServiceDisplayType;
+};
 
 const Services = () => {
   const [currentService, setCurrentService] = useState(0);
@@ -31,6 +36,7 @@ const Services = () => {
     [],
   );
 
+  console.log("services", services);
   const prevService = () => {
     setCurrentService((prev) => (prev - 1 + services.length) % services.length);
   };

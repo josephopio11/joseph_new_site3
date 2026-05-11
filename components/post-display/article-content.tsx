@@ -1,10 +1,11 @@
 import Markdown from "markdown-to-jsx";
 
 interface ArticleContentProps {
-  content: string;
+  content: string | null;
 }
 
 export function ArticleContent({ content }: ArticleContentProps) {
+  if (!content) return null;
   return (
     <div className="prose prose-lg text-foreground mt-8 max-w-none! space-y-6">
       {/* prose-pre:w-fit 

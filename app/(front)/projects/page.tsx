@@ -1,8 +1,9 @@
+import { getAllProjects } from "@/actions/projec";
 import ProjectCard from "@/components/landing/project-card";
 import Pagination from "@/components/pagination";
 import { BlogSidebar } from "@/components/post-display/blog-sidebar";
-import { projectsData, SITE_CONFIG } from "@/lib/data";
-import { Metadata } from "next";
+import { SITE_CONFIG } from "@/lib/data";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
@@ -58,18 +59,25 @@ export default async function ProjectsPage(props: {
 }) {
   // const postMetadata = getPostMetadata();
   const params = await props.searchParams;
+
   const page = params.page ? parseInt(params.page as string) : 1;
   const perPage = params.per_page ? parseInt(params.per_page as string) : 12;
   const start = (page - 1) * perPage;
   const end = start + perPage;
-  const lastPage = Math.ceil(projectsData.length / perPage);
+
+  const { projects, count } = await getAllProjects(start, end);
+
+  const lastPage = Math.ceil(count / perPage);
   const hasNextPage = page < lastPage;
   const hasPreviousPage = page > 1;
-  const projectsSlice = projectsData.slice(start, end);
+
+  // const projectsSlice = projects.slice(start, end);
 
   return (
     <div className="pt-10 print:pt-0">
-      <div className="my-16 print:hidden">{/* Just a spacer */}</div>
+      <div className="my-16 print:hidden">
+        {/* Just a spacer {count} {params.page} */}
+      </div>
       <div className="container mx-auto px-4 py-8 print:p-0">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_380px] lg:gap-12 print:gap-2">
           <article className="max-w-7xl">
@@ -89,7 +97,7 @@ export default async function ProjectsPage(props: {
               </div>
             </div>
             <div className="text-foreground my-8 grid max-w-none! grid-cols-1 space-y-6 sm:grid-cols-2 sm:gap-6 sm:space-y-0 md:grid-cols-3 print:gap-2">
-              {projectsSlice.map((project, index) => (
+              {projects.map((project, index) => (
                 <ProjectCard key={String(index)} project={project} />
               ))}
             </div>

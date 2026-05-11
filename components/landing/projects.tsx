@@ -1,4 +1,4 @@
-import { getFrontProjects } from "@/lib/actions/project";
+import { getFrontProjects } from "@/actions/projec";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import LinkTrigger from "./link-trigger";

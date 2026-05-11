@@ -66,11 +66,8 @@ export default async function PostsPage(props: { searchParams: SearchParams }) {
   const lastPage = Math.ceil(postMetadata.length / perPage);
   const hasNextPage = page < lastPage;
   const hasPreviousPage = page > 1;
-  const postsSlice = postMetadata.slice(start, end);
 
   const myPosts = await getAllPosts(start, end);
-
-  console.log(myPosts);
 
   return (
     <div className="pt-10 print:pt-0">

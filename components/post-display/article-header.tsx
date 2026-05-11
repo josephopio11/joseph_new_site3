@@ -3,9 +3,9 @@ import Image from "next/image";
 
 interface ArticleHeaderProps {
   title: string;
-  subtitle: string;
-  date: string;
-  imageSrc: string;
+  subtitle: string | null;
+  date: Date;
+  imageSrc: string | null;
 }
 
 export function ArticleHeader({

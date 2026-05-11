@@ -1,11 +1,11 @@
-import { PostType } from "@/actions/post";
+import { PostsType } from "@/actions/post";
 import getFormattedDate from "@/lib/posts/getFormattedDate";
 import { getRandomColour } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
 
-const PostsPreview = (props: PostType) => {
+const PostsPreview = (props: PostsType) => {
   const wanted = () => {
     const available_image = props.image;
     const default_image = "bg.jpg";

@@ -1,14 +1,13 @@
+import { getPostBySlug, grabAllPosts } from "@/actions/post";
 import { ArticleContent } from "@/components/post-display/article-content";
 import { ArticleHeader } from "@/components/post-display/article-header";
 import { Sidebar } from "@/components/post-display/sidebar";
 import { Badge } from "@/components/ui/badge";
-import getPostContent from "@/lib/posts/getPostContent";
-import getPostMetadata from "@/lib/posts/getPostMetadata";
 import { getRandomColour } from "@/lib/utils";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const generateStaticParams = async () => {
-  const posts = getPostMetadata();
+  const posts = await grabAllPosts();
   return posts.map((post) => ({
     slug: post.slug,
   }));
@@ -21,14 +20,22 @@ type Props = {
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const slug = (await props.params).slug;
-  const post = getPostContent(slug);
-  const tags = post.data.tags;
+  const post = await getPostBySlug(slug);
+
+  if (!post) {
+    return {
+      title: "Not found",
+      description: "The page you are seeking is not found",
+    };
+  }
+
+  const tags = post.tags;
 
   const postImage = () => {
-    if (post.data.image === undefined) {
+    if (post.image === undefined) {
       return "bg.jpg";
     } else {
-      return post.data.image;
+      return post.image;
     }
   };
 
@@ -36,12 +43,12 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     if (tags === undefined) {
       return (
         "joseph, opio, teacher, igcse, a level, cambridge, computer, science, " +
-        post.data.title.split(" ").join(", ").toLowerCase()
+        post.title.split(" ").join(", ").toLowerCase()
       );
     }
     return (
       "joseph, opio, teacher, igcse, a level, cambridge, computer, science, " +
-      post.data.title.split(" ").join(", ").toLowerCase() +
+      post.title.split(" ").join(", ").toLowerCase() +
       ", " +
       tags.join(", ")
     );
@@ -52,18 +59,19 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       title: "Not found",
       description: "The page you are seeking is not found",
     };
+
   return {
-    title: post.data.title,
-    description: post.data.subtitle,
+    title: post.title,
+    description: post.subtitle,
     keywords: postTags(),
     openGraph: {
       url: "/posts/" + slug,
-      title: post.data.title,
-      description: post.data.subtitle,
+      title: post.title,
+      description: post.subtitle || "",
       images: [
         {
           url: "/images/posts/" + postImage(),
-          alt: post.data.title,
+          alt: post.title,
         },
       ],
       locale: "en_US",
@@ -75,20 +83,24 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       site: "@josephopio11",
       creator: "@josephopio11",
       images: "/images/posts/" + postImage(),
-      description: post.data.subtitle,
+      description: post.subtitle,
     },
   };
 }
 
 const BlogPage = async (props: Props) => {
   const slug = (await props.params).slug;
-  const post = getPostContent(slug);
+
+  const post = await getPostBySlug(slug);
+  // const post = getPostContent(slug);
+
+  if (!post) return null;
 
   const wanted = () => {
-    if (post.data.image === undefined) {
+    if (post.image === undefined) {
       return "bg.jpg";
     } else {
-      return post.data.image;
+      return post.image;
     }
   };
 
@@ -99,22 +111,22 @@ const BlogPage = async (props: Props) => {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_380px] lg:gap-12">
           <article className="max-w-7xl">
             <ArticleHeader
-              title={post.data.title}
-              subtitle={post.data.subtitle}
-              date={post.data.date}
+              title={post.title}
+              subtitle={post.subtitle}
+              date={post.createdAt}
               imageSrc={wanted()}
             />
             <ArticleContent content={post.content} />
             <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
               Tags:
               {/* <pre>{JSON.stringify(post.data.tags, null, 2)}</pre> */}
-              {post.data.tags.map((tag: string) => (
+              {post.tags.map((tag) => (
                 <Badge
-                  key={tag}
+                  key={tag.id}
                   variant="secondary"
                   className={`text-xs font-medium text-white ${getRandomColour()} uppercase print:text-black`}
                 >
-                  {tag}
+                  {tag.name}
                 </Badge>
               ))}
             </div>

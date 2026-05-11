@@ -1,4 +1,4 @@
-import { FrontProject } from "@/lib/actions/project";
+import { FrontProject } from "@/actions/projec";
 import { getRandomColour } from "@/lib/utils";
 import { Link as LinkIcon } from "lucide-react";
 import Image from "next/image";

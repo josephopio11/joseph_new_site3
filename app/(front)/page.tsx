@@ -3,7 +3,7 @@ import Blog from "@/components/landing/blog";
 import Contact from "@/components/landing/contact";
 import Hero from "@/components/landing/hero";
 import Projects from "@/components/landing/projects";
-import Services from "@/components/landing/services";
+import ServicesCollector from "@/components/landing/services-collector";
 import Skills from "@/components/landing/skills";
 
 export default function PortfolioPage() {
@@ -16,7 +16,7 @@ export default function PortfolioPage() {
       <Skills />
       {/* <Experience /> */}
       <Blog />
-      <Services />
+      <ServicesCollector />
       {/* <Testimonials /> */}
       <Contact />
     </>
