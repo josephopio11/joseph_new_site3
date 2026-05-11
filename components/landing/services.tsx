@@ -1,10 +1,11 @@
 "use client";
 
 import { ServiceDisplayType } from "@/actions/service";
-import { fadedColours, myServices } from "@/lib/data";
+import { fadedColours } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { renderJSXIcon } from "../renderJSXIcon";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import LinkTrigger from "./link-trigger";
@@ -14,27 +15,27 @@ type DisplayServiceProps = {
   services: ServiceDisplayType;
 };
 
-const Services = () => {
+const Services = ({ services }: DisplayServiceProps) => {
   const [currentService, setCurrentService] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
   const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
 
-  const services = useMemo(
-    () =>
-      myServices.flatMap((category) =>
-        category.items
-          .filter((item) => item.bookable === true)
-          .map((item) => ({
-            id: `${category.category}-${item.item}`,
-            item: item.item,
-            description: item.description,
-            category: myServices.find((c) => c.category === category.category)
-              ?.category,
-            icon: category.icon,
-          })),
-      ),
-    [],
-  );
+  // const services = useMemo(
+  //   () =>
+  //     myServices.flatMap((category) =>
+  //       category.items
+  //         .filter((item) => item.bookable === true)
+  //         .map((item) => ({
+  //           id: `${category.category}-${item.item}`,
+  //           item: item.item,
+  //           description: item.description,
+  //           category: myServices.find((c) => c.category === category.category)
+  //             ?.category,
+  //           icon: category.icon,
+  //         })),
+  //     ),
+  //   [],
+  // );
 
   console.log("services", services);
   const prevService = () => {
@@ -125,13 +126,20 @@ const Services = () => {
                 >
                   <CardContent className="">
                     <div className="bg-background/50 mb-4 flex items-center justify-center gap-2 rounded-lg p-2">
-                      <service.icon className="h-12 w-12" />
-                      <h3 className="mb-2 font-semibold lg:text-lg">
-                        {service.item}
-                      </h3>
+                      <span className="flex flex-1 items-center justify-center text-center">
+                        {renderJSXIcon(service.icon)}
+                      </span>
+                      <div className="flex-6">
+                        <span className="line-clamp-1 text-xs font-light">
+                          {service.name}
+                        </span>
+                        <h3 className="mb-2 font-semibold">
+                          {service.services[0].title}
+                        </h3>
+                      </div>
                     </div>
-                    <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                      {service.description}
+                    <p className="text-muted-foreground mb-4 line-clamp-4 text-sm leading-relaxed font-normal italic">
+                      {service.services[0].description}
                     </p>
                     <Button>Learn More...</Button>
                   </CardContent>
@@ -151,25 +159,31 @@ const Services = () => {
         </section>
 
         <div className="mt-8 flex justify-center gap-3">
-          {services.map((service, index) => (
-            <Card
-              key={service.id}
-              // type="button"
-              onClick={() => setCurrentService(index)}
-              className={cn(
-                "flex-1 rounded-xl p-2",
-                //   "flex items-center gap-2 rounded-lg border px-3 py-2 text-sm transition-all hover:border-primary/50",
-                index === currentService
-                  ? "border-primary/50 bg-primary/10 shadow-foreground/20 shadow-xl"
-                  : "border-border bg-card/50 opacity-20",
-              )}
-            >
-              <CardContent className="flex flex-col items-center justify-center gap-4 text-center">
-                <service.icon className="h-8 w-8" />
-                <span className="hidden md:inline">{service.item}</span>
-              </CardContent>
-            </Card>
-          ))}
+          {services.map((service, index) => {
+            const isActive = index === 1;
+            return (
+              <Card
+                key={service.id}
+                // type="button"
+                onClick={() => setCurrentService(index)}
+                className={cn(
+                  "flex-1 rounded-xl p-2",
+                  //   "flex items-center gap-2 rounded-lg border px-3 py-2 text-sm transition-all hover:border-primary/50",
+                  index === currentService
+                    ? "border-primary/50 bg-primary/10 shadow-foreground/20 shadow-xl"
+                    : "border-border bg-card/50 opacity-20",
+                )}
+              >
+                <CardContent className="flex flex-col items-center justify-center gap-4 text-center">
+                  {renderJSXIcon(service.icon)}
+                  {/* <service.icon className="h-8 w-8" /> */}
+                  <span className="hidden text-xs md:inline">
+                    {service.name}
+                  </span>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>

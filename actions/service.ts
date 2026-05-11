@@ -6,7 +6,7 @@ export default async function getUniqueServicePerCategory() {
   const data = await prisma.serviceCategory.findMany({
     include: {
       services: {
-        take: 1,
+        take: 2,
       },
     },
   });
