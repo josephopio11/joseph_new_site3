@@ -1,4 +1,6 @@
+import { getAllServices } from "@/actions/service";
 import { ServicesSidebar } from "@/components/post-display/services-sidebar";
+import { renderJSXIcon } from "@/components/renderJSXIcon";
 import {
   Card,
   CardContent,
@@ -6,9 +8,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { myServices, SITE_CONFIG } from "@/lib/data";
+import { SITE_CONFIG } from "@/lib/data";
 import { cn, getRandomBackgroundColour } from "@/lib/utils";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -59,6 +61,10 @@ export const metadata: Metadata = {
 };
 
 export default async function PostsPage() {
+  const serviceCategories = await getAllServices();
+
+  if (!serviceCategories) return null;
+
   return (
     <div className="pt-10 print:pt-0">
       <div className="my-16 print:hidden">{/* Just a spacer */}</div>
@@ -85,18 +91,18 @@ export default async function PostsPage() {
             </div>
 
             <div className="space-y-20">
-              {myServices.map((category, categoryIndex) => {
+              {serviceCategories.map((category, categoryIndex) => {
                 const Icon = category.icon;
                 return (
                   <div key={String(categoryIndex)} className="space-y-8">
                     {/* Category Header */}
                     <div className="space-y-2">
                       <div className="flex items-center gap-3">
-                        <div className="bg-accent/10 rounded-lg p-2">
-                          <Icon className="text-primary h-6 w-6" />
+                        <div className="bg-accent/10 text-primary rounded-lg p-2">
+                          {renderJSXIcon(category.icon)}
                         </div>
                         <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
-                          {category.category}
+                          {category.name}
                         </h2>
                       </div>
                       <div className="bg-accent h-1 w-16 rounded-full" />
@@ -104,7 +110,7 @@ export default async function PostsPage() {
 
                     {/* Services Grid */}
                     <div className="grid gap-4 md:grid-cols-3">
-                      {category.items.map((service, serviceIndex) => (
+                      {category.services.map((service, serviceIndex) => (
                         <Card
                           key={String(serviceIndex)}
                           className={cn(
@@ -115,7 +121,7 @@ export default async function PostsPage() {
                         >
                           <CardHeader>
                             <CardTitle className="text-xl text-gray-900 transition-colors duration-300 group-hover:text-black dark:text-gray-200">
-                              {service.item}
+                              {service.title}
                             </CardTitle>
                           </CardHeader>
                           <CardContent>

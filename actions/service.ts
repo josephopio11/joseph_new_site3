@@ -18,3 +18,11 @@ export default async function getUniqueServicePerCategory() {
 export type ServiceDisplayType = Awaited<
   ReturnType<typeof getUniqueServicePerCategory>
 >;
+
+export async function getAllServices() {
+  const data = await prisma.serviceCategory.findMany({
+    include: { services: true },
+  });
+
+  return data;
+}
