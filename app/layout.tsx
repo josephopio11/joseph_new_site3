@@ -104,7 +104,8 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <TooltipProvider>{children}</TooltipProvider> <Toaster />
+            <TooltipProvider>{children}</TooltipProvider>
+            <Toaster richColors />
             <ThemeSwitcher />
             <div className="text-muted-foreground fixed right-1 bottom-1 font-mono text-xs">
               (Press <kbd>d</kbd> to toggle dark mode)

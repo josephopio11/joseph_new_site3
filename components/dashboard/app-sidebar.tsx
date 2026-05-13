@@ -1,9 +1,7 @@
 "use client";
 
-import { NavDocuments } from "@/components/nav-documents";
-import { NavMain } from "@/components/nav-main";
-import { NavSecondary } from "@/components/nav-secondary";
-import { NavUser } from "@/components/nav-user";
+import { NavMain } from "@/components/dashboard/nav-main";
+import { NavUser } from "@/components/dashboard/nav-user";
 import {
   Sidebar,
   SidebarContent,
@@ -18,7 +16,19 @@ import { IconUser } from "@tabler/icons-react";
 import Link from "next/link";
 import * as React from "react";
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
+  user: {
+    id: string;
+    createdAt: Date;
+    updatedAt: Date;
+    email: string;
+    emailVerified: boolean;
+    name: string;
+    image?: string | null | undefined;
+  };
+}
+
+export function AppSidebar({ user, ...props }: AppSidebarProps) {
   return (
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
@@ -28,9 +38,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               asChild
               className="data-[slot=sidebar-menu-button]:p-1.5!"
             >
-              <Link href="#">
+              <Link href="/dashboard">
                 <IconUser className="border-primary size-5! rounded-full border" />
-                <span className="text-base font-semibold">Joseph Opio</span>
+                <span className="text-base font-semibold">
+                  {user.name || ""}
+                </span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -38,14 +50,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={dashboard_navigation.navMain} />
-        <NavDocuments items={dashboard_navigation.documents} />
+        {/* <NavDocuments items={dashboard_navigation.documents} />
         <NavSecondary
           items={dashboard_navigation.navSecondary}
           className="mt-auto"
-        />
+        /> */}
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={dashboard_navigation.user} />
+        <NavUser user={user} />
       </SidebarFooter>
     </Sidebar>
   );

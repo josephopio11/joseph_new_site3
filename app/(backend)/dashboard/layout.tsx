@@ -1,4 +1,5 @@
-import { AppSidebar } from "@/components/app-sidebar";
+import { requireAuth } from "@/actions/auth";
+import { AppSidebar } from "@/components/dashboard/app-sidebar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
 type Props = {
@@ -6,6 +7,9 @@ type Props = {
 };
 
 export default async function DashboardLayout({ children }: Props) {
+  const session = await requireAuth();
+
+  console.log(session);
   return (
     <SidebarProvider
       style={
@@ -15,7 +19,7 @@ export default async function DashboardLayout({ children }: Props) {
         } as React.CSSProperties
       }
     >
-      <AppSidebar variant="inset" />
+      <AppSidebar variant="inset" user={session.user} />
       <SidebarInset>{children}</SidebarInset>
     </SidebarProvider>
   );
