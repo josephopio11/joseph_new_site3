@@ -3,8 +3,9 @@
 import { useActiveSectionContext } from "@/context/activeSectionContext";
 import { NavLink } from "@/lib/generated/prisma/browser";
 import { motion } from "framer-motion";
-import { Mail, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { CgMail } from "react-icons/cg";
+import { IoSparkles } from "react-icons/io5";
 // import { navLinks } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
@@ -26,8 +27,11 @@ const Navigation = ({ navLinks }: Props) => {
         <div className="fixed top-5 left-1/2 container mx-auto w-full -translate-x-1/2 rounded-full border bg-white/50 px-4 py-4 shadow-lg backdrop-blur-sm dark:bg-black/70">
           <nav className="mx-2 flex items-center justify-between">
             <Link href="/#" className="flex items-center gap-2">
-              <Sparkles className="text-primary h-5 w-5" />
-              <span className="text-lg font-semibold">Joseph Opio</span>
+              <IoSparkles className="text-primary h-5 w-5" />
+              <span className="hidden font-semibold lg:inline lg:text-lg">
+                Joseph Opio
+              </span>
+              <span className="mr-1 text-lg font-semibold lg:hidden">JO</span>
             </Link>
 
             <div className="text-wrap-balance hidden items-center justify-center gap-8 md:flex md:flex-wrap">
@@ -73,7 +77,7 @@ const Navigation = ({ navLinks }: Props) => {
                 className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full"
                 type="button"
               >
-                <Mail className="mr-1 h-4 w-4" />
+                <CgMail className="mr-1 h-4 w-4" />
                 Contact
               </Button>
             </Link>

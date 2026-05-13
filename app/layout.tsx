@@ -1,11 +1,12 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import ActiveSectionContextProvider from "@/context/activeSectionContext";
 import { SITE_CONFIG } from "@/lib/data";
+import { WebSite, WithContext } from "@/types/schema";
 import type { Metadata } from "next";
 import { Montserrat as Geist, Geist_Mono } from "next/font/google";
-import type { WebSite, WithContext } from "schema-dts";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -103,8 +104,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
-            <Toaster />
+            <TooltipProvider>{children}</TooltipProvider> <Toaster />
             <ThemeSwitcher />
             <div className="text-muted-foreground fixed right-1 bottom-1 font-mono text-xs">
               (Press <kbd>d</kbd> to toggle dark mode)

@@ -37,7 +37,6 @@ const Services = ({ services }: DisplayServiceProps) => {
   //   [],
   // );
 
-  console.log("services", services);
   const prevService = () => {
     setCurrentService((prev) => (prev - 1 + services.length) % services.length);
   };

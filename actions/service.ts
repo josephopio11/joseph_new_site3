@@ -11,7 +11,6 @@ export default async function getUniqueServicePerCategory() {
     },
   });
 
-  console.log(data);
   return data;
 }
 
