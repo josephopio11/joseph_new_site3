@@ -180,16 +180,16 @@ export async function getPublishedPosts(
 
   const posts = await prisma.post.findMany({
     where: {
-      // isPublished: true,
-      ...(category && { category: { name: { equals: category } } }),
       ...(q && {
         OR: [
           {
             subtitle: { contains: q, mode: "insensitive" },
-            title: { contains: q, mode: "insensitive" },
           },
+          { title: { contains: q, mode: "insensitive" } },
         ],
       }),
+      // isPublished: true,
+      ...(category && { category: { name: { equals: category } } }),
     },
     orderBy: { createdAt: "desc" },
     select: {

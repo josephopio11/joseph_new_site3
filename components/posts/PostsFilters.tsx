@@ -21,6 +21,9 @@ export function PostsFilters({ categories }: Props) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
+  // check if there are any params and return true or false
+  const hasParams = searchParams.toString().length > 0;
+
   const [searchQuery, setSearchQuery] = useState(searchParams.get("q") || "");
 
   const isFirstRender = useRef(true);
@@ -31,8 +34,11 @@ export function PostsFilters({ categories }: Props) {
       return;
     }
 
+    const params = new URLSearchParams(searchParams.toString());
+    if (searchQuery.length === 0) params.delete("q");
+    if (searchQuery.length < 3) return;
+
     const delayDebounceFn = setTimeout(() => {
-      const params = new URLSearchParams(searchParams.toString());
       if (searchQuery) {
         params.set("q", searchQuery);
       } else {

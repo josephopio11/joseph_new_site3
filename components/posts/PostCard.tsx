@@ -32,9 +32,9 @@ export default function PostCard({ post }: PostCardProps) {
           </div>
         )}
         <Badge className="absolute top-3 left-3 z-50 border-white">
-          <div className="flex items-center gap-2 text-[10px] font-medium tracking-wider uppercase">
+          <div className="flex items-center gap-2 text-[10px] font-medium tracking-wider">
             <Calendar className="h-3 w-3" />
-            {format(date, "dddd, MMM dd, yyyy")}
+            {format(date, "E, MMM dd, yyyy")}
           </div>
         </Badge>
       </div>

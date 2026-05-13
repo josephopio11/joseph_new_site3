@@ -15,7 +15,7 @@ export default async function PostsDashboardPage(props: {
   const params = await props.searchParams;
 
   console.log(params);
-  const q = params.q;
+  const q = params.q as string | undefined;
   const page = params.page ? parseInt(params.page as string) : 1;
   const perPage = params.per_page ? parseInt(params.per_page as string) : 12;
 
