@@ -166,7 +166,12 @@ export async function uploadPostImage(formData: FormData) {
   }
 }
 
-export async function getPublishedPosts(page?: number, per_page?: number) {
+export async function getPublishedPosts(
+  q: string | null = null,
+  page?: number,
+  per_page?: number,
+  category: string | null = null,
+) {
   if (!page || page < 1) page = 1;
   if (!per_page) per_page = 12;
 
@@ -174,12 +179,25 @@ export async function getPublishedPosts(page?: number, per_page?: number) {
   const take = per_page;
 
   const posts = await prisma.post.findMany({
+    where: {
+      // isPublished: true,
+      ...(category && { category: { name: { equals: category } } }),
+      ...(q && {
+        OR: [
+          {
+            subtitle: { contains: q, mode: "insensitive" },
+            title: { contains: q, mode: "insensitive" },
+          },
+        ],
+      }),
+    },
     orderBy: { createdAt: "desc" },
     select: {
       id: true,
       title: true,
       slug: true,
       subtitle: true,
+      category: true,
       image: true,
       createdAt: true,
     },

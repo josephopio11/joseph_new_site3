@@ -9,7 +9,6 @@ type Props = {
 export default async function DashboardLayout({ children }: Props) {
   const session = await requireAuth();
 
-  console.log(session);
   return (
     <SidebarProvider
       style={

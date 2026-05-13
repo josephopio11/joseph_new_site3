@@ -22,7 +22,8 @@ export default function PostCard({ post }: PostCardProps) {
           <Image
             alt={post.title}
             src={`/images/posts/${post.image}`}
-            fill
+            width={600}
+            height={600}
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
