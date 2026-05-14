@@ -92,7 +92,6 @@ export default async function PostsPage() {
 
             <div className="space-y-20">
               {serviceCategories.map((category, categoryIndex) => {
-                const Icon = category.icon;
                 return (
                   <div key={String(categoryIndex)} className="space-y-8">
                     {/* Category Header */}

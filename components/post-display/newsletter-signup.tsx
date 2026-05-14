@@ -12,22 +12,32 @@ import {
 import { Input } from "@/components/ui/input";
 import { Mail } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 import { Spinner } from "../ui/spinner";
 
 export function NewsletterSignup() {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | undefined>(undefined);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     setLoading(true);
+    setError(undefined);
 
     const formData = new FormData(e.currentTarget);
 
     const email = formData.get("email") as string;
     const name = formData.get("name") as string;
 
-    await subscribeToNewsletter({ email, name });
+    const result = await subscribeToNewsletter({ email, name });
+
+    if (!result.success) {
+      setError(result.error);
+      toast.error(result.error);
+    } else {
+      (e.target as HTMLFormElement).reset();
+    }
 
     setLoading(false);
   };
@@ -52,6 +62,9 @@ export function NewsletterSignup() {
         </CardHeader>
         <CardContent>
           <form className="space-y-3" onSubmit={handleSubmit}>
+            {error && (
+              <p className="text-destructive text-sm font-medium">{error}</p>
+            )}
             <Input
               type="text"
               name="name"
