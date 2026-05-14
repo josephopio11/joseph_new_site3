@@ -10,6 +10,9 @@ type PaginationProps = {
   hasNextPage: boolean;
   hasPreviousPage: boolean;
   page?: string;
+  perPage?: number;
+  category?: string;
+  q?: string;
 };
 
 const Pagination = (props: PaginationProps) => {
@@ -85,10 +88,14 @@ const Pagination = (props: PaginationProps) => {
                 key={i}
               >
                 <Link
-                  // href={`?page=${p}`}
                   href={{
                     pathname,
-                    query: { page: p },
+                    query: {
+                      page: p,
+                      per_page: props.perPage,
+                      category: props.category,
+                      q: props.q,
+                    },
                   }}
                   // className={cn(
                   //   "text-gray-500",

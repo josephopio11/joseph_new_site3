@@ -68,3 +68,16 @@ export function shuffle(array: any[]) {
   }
   return array;
 }
+
+export function readTime(content: string, wordsPerMinute: number = 200) {
+  const plainText = content.replace(/<[^>]*>/g, " ");
+
+  const wordCount = plainText
+    .trim()
+    .split(/\s+/)
+    .filter((word) => word.length > 0).length;
+
+  const minutes = Math.ceil(wordCount / wordsPerMinute);
+
+  return { minutes, wordCount };
+}

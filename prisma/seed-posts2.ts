@@ -29,7 +29,7 @@ async function main() {
 
   // ─── Process markdown files ───────────────────────────────────────────────
 
-  const postsDir = join(process.cwd(), "posts");
+  const postsDir = join(process.cwd(), "posta");
   const files = readdirSync(postsDir).filter((f) => f.endsWith(".md"));
 
   console.log(`📂 Found ${files.length} markdown files`);
@@ -80,17 +80,23 @@ async function main() {
       where: { slug },
     });
 
+    const categories = await prisma.category.findMany();
+    const randomCategory =
+      categories[Math.floor(Math.random() * categories.length)];
+
     if (existingPost) {
       console.log(`  ↳ Updating existing post`);
       await prisma.post.update({
         where: { slug },
         data: {
           title: matterResult.data.title,
+          category: { connect: { id: randomCategory.id } },
           subtitle: matterResult.data.subtitle,
           date: new Date(matterResult.data.date),
           createdAt: new Date(matterResult.data.date),
           updatedAt: new Date(matterResult.data.date),
           image: matterResult.data.image,
+          isPublished: true,
           content: htmlContent,
           tags: {
             set: tagConnections,
@@ -99,14 +105,17 @@ async function main() {
       });
     } else {
       console.log(`  ↳ Creating new post`);
+
       await prisma.post.create({
         data: {
           title: matterResult.data.title,
           slug,
           subtitle: matterResult.data.subtitle,
+          category: { connect: { id: randomCategory.id } },
           date: new Date(matterResult.data.date),
           createdAt: new Date(matterResult.data.date),
           updatedAt: new Date(matterResult.data.date),
+          isPublished: true,
           image: matterResult.data.image,
           content: htmlContent,
           tags: {

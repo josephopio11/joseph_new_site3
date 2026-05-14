@@ -1,6 +1,8 @@
+import { getAllPostCategories } from "@/actions/category";
 import { getAllPosts } from "@/actions/post";
 import Pagination from "@/components/pagination";
 import { BlogSidebar } from "@/components/post-display/blog-sidebar";
+import { PostsFilters } from "@/components/posts/PostsFilters";
 import PostsPreview from "@/components/PostsPreview";
 import { SITE_CONFIG } from "@/lib/data";
 import type { Metadata } from "next";
@@ -60,8 +62,16 @@ export default async function PostsPage(props: { searchParams: SearchParams }) {
 
   const page = params.page ? parseInt(params.page as string) : 1;
   const perPage = params.per_page ? parseInt(params.per_page as string) : 12;
+  const category = params.category ? (params.category as string) : undefined;
+  const q = params.q ? (params.q as string) : undefined;
 
-  const { data: myPosts, count } = await getAllPosts(page, perPage);
+  const { data: myPosts, count } = await getAllPosts(
+    page,
+    perPage,
+    category,
+    q,
+  );
+  const categories = await getAllPostCategories();
 
   const lastPage = Math.ceil(count / perPage);
   const hasNextPage = page < lastPage;
@@ -88,6 +98,7 @@ export default async function PostsPage(props: { searchParams: SearchParams }) {
                   to contact me directly.
                 </p>
               </div>
+              <PostsFilters categories={categories} />
             </div>
             <div className="text-foreground my-8 grid max-w-none! grid-cols-1 space-y-6 sm:grid-cols-2 sm:gap-6 sm:space-y-0 md:grid-cols-3">
               {myPosts.map((post) => (
@@ -95,6 +106,9 @@ export default async function PostsPage(props: { searchParams: SearchParams }) {
               ))}
             </div>
             <Pagination
+              perPage={perPage}
+              category={category}
+              q={q}
               hasNextPage={hasNextPage}
               hasPreviousPage={hasPreviousPage}
               totalPages={lastPage}

@@ -36,7 +36,7 @@ export function PostsFilters({ categories }: Props) {
 
     const params = new URLSearchParams(searchParams.toString());
     if (searchQuery.length === 0) params.delete("q");
-    if (searchQuery.length < 3) return;
+    // if (searchQuery.length < 3) return;
 
     const delayDebounceFn = setTimeout(() => {
       if (searchQuery) {

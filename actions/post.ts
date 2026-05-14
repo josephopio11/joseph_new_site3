@@ -27,7 +27,12 @@ export async function grabAllPosts() {
 
 export type DisplayPostType = Awaited<ReturnType<typeof grabAllPosts>>[number];
 
-export async function getAllPosts(page?: number, perPage?: number) {
+export async function getAllPosts(
+  page?: number,
+  perPage?: number,
+  category?: string,
+  q?: string,
+) {
   if (!page || page < 1) page = 1;
   if (!perPage || perPage < 1) perPage = 12;
 
@@ -35,6 +40,15 @@ export async function getAllPosts(page?: number, perPage?: number) {
   const start = (page - 1) * perPage;
 
   const data = await prisma.post.findMany({
+    where: {
+      ...(q && {
+        OR: [
+          { subtitle: { contains: q, mode: "insensitive" } },
+          { title: { contains: q, mode: "insensitive" } },
+        ],
+      }),
+      ...(category && { category: { name: { equals: category } } }),
+    },
     select: {
       id: true,
       title: true,
@@ -59,7 +73,17 @@ export async function getAllPosts(page?: number, perPage?: number) {
     take: take,
   });
 
-  const count = await prisma.post.count();
+  const count = await prisma.post.count({
+    where: {
+      ...(q && {
+        OR: [
+          { subtitle: { contains: q, mode: "insensitive" } },
+          { title: { contains: q, mode: "insensitive" } },
+        ],
+      }),
+      ...(category && { category: { name: { equals: category } } }),
+    },
+  });
 
   return { data, count };
 }

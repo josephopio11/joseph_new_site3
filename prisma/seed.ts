@@ -9,6 +9,16 @@ const pool = new Pool({ connectionString });
 const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
 
+function sluggify(str: string) {
+  return str
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, "") // remove non-word, non-whitespace, non-hyphen characters
+    .replace(/[\s_-]+/g, "-") // replace spaces, underscores, and hyphens with a single hyphen
+    .replace(/^-+/, "") // trim leading hyphens
+    .replace(/-+$/, ""); // trim trailing hyphens
+}
+
 async function main() {
   console.log("🌱 Starting seed...");
 
@@ -71,22 +81,41 @@ async function main() {
 
   // ─── Categories ───────────────────────────────────────────────────────────
   console.log("📂 Seeding categories...");
-  const categoryWebDev = await prisma.category.create({
-    data: {
-      name: "Web Development",
-      slug: "web-development",
-      description: "Articles about web development tools and technologies.",
-    },
-  });
 
-  const categoryEdTech = await prisma.category.create({
-    data: {
-      name: "Education & Technology",
-      slug: "education-technology",
-      description:
-        "Insights on teaching computer science and using tech in education.",
-    },
-  });
+  const categories = [
+    "Education",
+    "Computer Science Education",
+    "Programming",
+    "Web Development",
+    "Artificial Intelligence",
+    "Emerging Technologies",
+    "Digital Wellness",
+    "Gaming",
+    "Personal Growth",
+    "Creative Writing",
+    "Art and Design",
+    "Music",
+    "Health and Fitness",
+    "Parenting",
+    "Travel",
+    "Culture and History",
+    "Education and Technology",
+    "Undefined",
+  ];
+
+  const createCategories = await Promise.all(
+    categories.map((category) =>
+      prisma.category.upsert({
+        where: { name: category },
+        update: {},
+        create: {
+          name: category,
+          slug: sluggify(category),
+          description: "",
+        },
+      }),
+    ),
+  );
 
   // // ─── Posts ────────────────────────────────────────────────────────────────
   // console.log("📝 Seeding posts...");

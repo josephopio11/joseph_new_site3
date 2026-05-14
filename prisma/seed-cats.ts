@@ -9,26 +9,26 @@ const pool = new Pool({ connectionString });
 const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
 
-const categories = [
-  "Education",
-  "Computer Science Education",
-  "Programming",
-  "Web Development",
-  "Artificial Intelligence",
-  "Emerging Technologies",
-  "Digital Wellness",
-  "Gaming",
-  "Personal Growth",
-  "Creative Writing",
-  "Art and Design",
-  "Music",
-  "Health and Fitness",
-  "Parenting",
-  "Travel",
-  "Culture and History",
-];
+export async function seedCategories() {
+  const categories = [
+    "Education",
+    "Computer Science Education",
+    "Programming",
+    "Web Development",
+    "Artificial Intelligence",
+    "Emerging Technologies",
+    "Digital Wellness",
+    "Gaming",
+    "Personal Growth",
+    "Creative Writing",
+    "Art and Design",
+    "Music",
+    "Health and Fitness",
+    "Parenting",
+    "Travel",
+    "Culture and History",
+  ];
 
-async function seedCategories() {
   for (const category of categories) {
     await prisma.category.create({
       data: {
@@ -39,11 +39,9 @@ async function seedCategories() {
   }
 }
 
-seedCategories()
-  .catch((e) => {
-    console.error("❌ Seed failed:", e);
-    process.exit(1);
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
-  });
+seedCategories();
+
+process.on("SIGINT", async () => {
+  await prisma.$disconnect();
+  process.exit(0);
+});
