@@ -202,3 +202,14 @@ model Visits {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model Subscription {
+  id        String   @id @default(uuid())
+  email     String
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([email])
+  @@map("subscription")
+}

@@ -1,11 +1,11 @@
-import { PostsType } from "@/actions/post";
+import { DisplayPostType } from "@/actions/post";
 import getFormattedDate from "@/lib/posts/getFormattedDate";
 import { getRandomColour } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
 
-const PostsPreview = (props: PostsType) => {
+const PostsPreview = (props: DisplayPostType) => {
   const wanted = () => {
     const available_image = props.image;
     const default_image = "bg.jpg";
@@ -36,7 +36,7 @@ const PostsPreview = (props: PostsType) => {
         />
         <div className="p-2">
           <p className="m-0 text-xs font-light italic dark:text-slate-100">
-            {getFormattedDate(props.date.toString())}
+            {getFormattedDate(props.createdAt.toString())}
           </p>
           <h3 className="my-0 line-clamp-2 text-sm font-semibold no-underline transition delay-150 ease-in-out hover:text-black/70 hover:underline dark:text-white/70 dark:hover:text-white">
             {props.title}

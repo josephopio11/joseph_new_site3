@@ -1,7 +1,7 @@
 "use server";
 
 import prisma from "@/lib/prisma";
-import { sluggify } from "@/lib/utils";
+import { shuffle, sluggify } from "@/lib/utils";
 import { revalidatePath } from "next/cache";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
@@ -13,6 +13,9 @@ export async function grabAllPosts() {
       title: true,
       slug: true,
       subtitle: true,
+      image: true,
+      badge: true,
+      createdAt: true,
     },
     orderBy: {
       createdAt: "desc",
@@ -21,8 +24,16 @@ export async function grabAllPosts() {
 
   return data;
 }
-export async function getAllPosts(start: number, end: number) {
-  const take = end - start;
+
+export type DisplayPostType = Awaited<ReturnType<typeof grabAllPosts>>[number];
+
+export async function getAllPosts(page?: number, perPage?: number) {
+  if (!page || page < 1) page = 1;
+  if (!perPage || perPage < 1) perPage = 12;
+
+  const take = perPage;
+  const start = (page - 1) * perPage;
+
   const data = await prisma.post.findMany({
     select: {
       id: true,
@@ -31,8 +42,15 @@ export async function getAllPosts(start: number, end: number) {
       slug: true,
       subtitle: true,
       image: true,
-      tags: true,
+      tags: {
+        select: {
+          id: true,
+          name: true,
+          slug: true,
+        },
+      },
       badge: true,
+      createdAt: true,
     },
     orderBy: {
       createdAt: "desc",
@@ -41,10 +59,39 @@ export async function getAllPosts(start: number, end: number) {
     take: take,
   });
 
+  const count = await prisma.post.count();
+
+  return { data, count };
+}
+
+export async function justForGetTypes() {
+  const data = await prisma.post.findMany({
+    select: {
+      id: true,
+      title: true,
+      date: true,
+      slug: true,
+      subtitle: true,
+      image: true,
+      tags: {
+        select: {
+          id: true,
+          name: true,
+          slug: true,
+        },
+      },
+      badge: true,
+      createdAt: true,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+
   return data;
 }
 
-export type PostsType = Awaited<ReturnType<typeof getAllPosts>>[number];
+export type PostsType = Awaited<ReturnType<typeof justForGetTypes>>[number];
 
 export async function getPostBySlug(slug: string) {
   const data = await prisma.post.findUnique({
@@ -244,3 +291,20 @@ export async function getPostById(id: string) {
     return { success: false, error: "Failed to fetch post" };
   }
 }
+
+export async function getRandomPosts() {
+  const posts = await prisma.post.findMany({
+    select: {
+      id: true,
+      title: true,
+      slug: true,
+      tags: true,
+    },
+  });
+
+  const randomPosts = shuffle(posts);
+
+  return randomPosts;
+}
+
+export type RandomPostType = Awaited<ReturnType<typeof getRandomPosts>>[number];

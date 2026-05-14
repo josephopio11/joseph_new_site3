@@ -1,12 +1,12 @@
-import getPostMetadata from "@/lib/posts/getPostMetadata";
+import { grabAllPosts } from "@/actions/post";
 import Link from "next/link";
 import PostsPreview from "../PostsPreview";
 import { Button } from "../ui/button";
 import LinkTrigger from "./link-trigger";
 import SectionTitle from "./section-title";
 
-export default function Blog() {
-  const postMetadata = getPostMetadata();
+export default async function Blog() {
+  const postMetadata = await grabAllPosts();
   const postPreviews = postMetadata
     .slice(0, 4)
     .map((post) => <PostsPreview key={post.slug} {...post} />);

@@ -20,7 +20,7 @@ export function AuthorBio() {
         <div className="space-y-4">
           <div className="flex items-center gap-3">
             <Avatar className="h-12 w-12">
-              <AvatarImage src="/me2.png" alt="Joseph Opio" />
+              <AvatarImage src="/images/landing/me2.png" alt="Joseph Opio" />
               <AvatarFallback>JO</AvatarFallback>
             </Avatar>
             <div>
@@ -31,12 +31,13 @@ export function AuthorBio() {
             </div>
           </div>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            I&apos;m a seasoned Computer Science educator with over 13 years of
-            teaching experience. I&apos;ve impacted countless students&apos;
-            lives through dynamic learning environments. Beyond teaching, I
-            excel in freelance web and app development, creating innovative
-            solutions with cutting-edge tech. My expertise covers front-end,
-            back-end, mobile apps, databases, and UX.
+            I&apos;m a seasoned Computer Science educator with{" "}
+            {new Date().getFullYear() - 2011}+ years of teaching experience.
+            I&apos;ve impacted countless students&apos; lives through dynamic
+            learning environments. Beyond teaching, I excel in freelance web and
+            app development, creating innovative solutions with cutting-edge
+            tech. My expertise covers front-end, back-end, mobile apps,
+            databases, and UX.
           </p>
 
           {pathname !== "/posts" && (

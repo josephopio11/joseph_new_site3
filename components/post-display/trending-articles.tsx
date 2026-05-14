@@ -1,17 +1,14 @@
+import { getRandomPosts } from "@/actions/post";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import getPostMetadataRnd, {
-  shufflePosts,
-} from "@/lib/posts/getPostMetadataRnd";
-import { getRandomColour } from "@/lib/utils";
+import { shufflePosts } from "@/lib/posts/getPostMetadataRnd";
 import { TrendingUp } from "lucide-react";
-import { Badge } from "../ui/badge";
 
 type Props = {
   title?: string;
 };
 
 export async function TrendingArticles({ title }: Props) {
-  const posts = (await shufflePosts(getPostMetadataRnd())).slice(0, 6);
+  const posts = (await shufflePosts(await getRandomPosts())).slice(0, 6);
   return (
     <Card>
       <CardHeader>
@@ -37,7 +34,7 @@ export async function TrendingArticles({ title }: Props) {
                     {article.title}
                   </h3>
                   <div className="text-muted-foreground flex items-center gap-2 text-xs">
-                    {article?.tags && article?.tags?.length > 0 && (
+                    {/* {article?.tags && article?.tags?.length > 0 && (
                       <div className="flex flex-wrap items-center gap-1">
                         {article.tags?.slice(0, 2).map((tag) => (
                           <Badge
@@ -49,7 +46,7 @@ export async function TrendingArticles({ title }: Props) {
                           </Badge>
                         ))}
                       </div>
-                    )}
+                    )} */}
                     <span>•</span>
                     <span>5 min read</span>
                   </div>

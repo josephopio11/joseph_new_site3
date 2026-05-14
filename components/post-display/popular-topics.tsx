@@ -1,6 +1,6 @@
+import { getRandomPosts } from "@/actions/post";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import getPostMetadataRnd from "@/lib/posts/getPostMetadataRnd";
 import { getSortedTagCounts } from "@/lib/posts/getTagCounts";
 import { cn, getRandomColour } from "@/lib/utils";
 import { Hash } from "lucide-react";
@@ -14,9 +14,11 @@ import { Hash } from "lucide-react";
 //   { name: "Cybersecurity", count: 115 },
 // ];
 
-export function PopularTopics() {
-  const posts = getPostMetadataRnd();
+export async function PopularTopics() {
+  const posts = await getRandomPosts();
   const tagCounts = getSortedTagCounts(posts);
+
+  console.log("tagCounts", tagCounts);
 
   return (
     <Card>
@@ -30,17 +32,17 @@ export function PopularTopics() {
         <div className="flex flex-wrap gap-2">
           {tagCounts.map((topic) => (
             <Badge
-              key={topic.tag}
+              key={topic.id}
               variant="secondary"
               className={cn(
                 "hover:bg-accent hover:text-accent-foreground h-7 cursor-pointer rounded-full text-white capitalize transition-colors",
                 getRandomColour(),
               )}
             >
-              {topic.tag}{" "}
-              <span className="bg-background text-foreground flex h-4 w-4 items-center justify-center rounded-full p-1 text-[10px] font-light">
+              {topic.name}
+              {/* <span className="bg-background text-foreground flex h-4 w-4 items-center justify-center rounded-full p-1 text-[10px] font-light">
                 {topic.count}
-              </span>
+              </span> */}
             </Badge>
           ))}
         </div>

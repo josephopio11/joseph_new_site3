@@ -1,9 +1,8 @@
 import { getAllPosts } from "@/actions/post";
-import PostsPreview from "@/components/PostsPreview";
 import Pagination from "@/components/pagination";
 import { BlogSidebar } from "@/components/post-display/blog-sidebar";
+import PostsPreview from "@/components/PostsPreview";
 import { SITE_CONFIG } from "@/lib/data";
-import getPostMetadata from "@/lib/posts/getPostMetadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -57,17 +56,16 @@ export const metadata: Metadata = {
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
 export default async function PostsPage(props: { searchParams: SearchParams }) {
-  const postMetadata = getPostMetadata();
   const params = await props.searchParams;
+
   const page = params.page ? parseInt(params.page as string) : 1;
   const perPage = params.per_page ? parseInt(params.per_page as string) : 12;
-  const start = (page - 1) * perPage;
-  const end = start + perPage;
-  const lastPage = Math.ceil(postMetadata.length / perPage);
+
+  const { data: myPosts, count } = await getAllPosts(page, perPage);
+
+  const lastPage = Math.ceil(count / perPage);
   const hasNextPage = page < lastPage;
   const hasPreviousPage = page > 1;
-
-  const myPosts = await getAllPosts(start, end);
 
   return (
     <div className="pt-10 print:pt-0">

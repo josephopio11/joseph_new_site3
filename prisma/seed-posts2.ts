@@ -50,7 +50,7 @@ async function main() {
     console.log(`📝 Processing: ${matterResult.data.title}`);
 
     // Convert markdown body to HTML
-    const htmlContent = await marked.parse(body);
+    const htmlContent = await marked.parse(matterResult.content);
 
     // Create or find tags
     const tagConnections: { id: number }[] = [];
